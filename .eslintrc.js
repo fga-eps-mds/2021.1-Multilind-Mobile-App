@@ -33,4 +33,9 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-console': 'off',
   },
+  settings: {
+    'import/resolver': {
+      'babel-module': {},
+    },
+  },
 };

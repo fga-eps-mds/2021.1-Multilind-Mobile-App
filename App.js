@@ -1,10 +1,6 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { HomeScreen } from '_screens';
 
 export default function App() {
-  return (
-    <View>
-      <Text>teste</Text>
-    </View>
-  );
+  return <HomeScreen />;
 }
