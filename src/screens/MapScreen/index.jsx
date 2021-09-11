@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
-import { Input } from '../../components';
 import MapView, { Marker } from 'react-native-maps';
 import {
   requestForegroundPermissionsAsync,
   getCurrentPositionAsync,
 } from 'expo-location';
+import { Input } from '../../components';
 import styles from './styles';
 import markerImage from '../../assets/images/marker.png';
 
@@ -28,7 +28,7 @@ export function MapScreen() {
 
   return (
     <View style={styles.container}>
-    <Input />
+      <Input />
       {location && (
         <MapView
           style={styles.map}
