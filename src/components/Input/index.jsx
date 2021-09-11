@@ -9,7 +9,7 @@ export function Input() {
   return (
     <View
       style={{
-        top: insets.top,
+        top: insets.top + 20,
         position: 'absolute',
         width: '100%',
         zIndex: 1,
