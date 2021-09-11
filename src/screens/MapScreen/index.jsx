@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import {
   requestForegroundPermissionsAsync,
-  getCurrentPositionAsync,
+  getLastKnownPositionAsync,
 } from 'expo-location';
 import { Input } from '../../components';
 import styles from './styles';
@@ -19,9 +19,9 @@ export function MapScreen() {
         return;
       }
 
-      const currentLocation = await getCurrentPositionAsync({});
+      const currentLocation = await getLastKnownPositionAsync({});
 
-      setLocation(currentLocation.coords);
+      setLocation(currentLocation?.coords);
     }
     getPosition();
   }, []);
