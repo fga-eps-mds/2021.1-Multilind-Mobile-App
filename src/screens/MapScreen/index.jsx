@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
+import { Input } from '../../components';
 import MapView, { Marker } from 'react-native-maps';
 import {
   requestForegroundPermissionsAsync,
@@ -27,6 +28,7 @@ export function MapScreen() {
 
   return (
     <View style={styles.container}>
+    <Input />
       {location && (
         <MapView
           style={styles.map}
