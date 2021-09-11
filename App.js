@@ -1,11 +1,14 @@
 import React from 'react';
-import { MapScreen } from '_screens';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { BottomNavigation } from './src/navigation';
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <MapScreen />
+      <NavigationContainer>
+        <BottomNavigation />
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }
