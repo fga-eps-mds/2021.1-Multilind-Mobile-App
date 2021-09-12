@@ -5,6 +5,7 @@ import { LanguageScreen, MapScreen, SettingsScreen } from '../screens';
 import { PRIMARY_BLUE, DARK } from '../constants';
 
 const Tab = createBottomTabNavigator();
+export const BOTTOM_TAB_HEIGHT = 75;
 
 export function BottomNavigation() {
   return (
@@ -13,7 +14,7 @@ export function BottomNavigation() {
         headerShown: false,
         tabBarActiveTintColor: PRIMARY_BLUE,
         tabBarLabelStyle: { fontSize: 16 },
-        tabBarStyle: { height: 75, alignItems: 'center' },
+        tabBarStyle: { height: BOTTOM_TAB_HEIGHT, alignItems: 'center' },
         tabBarItemStyle: { padding: 10 },
         tabBarInactiveTintColor: DARK,
       }}
