@@ -1,53 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { View } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
-import {
-  requestForegroundPermissionsAsync,
-  getLastKnownPositionAsync,
-} from 'expo-location';
-import { Input } from '../../components';
+import { useLocation } from '../../contexts';
+import { Input, Map } from '../../components';
 import styles from './styles';
-import markerImage from '../../assets/images/marker.png';
 
+const MARKERS = [
+  {
+    id: 1,
+    latitude: -16.01504,
+    longitude: -48.0595503,
+  },
+];
 export function MapScreen() {
-  const [location, setLocation] = useState(null);
-
-  useEffect(() => {
-    async function getPosition() {
-      const { status } = await requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        return;
-      }
-
-      const currentLocation = await getLastKnownPositionAsync({});
-
-      setLocation(currentLocation?.coords);
-    }
-    getPosition();
-  }, []);
-
+  const { location, hasLocation } = useLocation();
   return (
     <View style={styles.container}>
       <Input />
-      {location && (
-        <MapView
-          style={styles.map}
-          initialRegion={{
-            latitude: location.latitude,
-            longitude: location.longitude,
-            latitudeDelta: 0.05,
-            longitudeDelta: 0.05,
-          }}
-        >
-          <Marker
-            coordinate={{
-              latitude: -27.5965432,
-              longitude: -48.5865547,
-            }}
-            image={markerImage}
-          />
-        </MapView>
-      )}
+      {hasLocation && <Map initialRegion={location} markers={MARKERS} />}
     </View>
   );
 }

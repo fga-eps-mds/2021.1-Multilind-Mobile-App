@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Image, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Entypo } from '@expo/vector-icons';
 import { SCREEN_WIDTH } from '../../constants';
-import logoImage from '../../assets/images/logo.png';
 
 export function Input() {
   const insets = useSafeAreaInsets();
@@ -16,22 +16,24 @@ export function Input() {
         justifyContent: 'center',
       }}
     >
-      <Image
-        source={logoImage}
+      <View
         style={{
           position: 'absolute',
           left: SCREEN_WIDTH * 0.08,
           zIndex: 1,
         }}
-      />
+      >
+        <Entypo name="magnifying-glass" size={30} color="#838383" />
+      </View>
+
       <TextInput
         placeholder="Pesquisar um local"
         style={{
           width: SCREEN_WIDTH * 0.9,
           height: 50,
-          backgroundColor: '#fff',
+          backgroundColor: '#EFEFEF',
           alignSelf: 'center',
-          borderRadius: 30,
+          borderRadius: 15,
           paddingHorizontal: 50,
           fontSize: 16,
         }}
