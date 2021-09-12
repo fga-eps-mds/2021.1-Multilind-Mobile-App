@@ -3,8 +3,8 @@ import { SCREEN_HEIGHT, SCREEN_WIDTH, WHITE } from '../../constants';
 
 const styles = StyleSheet.create({
   background: {
-    width: SCREEN_HEIGHT,
-    height: SCREEN_WIDTH,
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
     backgroundColor: 'transparent',
     position: 'absolute',
     zIndex: 90,
