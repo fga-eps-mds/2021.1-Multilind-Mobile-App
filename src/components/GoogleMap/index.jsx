@@ -5,7 +5,7 @@ import markerImage from '../../assets/images/marker.png';
 import markerSelectedImage from '../../assets/images/marker-yellow.png';
 import styles from './styles';
 
-export function Map({ markers, mapStyle, onPressMarker, ...props }) {
+export function GoogleMap({ markers, mapStyle, onPressMarker, ...props }) {
   const [selectedMarkerId, setSelectedMarkerId] = useState(null);
 
   const handlePressMarker = (marker) => {

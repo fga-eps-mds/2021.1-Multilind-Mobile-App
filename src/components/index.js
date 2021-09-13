@@ -1,5 +1,5 @@
 export { Input } from './Input';
-export { Map } from './Map';
+export { GoogleMap } from './GoogleMap';
 export { BottomModal } from './BottomModal';
 export { ContentBottomModal } from './ContentBottomModal';
 export { Button } from './Button';
