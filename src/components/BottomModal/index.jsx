@@ -3,7 +3,7 @@ import { Animated, View, TouchableOpacity } from 'react-native';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../constants';
 import modalStyles from './styles';
 
-const MODAL_HEIGHT = SCREEN_HEIGHT * 0.3;
+const MODAL_HEIGHT = SCREEN_HEIGHT * 0.35;
 const MODAL_WIDTH = SCREEN_WIDTH;
 export function BottomModal({ visible, toggle, children }) {
   const translateY = useRef(new Animated.Value(MODAL_HEIGHT)).current;
