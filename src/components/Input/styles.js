@@ -4,6 +4,7 @@ import { DARK_GRAY, LIGHT, PRIMARY_BLUE } from '../../constants';
 const styles = StyleSheet.create({
   container: {
     width: '100%',
+    justifyContent: 'center',
   },
   input: {
     width: '100%',
