@@ -2,183 +2,177 @@
   "languages": [
     {
       "id": 1,
-      "name": "Aruá"
+      "name": "Aruá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte e Nordeste "
     },
     {
       "id": 2,
-      "name": "Bahwana"
+      "name": "Bahwana",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
       "id": 3,
-      "name": "Banauá"
+      "name": "Banauá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
       "id": 4,
-      "name": "Culina"
+      "name": "Culina",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
       "id": 5,
-      "name": "Deni"
+      "name": "Deni",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
       "id": 6,
-      "name": "Jamamadi"
+      "name": "Jamamadi",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
       "id": 7,
-      "name": "Juráuara"
+      "name": "Juráuara",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
       "id": 8,
-      "name": "Paumari"
+      "name": "Paumari",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
       "id": 9,
-      "name": "Sorouahá"
+      "name": "Sorouahá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 1,
-      "name": "Aruá"
+      "id": 10,
+      "name": "Aruá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte e Nordeste "
     },
     {
-      "id": 2,
-      "name": "Bahwana"
+      "id": 11,
+      "name": "Bahwana",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 3,
-      "name": "Banauá"
+      "id": 12,
+      "name": "Banauá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 4,
-      "name": "Culina"
+      "id": 13,
+      "name": "Culina",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 5,
-      "name": "Deni"
+      "id": 14,
+      "name": "Deni",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 6,
-      "name": "Jamamadi"
+      "id": 15,
+      "name": "Jamamadi",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 7,
-      "name": "Juráuara"
+      "id": 16,
+      "name": "Juráuara",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 8,
-      "name": "Paumari"
+      "id": 17,
+      "name": "Paumari",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 9,
-      "name": "Sorouahá"
+      "id": 18,
+      "name": "Sorouahá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 1,
-      "name": "Aruá"
+      "id": 20,
+      "name": "Aruá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte e Nordeste "
     },
     {
-      "id": 2,
-      "name": "Bahwana"
+      "id": 21,
+      "name": "Bahwana",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 3,
-      "name": "Banauá"
+      "id": 22,
+      "name": "Banauá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 4,
-      "name": "Culina"
+      "id": 23,
+      "name": "Culina",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 5,
-      "name": "Deni"
+      "id": 24,
+      "name": "Deni",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 6,
-      "name": "Jamamadi"
+      "id": 25,
+      "name": "Jamamadi",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 7,
-      "name": "Juráuara"
+      "id": 26,
+      "name": "Juráuara",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 8,
-      "name": "Paumari"
+      "id": 27,
+      "name": "Paumari",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 9,
-      "name": "Sorouahá"
+      "id": 28,
+      "name": "Sorouahá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     },
     {
-      "id": 1,
-      "name": "Aruá"
+      "id": 29,
+      "name": "Aruá",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte e Nordeste "
     },
     {
-      "id": 2,
-      "name": "Bahwana"
-    },
-    {
-      "id": 3,
-      "name": "Banauá"
-    },
-    {
-      "id": 4,
-      "name": "Culina"
-    },
-    {
-      "id": 5,
-      "name": "Deni"
-    },
-    {
-      "id": 6,
-      "name": "Jamamadi"
-    },
-    {
-      "id": 7,
-      "name": "Juráuara"
-    },
-    {
-      "id": 8,
-      "name": "Paumari"
-    },
-    {
-      "id": 9,
-      "name": "Sorouahá"
-    },
-    {
-      "id": 1,
-      "name": "Aruá"
-    },
-    {
-      "id": 2,
-      "name": "Bahwana"
-    },
-    {
-      "id": 3,
-      "name": "Banauá"
-    },
-    {
-      "id": 4,
-      "name": "Culina"
-    },
-    {
-      "id": 5,
-      "name": "Deni"
-    },
-    {
-      "id": 6,
-      "name": "Jamamadi"
-    },
-    {
-      "id": 7,
-      "name": "Juráuara"
-    },
-    {
-      "id": 8,
-      "name": "Paumari"
-    },
-    {
-      "id": 9,
-      "name": "Sorouahá"
+      "id": 30,
+      "name": "Bahwana",
+      "troncolinguistico": "Tupi-Guarani",
+      "regioesfaladas": "Norte "
     }
   ]
 }
