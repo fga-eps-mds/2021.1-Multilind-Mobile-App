@@ -1,8 +1,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome5, Ionicons } from '@expo/vector-icons';
-import { LanguageScreen, MapScreen, SettingsScreen } from '../screens';
+import { MapScreen, SettingsScreen } from '../screens';
 import { PRIMARY_BLUE, DARK } from '../constants';
+import { LanguageNavigation } from './LanguageNavigation';
 
 const Tab = createBottomTabNavigator();
 export const BOTTOM_TAB_HEIGHT = 75;
@@ -30,14 +31,14 @@ export function BottomNavigation() {
         component={MapScreen}
       />
       <Tab.Screen
-        name="Language"
+        name="LanguageNavigator"
         options={{
           tabBarLabel: 'Linguas',
           tabBarIcon: ({ color }) => (
             <FontAwesome5 name="language" size={35} color={color} />
           ),
         }}
-        component={LanguageScreen}
+        component={LanguageNavigation}
       />
       <Tab.Screen
         name="Settings"
