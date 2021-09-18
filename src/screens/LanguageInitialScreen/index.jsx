@@ -8,6 +8,7 @@ import {
   MONTSERRAT_SEMIBOLD,
 } from '../../constants';
 import { useRoute, useNavigation } from '@react-navigation/native';
+import { Button } from '../../components';
 
 export function LanguageInitialScreen() {
   const route = useRoute();
