@@ -14,7 +14,8 @@ export function LanguageInitialScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const navigation = useNavigation();
-
+  const dicionary = require('../../assets/images/dicionary.png');
+  const portrait = require('../../assets/images/portrait.png');
   return (
     <SafeAreaView
       style={{
@@ -108,10 +109,7 @@ export function LanguageInitialScreen() {
               alignItems: 'center',
             }}
           >
-            <Image
-              style={{ width: 50, height: 50 }}
-              source={require('../../assets/images/dicionary.png')}
-            />
+            <Image style={{ width: 50, height: 50 }} source={dicionary} />
             <Text
               style={{
                 color: 'black',
@@ -144,10 +142,7 @@ export function LanguageInitialScreen() {
               alignItems: 'center',
             }}
           >
-            <Image
-              source={require('../../assets/images/portrait.png')}
-              style={{ width: 50, height: 50 }}
-            />
+            <Image source={portrait} style={{ width: 50, height: 50 }} />
             <Text
               style={{
                 color: 'black',
