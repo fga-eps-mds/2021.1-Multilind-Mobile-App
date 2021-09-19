@@ -14,8 +14,14 @@ export function LanguageInitialScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const navigation = useNavigation();
+
+  /* eslint-disable global-require */
+
   const dicionary = require('../../assets/images/dicionary.png');
   const portrait = require('../../assets/images/portrait.png');
+
+  /* eslint-enable global-require */
+
   return (
     <SafeAreaView
       style={{
