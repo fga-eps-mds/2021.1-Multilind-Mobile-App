@@ -6,6 +6,7 @@ import { BottomNavigation } from './src/navigation';
 import { LocationContextProvider } from './src/contexts';
 import { useCustomFonts } from './src/helpers';
 import Linguas from './src/services/Linguas';
+// import teste from './src/services/teste';
 
 export default function App() {
   const fontLoaded = useCustomFonts();
@@ -15,7 +16,7 @@ export default function App() {
   }
 
   Linguas();
-
+  // teste();
   return (
     <LocationContextProvider>
       <SafeAreaProvider>
