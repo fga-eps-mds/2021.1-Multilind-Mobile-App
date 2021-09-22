@@ -29,40 +29,19 @@ export function LanguageScreen() {
 
   const list = () =>
     lista.map((language) => (
-      <View
-        key={language.id}
-        style={{
-          margin: 1,
-        }}
-      >
+      <View key={language.id} style={styles.listcontainer}>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('LanguageInitial', { language });
           }}
-          style={{
-            backgroundColor: 'white',
-            borderRadius: 0,
-            paddingVertical: 20,
-            paddingHorizontal: 25,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}
+          style={styles.list}
         >
-          <Text
-            style={{
-              color: 'black',
-              fontSize: 18,
-              fontFamily: MONTSERRAT_SEMIBOLD,
-            }}
-          >
-            {language.name}
-          </Text>
+          <Text style={styles.textlist}>{language.name}</Text>
           <AntDesign
             name="right"
             size={24}
             color="#B1B1B1"
-            style={{ paddingRight: 14 }}
+            style={styles.arrow}
           />
         </TouchableOpacity>
       </View>
@@ -115,10 +94,7 @@ export function LanguageScreen() {
               }}
             >
               <Pressable
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}
+                style={styles.flex}
                 onPress={() => {
                   listOrdenada();
                   setVisib(false);
@@ -130,22 +106,12 @@ export function LanguageScreen() {
                   color="black"
                   style={{ left: 5 }}
                 />
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: MONTSERRAT_REGULAR,
-                    width: 200,
-                    left: 25,
-                  }}
-                >
+                <Text style={styles.textmodal}>
                   Listar por nome (crescente)
                 </Text>
               </Pressable>
               <Pressable
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}
+                style={styles.flex}
                 onPress={() => {
                   listDesOrdenada();
                   setVisib(false);
@@ -155,23 +121,14 @@ export function LanguageScreen() {
                   name="sort-alpha-down-alt"
                   size={30}
                   color="black"
-                  style={{ left: 5 }}
+                  style={styles.iconmodal}
                 />
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: MONTSERRAT_REGULAR,
-                    left: 25,
-                  }}
-                >
+                <Text style={styles.textmodal}>
                   Listar por nome (decrescente)
                 </Text>
               </Pressable>
               <Pressable
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                }}
+                style={styles.flex}
                 onPress={() => {
                   listOrdenadaTronco();
                   setVisib(false);
@@ -183,14 +140,7 @@ export function LanguageScreen() {
                   color="black"
                   style={{ left: 5 }}
                 />
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: MONTSERRAT_REGULAR,
-                    width: 200,
-                    left: 25,
-                  }}
-                >
+                <Text style={styles.textmodal}>
                   Listar por tronco linguistico
                 </Text>
               </Pressable>
@@ -199,13 +149,7 @@ export function LanguageScreen() {
         </TouchableOpacity>
       </Modal>
       <View>
-        <View
-          style={{
-            height: 70,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
+        <View style={styles.container}>
           <Text
             style={{
               marginTop: insets.top + 10,
