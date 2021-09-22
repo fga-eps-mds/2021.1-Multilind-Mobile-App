@@ -13,8 +13,6 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import {
   DARK_GRAY,
   MONTSERRAT_BOLD,
-  MONTSERRAT_SEMIBOLD,
-  MONTSERRAT_REGULAR,
   SCREEN_HEIGHT,
   SCREEN_WIDTH,
 } from '../../constants';
@@ -25,10 +23,10 @@ import { Input } from '../../components';
 export function LanguageScreen() {
   const { languages } = Languages;
   const navigation = useNavigation();
-  const [lista, setLista] = useState(languages);
+  const [listLanguage, setListLanguage] = useState(languages);
 
   const list = () =>
-    lista.map((language) => (
+    listLanguage.map((language) => (
       <View key={language.id} style={styles.listcontainer}>
         <TouchableOpacity
           onPress={() => {
@@ -49,25 +47,25 @@ export function LanguageScreen() {
 
   const insets = useSafeAreaInsets();
   const [visib, setVisib] = useState(false);
-  const listOrdenada = () => {
+  const sortList = () => {
     const newList = [...languages];
 
     newList.sort((a, b) => a.name.localeCompare(b.name));
-    setLista(newList);
+    setListLanguage(newList);
   };
-  const listDesOrdenada = () => {
+  const notsortList = () => {
     const newList = [...languages];
 
     newList.sort((a, b) => b.name.localeCompare(a.name));
-    setLista(newList);
+    setListLanguage(newList);
   };
-  const listOrdenadaTronco = () => {
+  const sortListTronco = () => {
     const newList = [...languages];
 
     newList.sort((a, b) =>
       a.troncolinguistico.localeCompare(b.troncolinguistico)
     );
-    setLista(newList);
+    setListLanguage(newList);
   };
   return (
     <>
@@ -96,7 +94,7 @@ export function LanguageScreen() {
               <Pressable
                 style={styles.flex}
                 onPress={() => {
-                  listOrdenada();
+                  sortList();
                   setVisib(false);
                 }}
               >
@@ -113,7 +111,7 @@ export function LanguageScreen() {
               <Pressable
                 style={styles.flex}
                 onPress={() => {
-                  listDesOrdenada();
+                  notsortList();
                   setVisib(false);
                 }}
               >
@@ -130,7 +128,7 @@ export function LanguageScreen() {
               <Pressable
                 style={styles.flex}
                 onPress={() => {
-                  listOrdenadaTronco();
+                  sortListTronco();
                   setVisib(false);
                 }}
               >
