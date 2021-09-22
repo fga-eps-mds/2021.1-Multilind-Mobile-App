@@ -187,12 +187,12 @@ export function LanguageScreen() {
               name="filter"
               size={24}
               color={DARK_GRAY}
-              style={{ left: 350 }}
+              style={{ left: '80%' }}
             />
           </TouchableOpacity>
         </View>
 
-        <ScrollView style={{ top: 50 }}>{list()}</ScrollView>
+        <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
       </View>
     </>
   );
