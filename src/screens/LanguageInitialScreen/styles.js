@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
 
   info: {
-    width: 363,
+    width: '100%',
     top: 45,
     backgroundColor: '#2D48BA',
     height: 49,
