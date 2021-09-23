@@ -17,11 +17,12 @@ import {
   SCREEN_WIDTH,
 } from '../../constants';
 import styles from './styles';
-import Languages from '../../languages.json';
+// import Languages from '../../languages.json';
+import { useLanguage } from '../../contexts';
 import { Input } from '../../components';
 
 export function LanguageScreen() {
-  const { languages } = Languages;
+  const { languages } = useLanguage();
   const navigation = useNavigation();
   const [listLanguage, setListLanguage] = useState(languages);
 
