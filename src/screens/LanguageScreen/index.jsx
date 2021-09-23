@@ -53,13 +53,13 @@ export function LanguageScreen() {
   const sortList = () => {
     const newList = [...languages];
 
-    newList.sort((a, b) => a.name.localeCompare(b.name));
+    newList.sort((a, b) => a.nome.localeCompare(b.nome));
     setListLanguage(newList);
   };
   const notsortList = () => {
     const newList = [...languages];
 
-    newList.sort((a, b) => b.name.localeCompare(a.name));
+    newList.sort((a, b) => b.nome.localeCompare(a.nome));
     setListLanguage(newList);
   };
   const sortListTronco = () => {
