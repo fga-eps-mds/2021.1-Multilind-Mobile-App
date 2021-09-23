@@ -1,6 +1,6 @@
 import api from './api';
 
-export default class LanguageService {
+export class LanguageService {
   constructor() {
     this.url = '/lingua';
   }
@@ -10,7 +10,7 @@ export default class LanguageService {
       const response = await api.get(this.url);
       return response.data;
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return { error: true, message: error?.response?.data };
     }
   }
