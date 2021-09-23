@@ -25,17 +25,17 @@ export function LanguageScreen() {
   const { languages } = useLanguage();
   const navigation = useNavigation();
   const [listLanguage, setListLanguage] = useState(languages);
-
+  console.log(listLanguage);
   const list = () =>
     listLanguage.map((language) => (
-      <View key={language.id} style={styles.listcontainer}>
+      <View key={language.id_lingua} style={styles.listcontainer}>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('LanguageInitial', { language });
           }}
           style={styles.list}
         >
-          <Text style={styles.textlist}>{language.name}</Text>
+          <Text style={styles.textlist}>{language.nome}</Text>
           <AntDesign
             name="right"
             size={24}
@@ -45,6 +45,8 @@ export function LanguageScreen() {
         </TouchableOpacity>
       </View>
     ));
+
+  console.log(listLanguage);
 
   const insets = useSafeAreaInsets();
   const [visib, setVisib] = useState(false);

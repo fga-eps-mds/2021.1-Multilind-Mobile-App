@@ -11,14 +11,8 @@ export function LanguageContextProvider({ children }) {
     setLanguages(response);
   }
 
-  async function getLanguageByID(id) {
-    const response = await LanguageService.getLanguageByID(id);
-    setLanguages(response);
-  }
-
   useEffect(() => {
     getAllLanguages();
-    getLanguageByID();
   }, []);
 
   return (
