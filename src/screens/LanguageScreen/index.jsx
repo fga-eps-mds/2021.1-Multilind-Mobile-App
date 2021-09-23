@@ -46,7 +46,7 @@ export function LanguageScreen() {
       </View>
     ));
 
-  console.log(listLanguage);
+  // console.log('####################', list());
 
   const insets = useSafeAreaInsets();
   const [visib, setVisib] = useState(false);
