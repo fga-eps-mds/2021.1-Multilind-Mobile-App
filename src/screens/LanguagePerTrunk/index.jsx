@@ -18,49 +18,69 @@ import {
 } from '../../constants';
 import styles from './styles';
 import Languages from '../../languages.json';
+import LanguagesPerTrunkJSON from '../../languagesPerTrunk.json';
 import { Input } from '../../components';
 
-export function LanguageScreen() {
+export function LanguagePerTrunk() {
   const { languages } = Languages;
   const navigation = useNavigation();
-  const [listLanguage, setListLanguage] = useState(languages);
+  const [listLanguage, setListLanguage] = useState(LanguagesPerTrunkJSON);
+  const [expanded, setExpanded] = useState(false);
 
+  toggleExpand = () => {
+    setExpanded(!expanded);
+    console.log(expanded);
+  };
   const list = () =>
-    listLanguage.map((language) => (
-      <View key={language.id} style={styles.listcontainer}>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('LanguageInitial', { language });
-          }}
-          style={styles.list}
-        >
-          <Text style={styles.textlist}>{language.name}</Text>
-          <AntDesign
-            name="right"
-            size={24}
-            color="#B1B1B1"
-            style={styles.arrow}
-          />
-        </TouchableOpacity>
+    listLanguage.map((tronco) => (
+      <View>
+        <View key={tronco.id_tronco} style={styles.listcontainer}>
+          <TouchableOpacity
+            style={styles.list}
+            onPress={() => this.toggleExpand()}
+          >
+            <Text style={styles.textlist}>{tronco.nome}</Text>
+            <AntDesign
+              name="down"
+              size={24}
+              color="#B1B1B1"
+              style={styles.arrow}
+            />
+          </TouchableOpacity>
+        </View>
+        {this.expanded &&
+          tronco.linguas.map((lingua) => (
+            <View key={lingua.id_lingua} style={styles.listcontainer}>
+              <TouchableOpacity style={styles.list}>
+                <Text style={styles.textlist}>{lingua.nome}</Text>
+                <AntDesign
+                  name="down"
+                  size={24}
+                  color="#B1B1B1"
+                  style={styles.arrow}
+                />
+              </TouchableOpacity>
+            </View>
+          ))}
       </View>
     ));
 
   const insets = useSafeAreaInsets();
   const [visib, setVisib] = useState(false);
   const sortList = () => {
-    const newList = [...languages];
+    const newList = [...LanguagesPerTrunkJSON];
 
-    newList.sort((a, b) => a.name.localeCompare(b.name));
+    newList.sort((a, b) => a.nome.localeCompare(b.nome));
     setListLanguage(newList);
   };
   const notsortList = () => {
-    const newList = [...languages];
+    const newList = [...LanguagesPerTrunkJSON];
 
-    newList.sort((a, b) => b.name.localeCompare(a.name));
+    newList.sort((a, b) => b.nome.localeCompare(a.nome));
     setListLanguage(newList);
   };
   const sortListTronco = () => {
-    const newList = [...languages];
+    const newList = [...LanguagesPerTrunkJSON];
 
     newList.sort((a, b) =>
       a.troncolinguistico.localeCompare(b.troncolinguistico)
@@ -128,7 +148,7 @@ export function LanguageScreen() {
               <Pressable
                 style={styles.flex}
                 onPress={() => {
-                  navigation.navigate('LanguagePerTrunk');
+                  sortListTronco();
                   setVisib(false);
                 }}
               >
@@ -192,7 +212,7 @@ export function LanguageScreen() {
           </TouchableOpacity>
         </View>
 
-        <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
+        <ScrollView style={{ top: '12%' }}>{list()}</ScrollView>
       </View>
     </>
   );
