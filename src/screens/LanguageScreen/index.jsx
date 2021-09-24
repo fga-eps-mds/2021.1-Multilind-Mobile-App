@@ -17,7 +17,6 @@ import {
   SCREEN_WIDTH,
 } from '../../constants';
 import styles from './styles';
-// import Languages from '../../languages.json';
 import { useLanguage } from '../../contexts';
 import { Input } from '../../components';
 
@@ -45,9 +44,6 @@ export function LanguageScreen() {
         </TouchableOpacity>
       </View>
     ));
-
-  // console.log('####################', list());
-
   const insets = useSafeAreaInsets();
   const [visib, setVisib] = useState(false);
   const sortList = () => {
