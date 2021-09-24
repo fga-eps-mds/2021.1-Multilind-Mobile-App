@@ -5,7 +5,6 @@ import AppLoading from 'expo-app-loading';
 import { BottomNavigation } from './src/navigation';
 import { LocationContextProvider } from './src/contexts';
 import { useCustomFonts } from './src/helpers';
-import Linguas from './src/services/Linguas';
 
 export default function App() {
   const fontLoaded = useCustomFonts();
@@ -13,7 +12,6 @@ export default function App() {
   if (!fontLoaded) {
     return <AppLoading />;
   }
-
 
   return (
     <LocationContextProvider>
