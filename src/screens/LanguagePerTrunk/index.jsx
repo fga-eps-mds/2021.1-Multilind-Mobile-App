@@ -1,36 +1,22 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView, Modal, TouchableOpacity } from 'react-native';
-import {
-  Entypo,
-  FontAwesome5,
-  AntDesign,
-  FontAwesome,
-} from '@expo/vector-icons';
+import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import {
-  DARK_GRAY,
-  MONTSERRAT_BOLD,
-  SCREEN_HEIGHT,
-  SCREEN_WIDTH,
-} from '../../constants';
+import { DARK_GRAY, MONTSERRAT_BOLD } from '../../constants';
 import styles from './styles';
 import LanguagesPerTrunkJSON from '../../languagesPerTrunk.json';
-import { Input } from '../../components';
+import { Input, ListLanguages, ModalMod } from '../../components';
 
 export function LanguagePerTrunk() {
-  const navigation = useNavigation();
   const [listLanguage, setListLanguage] = useState(LanguagesPerTrunkJSON);
   const [expanded, setExpanded] = useState(false);
+  const [visib, setVisib] = useState(false);
 
-  toggleExpand = (index) => {
-    if (expanded === index) {
-      return setExpanded(null);
-    }
-    setExpanded(index);
-  };
+  const updateLanguage = (value) => setListLanguage(value);
+  const updateVisib = (value) => setVisib(value);
+
+  const toggleExpand = (index) =>
+    expanded === index ? setExpanded(null) : setExpanded(index);
 
   const list = () =>
     listLanguage.map((tronco, index) => (
@@ -40,9 +26,11 @@ export function LanguagePerTrunk() {
           onPress={() => toggleExpand(index)}
         >
           <Text style={styles.textlist}>{tronco.nome}</Text>
-          <Text style={styles.qtdLinguas}>
-            {listLanguage.length ? `${listLanguage.length} línguas` : ''}
-          </Text>
+          {tronco.linguas.length > 0 && (
+            <Text style={styles.qtdLinguas}>
+              {`${tronco.linguas.length} línguas`}
+            </Text>
+          )}
           <AntDesign
             name={expanded === index ? 'up' : 'down'}
             size={24}
@@ -50,130 +38,21 @@ export function LanguagePerTrunk() {
             style={styles.arrow}
           />
         </TouchableOpacity>
-        {expanded === index &&
-          tronco.linguas.map((lingua) => (
-            <View key={lingua.id_lingua} style={styles.listcontainer}>
-              <TouchableOpacity
-                style={styles.list}
-                onPress={() => {
-                  navigation.navigate('LanguageInitial', {
-                    language: {
-                      id: lingua.id_lingua,
-                      name: lingua.nome,
-                      troncolinguistico: tronco.nome,
-                      regioesfaladas: 'algo',
-                    },
-                  });
-                }}
-              >
-                <Text style={styles.textlist}>{lingua.nome}</Text>
-                <AntDesign
-                  name="right"
-                  size={24}
-                  color="#B1B1B1"
-                  style={styles.arrow}
-                />
-              </TouchableOpacity>
-            </View>
-          ))}
+        {expanded === index && <ListLanguages listLanguage={tronco.linguas} />}
       </View>
     ));
 
   const insets = useSafeAreaInsets();
-  const [visib, setVisib] = useState(false);
-  const sortList = () => {
-    const newList = [...LanguagesPerTrunkJSON];
 
-    newList.sort((a, b) => a.nome.localeCompare(b.nome));
-    setListLanguage(newList);
-  };
-  const notsortList = () => {
-    const newList = [...LanguagesPerTrunkJSON];
-
-    newList.sort((a, b) => b.nome.localeCompare(a.nome));
-    setListLanguage(newList);
-  };
-  const sortListTronco = () => {
-    const newList = [...LanguagesPerTrunkJSON];
-
-    newList.sort((a, b) =>
-      a.troncolinguistico.localeCompare(b.troncolinguistico)
-    );
-    setListLanguage(newList);
-  };
   return (
     <>
-      <Modal visible={visib} transparent animationType="fade">
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={() => {
-            setVisib(false);
-          }}
-          style={{
-            width: SCREEN_WIDTH,
-            height: SCREEN_HEIGHT,
-            backgroundColor: 'rgba(0,0,0,0.3)',
-          }}
-        >
-          <TouchableWithoutFeedback>
-            <View
-              style={{
-                marginTop: 140,
-                marginLeft: SCREEN_WIDTH - 233,
-                backgroundColor: 'white',
-                width: 233,
-                padding: 10,
-              }}
-            >
-              <Pressable
-                style={styles.flex}
-                onPress={() => {
-                  sortList();
-                  setVisib(false);
-                }}
-              >
-                <FontAwesome5
-                  name="sort-alpha-down"
-                  size={30}
-                  color="black"
-                  style={{ left: 5 }}
-                />
-                <Text style={styles.textmodal}>
-                  Listar por nome (crescente)
-                </Text>
-              </Pressable>
-              <Pressable
-                style={styles.flex}
-                onPress={() => {
-                  notsortList();
-                  setVisib(false);
-                }}
-              >
-                <FontAwesome5
-                  name="sort-alpha-down-alt"
-                  size={30}
-                  color="black"
-                  style={styles.iconmodal}
-                />
-                <Text style={styles.textmodal}>
-                  Listar por nome (decrescente)
-                </Text>
-              </Pressable>
-              <Pressable style={styles.flex}>
-                <Entypo
-                  name="flow-tree"
-                  size={30}
-                  color="black"
-                  style={{ left: 5 }}
-                />
-                <Text style={styles.textmodal}>
-                  Listar por tronco linguistico
-                </Text>
-              </Pressable>
-            </View>
-          </TouchableWithoutFeedback>
-        </TouchableOpacity>
-      </Modal>
+      <ModalMod
+        list={listLanguage}
+        onChange={updateLanguage}
+        onChangeV={updateVisib}
+        visual={visib}
+      />
+
       <View>
         <View style={styles.container}>
           <Text
