@@ -17,24 +17,24 @@ import {
   SCREEN_WIDTH,
 } from '../../constants';
 import styles from './styles';
-import Languages from '../../languages.json';
+import { useLanguage } from '../../contexts';
 import { Input } from '../../components';
 
 export function LanguageScreen() {
-  const { languages } = Languages;
+  const { languages } = useLanguage();
   const navigation = useNavigation();
   const [listLanguage, setListLanguage] = useState(languages);
-
+  console.log(listLanguage);
   const list = () =>
     listLanguage.map((language) => (
-      <View key={language.id} style={styles.listcontainer}>
+      <View key={language.id_lingua} style={styles.listcontainer}>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('LanguageInitial', { language });
           }}
           style={styles.list}
         >
-          <Text style={styles.textlist}>{language.name}</Text>
+          <Text style={styles.textlist}>{language.nome}</Text>
           <AntDesign
             name="right"
             size={24}
@@ -44,19 +44,18 @@ export function LanguageScreen() {
         </TouchableOpacity>
       </View>
     ));
-
   const insets = useSafeAreaInsets();
   const [visib, setVisib] = useState(false);
   const sortList = () => {
     const newList = [...languages];
 
-    newList.sort((a, b) => a.name.localeCompare(b.name));
+    newList.sort((a, b) => a.nome.localeCompare(b.nome));
     setListLanguage(newList);
   };
   const notsortList = () => {
     const newList = [...languages];
 
-    newList.sort((a, b) => b.name.localeCompare(a.name));
+    newList.sort((a, b) => b.nome.localeCompare(a.nome));
     setListLanguage(newList);
   };
   const sortListTronco = () => {

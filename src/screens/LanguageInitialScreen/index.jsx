@@ -66,7 +66,7 @@ export function LanguageInitialScreen() {
         <Button
           style={styles.plusbutton}
           icon={<AntDesign name="plus" size={24} color="blue" />}
-        ></Button>
+        />
       </View>
     </SafeAreaView>
   );
