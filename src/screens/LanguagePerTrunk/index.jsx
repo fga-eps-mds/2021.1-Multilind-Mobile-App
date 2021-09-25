@@ -31,12 +31,14 @@ export function LanguagePerTrunk() {
               {`${tronco.linguas.length} línguas`}
             </Text>
           )}
-          <AntDesign
-            name={expanded === index ? 'up' : 'down'}
-            size={24}
-            color="#B1B1B1"
-            style={styles.arrow}
-          />
+          {tronco.linguas.length > 0 && (
+            <AntDesign
+              name={expanded === index ? 'up' : 'down'}
+              size={24}
+              color="#B1B1B1"
+              style={styles.arrow}
+            />
+          )}
         </TouchableOpacity>
         {expanded === index && <ListLanguages listLanguage={tronco.linguas} />}
       </View>

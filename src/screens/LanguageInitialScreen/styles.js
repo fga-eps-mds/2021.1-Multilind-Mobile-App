@@ -4,6 +4,7 @@ import {
   MONTSERRAT_SEMIBOLD,
   MONTSERRAT_REGULAR,
 } from '../../constants';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

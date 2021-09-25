@@ -9,7 +9,7 @@ export function ListLanguages({ listLanguage }) {
   const navigation = useNavigation();
 
   return listLanguage.map((language, index) => (
-    <View key={index} style={styles.listcontainer}>
+    <View key={language.id_lingua} style={styles.listcontainer}>
       <TouchableOpacity
         onPress={() => {
           navigation.navigate('LanguageInitial', {

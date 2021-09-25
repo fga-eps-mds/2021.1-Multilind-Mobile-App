@@ -1,8 +1,8 @@
 const sortName = (array) => {
-  var newArray = [...array];
+  const newArray = [...array];
   return newArray.sort((a, b) => {
-    var nameA = a.nome.toUpperCase();
-    var nameB = b.nome.toUpperCase();
+    const nameA = a.nome.toUpperCase();
+    const nameB = b.nome.toUpperCase();
     if (nameA < nameB) {
       return -1;
     }
@@ -13,10 +13,10 @@ const sortName = (array) => {
   });
 };
 const inverseSortName = (array) => {
-  var newArray = [...array];
+  const newArray = [...array];
   return newArray.sort((a, b) => {
-    var nameA = a.nome.toUpperCase();
-    var nameB = b.nome.toUpperCase();
+    const nameA = a.nome.toUpperCase();
+    const nameB = b.nome.toUpperCase();
     if (nameA < nameB) {
       return 1;
     }
