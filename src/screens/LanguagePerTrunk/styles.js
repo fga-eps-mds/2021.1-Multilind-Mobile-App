@@ -22,11 +22,20 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 18,
     fontFamily: MONTSERRAT_SEMIBOLD,
+    marginRight: -125,
   },
   arrow: {
     paddingRight: 14,
   },
-
+  qtdLinguas: {
+    backgroundColor: '#3CB371',
+    paddingVertical: 7,
+    paddingHorizontal: 7,
+    borderRadius: 17,
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: 'bold',
+  },
   container: {
     height: 70,
     alignItems: 'center',

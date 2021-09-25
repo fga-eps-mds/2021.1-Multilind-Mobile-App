@@ -17,44 +17,58 @@ import {
   SCREEN_WIDTH,
 } from '../../constants';
 import styles from './styles';
-import Languages from '../../languages.json';
 import LanguagesPerTrunkJSON from '../../languagesPerTrunk.json';
 import { Input } from '../../components';
 
 export function LanguagePerTrunk() {
-  const { languages } = Languages;
   const navigation = useNavigation();
   const [listLanguage, setListLanguage] = useState(LanguagesPerTrunkJSON);
   const [expanded, setExpanded] = useState(false);
 
-  toggleExpand = () => {
-    setExpanded(!expanded);
-    console.log(expanded);
+  toggleExpand = (index) => {
+    if (expanded === index) {
+      return setExpanded(null);
+    }
+    setExpanded(index);
   };
+
   const list = () =>
-    listLanguage.map((tronco) => (
-      <View>
-        <View key={tronco.id_tronco} style={styles.listcontainer}>
-          <TouchableOpacity
-            style={styles.list}
-            onPress={() => this.toggleExpand()}
-          >
-            <Text style={styles.textlist}>{tronco.nome}</Text>
-            <AntDesign
-              name="down"
-              size={24}
-              color="#B1B1B1"
-              style={styles.arrow}
-            />
-          </TouchableOpacity>
-        </View>
-        {this.expanded &&
+    listLanguage.map((tronco, index) => (
+      <View key={tronco.id_tronco} style={styles.listcontainer}>
+        <TouchableOpacity
+          style={styles.list}
+          onPress={() => toggleExpand(index)}
+        >
+          <Text style={styles.textlist}>{tronco.nome}</Text>
+          <Text style={styles.qtdLinguas}>
+            {listLanguage.length ? `${listLanguage.length} línguas` : ''}
+          </Text>
+          <AntDesign
+            name={expanded === index ? 'up' : 'down'}
+            size={24}
+            color="#B1B1B1"
+            style={styles.arrow}
+          />
+        </TouchableOpacity>
+        {expanded === index &&
           tronco.linguas.map((lingua) => (
             <View key={lingua.id_lingua} style={styles.listcontainer}>
-              <TouchableOpacity style={styles.list}>
+              <TouchableOpacity
+                style={styles.list}
+                onPress={() => {
+                  navigation.navigate('LanguageInitial', {
+                    language: {
+                      id: lingua.id_lingua,
+                      name: lingua.nome,
+                      troncolinguistico: tronco.nome,
+                      regioesfaladas: 'algo',
+                    },
+                  });
+                }}
+              >
                 <Text style={styles.textlist}>{lingua.nome}</Text>
                 <AntDesign
-                  name="down"
+                  name="right"
                   size={24}
                   color="#B1B1B1"
                   style={styles.arrow}
@@ -145,13 +159,7 @@ export function LanguagePerTrunk() {
                   Listar por nome (decrescente)
                 </Text>
               </Pressable>
-              <Pressable
-                style={styles.flex}
-                onPress={() => {
-                  sortListTronco();
-                  setVisib(false);
-                }}
-              >
+              <Pressable style={styles.flex}>
                 <Entypo
                   name="flow-tree"
                   size={30}
@@ -211,8 +219,7 @@ export function LanguagePerTrunk() {
             />
           </TouchableOpacity>
         </View>
-
-        <ScrollView style={{ top: '12%' }}>{list()}</ScrollView>
+        <ScrollView style={{ top: 25 }}>{list()}</ScrollView>
       </View>
     </>
   );
