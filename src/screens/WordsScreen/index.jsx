@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text, View, ScrollView, Modal, TouchableOpacity } from 'react-native';
 import {
   Entypo,
@@ -9,7 +9,8 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { TouchableNativeFeedback } from 'react-native-gesture-handler';
+import { Montserrat, _100Thin } from '@expo-google-fonts/montserrat';
 import {
   DARK_GRAY,
   MONTSERRAT_BOLD,
@@ -17,27 +18,23 @@ import {
   SCREEN_WIDTH,
 } from '../../constants';
 import styles from './styles';
-// import Languages from '../../languages.json';
-// eslint-disable-next-line import/named
-import { useLanguage } from '../../contexts';
 import { Input } from '../../components';
 
-export function LanguageScreen() {
-  const { languages } = useLanguage();
+export function WordsSreen() {
+  const { words } = useWord(); // parte do context
   const navigation = useNavigation();
-  const [listLanguage, setListLanguage] = useState(languages);
-  console.log(listLanguage);
+  const [listWord, setListWord] = useState(words);
 
   const list = () =>
-    listLanguage.map((language) => (
-      <View key={language.id_lingua} style={styles.listcontainer}>
+    listWord.map((word) => (
+      <View key={word.id_palavra} styçle={styles.listcontainer}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('LanguageInitial', { language });
+            navigation.navigate('');
           }}
           style={styles.list}
         >
-          <Text style={styles.textlist}>{language.nome}</Text>
+          <Text style={styles.textlist}>{word.nome}</Text>
           <AntDesign
             name="right"
             size={24}
@@ -51,24 +48,16 @@ export function LanguageScreen() {
   const insets = useSafeAreaInsets();
   const [visib, setVisib] = useState(false);
   const sortList = () => {
-    const newList = [...languages];
+    const newList = [...words];
 
     newList.sort((a, b) => a.nome.localeCompare(b.nome));
-    setListLanguage(newList);
+    setListWord(newList);
   };
   const notsortList = () => {
-    const newList = [...languages];
+    const newList = [...words];
 
     newList.sort((a, b) => b.nome.localeCompare(a.nome));
-    setListLanguage(newList);
-  };
-  const sortListTronco = () => {
-    const newList = [...languages];
-
-    newList.sort((a, b) =>
-      a.troncolinguistico.localeCompare(b.troncolinguistico)
-    );
-    setListLanguage(newList);
+    setListWord(newList);
   };
   return (
     <>
@@ -81,7 +70,7 @@ export function LanguageScreen() {
           style={{
             width: SCREEN_WIDTH,
             height: SCREEN_HEIGHT,
-            backgroundColor: 'rgba(0,0,0,0.3)',
+            backgroundColor: 'rgba(0, 0, 0, 0, 3)',
           }}
         >
           <TouchableWithoutFeedback>
@@ -125,24 +114,7 @@ export function LanguageScreen() {
                   style={styles.iconmodal}
                 />
                 <Text style={styles.textmodal}>
-                  Listar por nome (decrescente)
-                </Text>
-              </Pressable>
-              <Pressable
-                style={styles.flex}
-                onPress={() => {
-                  sortListTronco();
-                  setVisib(false);
-                }}
-              >
-                <Entypo
-                  name="flow-tree"
-                  size={30}
-                  color="black"
-                  style={{ left: 5 }}
-                />
-                <Text style={styles.textmodal}>
-                  Listar por tronco linguistico
+                  Listar por nome (decresente)
                 </Text>
               </Pressable>
             </View>
@@ -158,45 +130,45 @@ export function LanguageScreen() {
               fontSize: 30,
             }}
           >
-            Línguas Indígenas
+            Palavras Indígenas
           </Text>
         </View>
-        <View>
-          <Input
-            icon={
-              <Entypo
-                name="magnifying-glass"
-                size={30}
-                color={DARK_GRAY}
-                style={{ left: 10 }}
-              />
-            }
-            inputContainerStyle={[
-              styles.searchBar,
-              {
-                top: insets.top + 20,
-              },
-            ]}
-            placeholder="Pesquisar língua"
-          />
-
-          <TouchableOpacity
-            style={{ top: 15 }}
-            onPress={() => {
-              setVisib(true);
-            }}
-          >
-            <FontAwesome
-              name="filter"
-              size={24}
-              color={DARK_GRAY}
-              style={{ left: '80%' }}
-            />
-          </TouchableOpacity>
-        </View>
-
-        <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
       </View>
+      <View>
+        <Input
+          icon={
+            <Entypo
+              name="magnifying-glass"
+              size={30}
+              color={DARK_GRAY}
+              style={{ left: 10 }}
+            />
+          }
+          inputContainerStyle={[
+            styles.searchBar,
+            {
+              top: insets.top + 20,
+            },
+          ]}
+          placeholder="Pesquisar palavra"
+        />
+
+        <TouchableOpacity
+          style={{ top: 15 }}
+          onPress={() => {
+            setVisib(true);
+          }}
+        >
+          <FontAwesome
+            name="filter"
+            size={24}
+            color={DARK_GRAY}
+            style={{ left: '80%' }}
+          />
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
     </>
   );
 }
