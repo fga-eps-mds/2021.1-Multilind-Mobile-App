@@ -60,17 +60,17 @@ export function LanguagePerTrunk() {
             onPress={() => {
               updateVisib(true);
             }}
-            style={{ bottom: '35%' }}
+            style={styles.filterClick}
           >
             <FontAwesome
               name="filter"
               size={24}
               color={DARK_GRAY}
-              style={{ left: '85%' }}
+              style={styles.filter}
             />
           </TouchableOpacity>
         </View>
-        <ScrollView style={{ marginTop: '1%' }}>{list()}</ScrollView>
+        <ScrollView style={styles.scrollView}>{list()}</ScrollView>
       </View>
     </SafeAreaView>
   );
