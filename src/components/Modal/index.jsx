@@ -31,7 +31,7 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
         <TouchableWithoutFeedback>
           <View
             style={{
-              marginTop: 140,
+              marginTop: 120,
               marginLeft: SCREEN_WIDTH - 233,
               backgroundColor: 'white',
               width: 233,

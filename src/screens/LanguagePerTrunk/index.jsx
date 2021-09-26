@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
-import { Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { DARK_GRAY, MONTSERRAT_BOLD } from '../../constants';
+import { ListLanguages, ModalMod, TopBar, SearchBar } from '../../components';
+import { AntDesign, FontAwesome } from '@expo/vector-icons';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { DARK_GRAY } from '../../constants';
 import styles from './styles';
 import LanguagesPerTrunkJSON from '../../languagesPerTrunk.json';
-import { Input, ListLanguages, ModalMod } from '../../components';
 
 export function LanguagePerTrunk() {
   const [listLanguage, setListLanguage] = useState(LanguagesPerTrunkJSON);
@@ -14,9 +14,7 @@ export function LanguagePerTrunk() {
 
   const updateLanguage = (value) => setListLanguage(value);
   const updateVisib = (value) => setVisib(value);
-
-  const toggleExpand = (index) =>
-    expanded === index ? setExpanded(null) : setExpanded(index);
+  const toggleExpand = (index) => setExpanded(expanded == index ? null : index);
 
   const list = () =>
     listLanguage.map((tronco, index) => (
@@ -25,12 +23,14 @@ export function LanguagePerTrunk() {
           style={styles.list}
           onPress={() => toggleExpand(index)}
         >
-          <Text style={styles.textlist}>{tronco.nome}</Text>
-          {tronco.linguas.length > 0 && (
-            <Text style={styles.qtdLinguas}>
-              {`${tronco.linguas.length} línguas`}
-            </Text>
-          )}
+          <View style={styles.troncoLinguas}>
+            <Text style={styles.textlist}>{tronco.nome}</Text>
+            {tronco.linguas.length > 0 && (
+              <Text style={styles.qtdLinguas}>
+                {`${tronco.linguas.length} línguas`}
+              </Text>
+            )}
+          </View>
           {tronco.linguas.length > 0 && (
             <AntDesign
               name={expanded === index ? 'up' : 'down'}
@@ -44,64 +44,34 @@ export function LanguagePerTrunk() {
       </View>
     ));
 
-  const insets = useSafeAreaInsets();
-
   return (
-    <>
+    <SafeAreaView>
       <ModalMod
         list={listLanguage}
         onChange={updateLanguage}
         onChangeV={updateVisib}
         visual={visib}
       />
-
       <View>
-        <View style={styles.container}>
-          <Text
-            style={{
-              marginTop: insets.top + 10,
-              fontFamily: MONTSERRAT_BOLD,
-              fontSize: 30,
-            }}
-          >
-            Línguas Indígenas
-          </Text>
-        </View>
+        <TopBar>Línguas Indígenas</TopBar>
         <View>
-          <Input
-            icon={
-              <Entypo
-                name="magnifying-glass"
-                size={30}
-                color={DARK_GRAY}
-                style={{ left: 10 }}
-              />
-            }
-            inputContainerStyle={[
-              styles.searchBar,
-              {
-                top: insets.top + 20,
-              },
-            ]}
-            placeholder="Pesquisar língua"
-          />
-
+          <SearchBar placeholder="Pesquisar por uma língua"></SearchBar>
           <TouchableOpacity
-            style={{ top: 15 }}
             onPress={() => {
-              setVisib(true);
+              updateVisib(true);
             }}
+            style={{ bottom: '35%' }}
           >
             <FontAwesome
               name="filter"
               size={24}
               color={DARK_GRAY}
-              style={{ left: '80%' }}
+              style={{ left: '85%' }}
             />
           </TouchableOpacity>
         </View>
-        <ScrollView style={{ top: 25 }}>{list()}</ScrollView>
+        <ScrollView style={{ marginTop: '1%' }}>{list()}</ScrollView>
       </View>
-    </>
+    </SafeAreaView>
   );
 }
