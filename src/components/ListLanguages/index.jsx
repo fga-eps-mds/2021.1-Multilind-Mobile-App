@@ -8,7 +8,7 @@ import styles from './styles';
 export function ListLanguages({ listLanguage }) {
   const navigation = useNavigation();
 
-  return listLanguage.map((language, index) => (
+  return listLanguage.map((language) => (
     <View key={language.id_lingua} style={styles.listcontainer}>
       <TouchableOpacity
         onPress={() => {

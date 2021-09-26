@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
-import { ListLanguages, ModalMod, TopBar, SearchBar } from '../../components';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { ListLanguages, ModalMod, TopBar, SearchBar } from '../../components';
 import { DARK_GRAY } from '../../constants';
 import styles from './styles';
 import LanguagesPerTrunkJSON from '../../languagesPerTrunk.json';
@@ -14,7 +14,8 @@ export function LanguagePerTrunk() {
 
   const updateLanguage = (value) => setListLanguage(value);
   const updateVisib = (value) => setVisib(value);
-  const toggleExpand = (index) => setExpanded(expanded == index ? null : index);
+  const toggleExpand = (index) =>
+    setExpanded(expanded === index ? null : index);
 
   const list = () =>
     listLanguage.map((tronco, index) => (
@@ -55,7 +56,7 @@ export function LanguagePerTrunk() {
       <View>
         <TopBar>Línguas Indígenas</TopBar>
         <View>
-          <SearchBar placeholder="Pesquisar por uma língua"></SearchBar>
+          <SearchBar placeholder="Pesquisar por uma língua" />
           <TouchableOpacity
             onPress={() => {
               updateVisib(true);

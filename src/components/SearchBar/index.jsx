@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './styles';
 import { Entypo } from '@expo/vector-icons';
+import styles from './styles';
 import { Input } from '../Input';
 import { DARK_GRAY } from '../../constants';
 

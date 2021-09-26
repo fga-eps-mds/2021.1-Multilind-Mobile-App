@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './styles';
 import { Text, View } from 'react-native';
+import styles from './styles';
 
 export function TopBar(props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.textBar} {...props}></Text>
+      <Text style={styles.textBar} {...props} />
     </View>
   );
 }
