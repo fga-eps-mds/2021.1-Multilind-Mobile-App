@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTrunk } from '../../contexts';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -8,7 +9,8 @@ import styles from './styles';
 import LanguagesPerTrunkJSON from '../../languagesPerTrunk.json';
 
 export function LanguagePerTrunk() {
-  const [listLanguage, setListLanguage] = useState(LanguagesPerTrunkJSON);
+  const { trunks } = useTrunk();
+  const [listLanguage, setListLanguage] = useState(trunks);
   const [expanded, setExpanded] = useState(false);
   const [visib, setVisib] = useState(false);
 
