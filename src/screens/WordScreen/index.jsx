@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, ScrollView, Modal, TouchableOpacity } from 'react-native';
 import {
   Entypo,
@@ -7,10 +7,8 @@ import {
   FontAwesome,
 } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
-import { TouchableNativeFeedback } from 'react-native-gesture-handler';
-import { Montserrat, _100Thin } from '@expo-google-fonts/montserrat';
 import {
   DARK_GRAY,
   MONTSERRAT_BOLD,
@@ -18,11 +16,11 @@ import {
   SCREEN_WIDTH,
 } from '../../constants';
 import styles from './styles';
+import { useWord } from '../../contexts';
 import { Input } from '../../components';
 
 export function WordsScreen() {
-  const { words } = useWord(); // parte do context
-  const navigation = useNavigation();
+  const { words } = useWord();
   const [listWord, setListWord] = useState(words);
 
   const list = () =>
