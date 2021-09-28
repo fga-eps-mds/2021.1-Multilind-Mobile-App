@@ -7,3 +7,5 @@ export { ListLanguages } from './ListLanguages';
 export { ModalMod } from './Modal';
 export { TopBar } from './TopBar';
 export { SearchBar } from './SearchBar';
+export { GoBack } from './GoBack';
+export { ImageContainer } from './ImageContainer';
