@@ -11,10 +11,8 @@ import { DARK_GRAY, MONTSERRAT_BOLD } from '../../constants';
 export function DictionaryScreen() {
   const { alphabet } = Alphabet;
 
-  const [listAlphabet, setListAlphabet] = useState(alphabet);
-
   const list = () =>
-    listAlphabet.map((alphabetParam) => (
+    alphabet.map((alphabetParam) => (
       <View key={alphabetParam.id} style={styles.listcontainer}>
         <TouchableOpacity style={styles.list}>
           <Text styles={styles.textList}>{alphabetParam.name}</Text>

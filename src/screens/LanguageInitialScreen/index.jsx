@@ -40,7 +40,10 @@ export function LanguageInitialScreen() {
       </View>
 
       <View style={styles.buttonscontainer}>
-        <TouchableOpacity style={styles.dictionary}>
+        <TouchableOpacity
+          style={styles.dictionary}
+          onPress={navigation.navigate('Dictionary')}
+        >
           <View style={styles.flexview}>
             <Image style={styles.img} source={dicionary} />
             <Text style={styles.buttontext}>Dicionário</Text>
