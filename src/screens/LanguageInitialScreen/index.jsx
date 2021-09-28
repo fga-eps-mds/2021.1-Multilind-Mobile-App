@@ -42,7 +42,9 @@ export function LanguageInitialScreen() {
       <View style={styles.buttonscontainer}>
         <TouchableOpacity
           style={styles.dictionary}
-          onPress={navigation.navigate('Dictionary')}
+          onPress={() => {
+            navigation.navigate('Dictionary');
+          }}
         >
           <View style={styles.flexview}>
             <Image style={styles.img} source={dicionary} />
