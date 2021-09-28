@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { useTrunk } from '../../contexts';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTrunk } from '../../contexts';
 import { ListLanguages, ModalMod, TopBar, SearchBar } from '../../components';
 import { DARK_GRAY } from '../../constants';
 import styles from './styles';
-import LanguagesPerTrunkJSON from '../../languagesPerTrunk.json';
 
 export function LanguagePerTrunk() {
   const { trunks } = useTrunk();
