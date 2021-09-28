@@ -6,6 +6,7 @@ import {
   AntDesign,
   FontAwesome,
 } from '@expo/vector-icons';
+// import { useRoute, useNavigation } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
@@ -20,6 +21,8 @@ import { useWord } from '../../contexts';
 import { Input } from '../../components';
 
 export function WordsScreen() {
+  // const route = useRoute();
+  // const wordID = route.params?.alphabetParams;
   const { words } = useWord();
   const [listWord, setListWord] = useState(words);
 
@@ -28,8 +31,7 @@ export function WordsScreen() {
       <View key={word.id_palavra} styçle={styles.listcontainer}>
                 
         <TouchableOpacity style={styles.list}>
-                    <Text style={styles.textlist}>{word.nome}</Text>
-                    
+          <Text style={styles.textlist}>{word.nome}</Text>
           <AntDesign
             name="right"
             size={24}
