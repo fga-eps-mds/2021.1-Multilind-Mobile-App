@@ -111,8 +111,6 @@ export function SpecificWordScreen() {
                      </View>
                 </TouchableOpacity>
             </View> 
-          }}
-        >
           <Text
             style={{
               marginTop: insets.top + 30,
