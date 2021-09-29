@@ -12,7 +12,7 @@ export function LanguageInitialScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const navigation = useNavigation();
-
+  console.log(language);
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
@@ -43,7 +43,7 @@ export function LanguageInitialScreen() {
         <TouchableOpacity
           style={styles.dictionary}
           onPress={() => {
-            navigation.navigate('Dictionary');
+            navigation.navigate('Dictionary', { language });
           }}
         >
           <View style={styles.flexview}>
