@@ -1,9 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {
-  MONTSERRAT_BOLD,
-  MONTSERRAT_SEMIBOLD,
-  MONTSERRAT_REGULAR,
-} from '../../constants';
+import { MONTSERRAT_BOLD, MONTSERRAT_REGULAR } from '../../constants';
 
 const styles = StyleSheet.create({
   listcontainer: {
