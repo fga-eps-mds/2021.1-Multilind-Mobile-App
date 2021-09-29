@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { Entypo, AntDesign } from '@expo/vector-icons';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService } from '../../services';
 import { DARK_GRAY, MONTSERRAT_BOLD } from '../../constants';
@@ -11,6 +11,7 @@ import { Input } from '../../components';
 export function WordsScreen() {
   const route = useRoute();
   const letter = route.params?.alphabetParam.name;
+  const navigation = useNavigation();
   const language = route.params?.language;
   const [words, setWords] = useState([]);
 
@@ -31,7 +32,12 @@ export function WordsScreen() {
       .map((word) => (
         <View key={word.id_palavra} style={styles.listcontainer}>
           {word ? (
-            <TouchableOpacity style={styles.list}>
+            <TouchableOpacity
+              style={styles.list}
+              onPress={() => {
+                navigation.navigate('SpecificWord', { word });
+              }}
+            >
               <Text style={styles.textlist}>{word.nome}</Text>
               <AntDesign
                 name="right"

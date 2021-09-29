@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { useRoute } from '@react-navigation/native';
 import {
   MONTSERRAT_BOLD,
   MONTSERRAT_SEMIBOLD,
@@ -11,6 +12,8 @@ import styles from './styles';
 
 export function SpecificWordScreen() {
   const insets = useSafeAreaInsets();
+  const route = useRoute();
+  const word = route.params?.word;
   return (
     <>
       <View>

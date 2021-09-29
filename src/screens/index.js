@@ -4,3 +4,4 @@ export { MapScreen } from './MapScreen';
 export { LanguageInitialScreen } from './LanguageInitialScreen';
 export { WordsScreen } from './WordScreen';
 export { DictionaryScreen } from './DictionaryScreen';
+export { SpecificWordScreen } from './SpecificWordScreen';
