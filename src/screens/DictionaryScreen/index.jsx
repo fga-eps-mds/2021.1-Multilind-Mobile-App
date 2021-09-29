@@ -25,7 +25,7 @@ import {
 export function DictionaryScreen() {
   const { alphabet } = Alphabet;
   const route = useRoute();
-  const language = route.params?.language.id_lingua;
+  const language = route.params?.language;
   const navigate = useNavigation();
   const [listWord, setListWord] = useState(alphabet);
   console.log('dictionary', language);
