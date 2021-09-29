@@ -26,7 +26,11 @@ const styles = StyleSheet.create({
   arrow: {
     paddingRight: 14,
   },
-
+  goback: {
+    position: 'absolute',
+    top: 55,
+    left: 15,
+  },
   container: {
     height: 70,
     alignItems: 'center',

@@ -54,16 +54,25 @@ export function WordsScreen() {
 
   return (
     <SafeAreaView>
+      <TouchableOpacity
+        style={styles.goback}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
+        <AntDesign name="left" size={24} color="#B1B1B1" />
+      </TouchableOpacity>
+
       <View>
         <View style={styles.container}>
           <Text
             style={{
-              // marginTop: insets.top + 10,
+              marginBottom: 45,
               fontFamily: MONTSERRAT_BOLD,
-              fontSize: 30,
+              fontSize: 40,
             }}
           >
-            Palavras Indígenas
+            {letter}
           </Text>
         </View>
         <View>
@@ -76,12 +85,7 @@ export function WordsScreen() {
                 style={{ left: 10 }}
               />
             }
-            inputContainerStyle={[
-              styles.searchBar,
-              {
-                // top: insets.top + 20,
-              },
-            ]}
+            inputContainerStyle={[styles.searchBar]}
             placeholder="Pesquisar palavra"
           />
         </View>

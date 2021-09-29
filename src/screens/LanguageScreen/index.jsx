@@ -170,14 +170,14 @@ export function LanguageScreen() {
             inputContainerStyle={[
               styles.searchBar,
               {
-                top: insets.top + 20,
+                top: 30,
               },
             ]}
             placeholder="Pesquisar língua"
           />
 
           <TouchableOpacity
-            style={{ top: 15 }}
+            style={{ top: -8 }}
             onPress={() => {
               setVisib(true);
             }}

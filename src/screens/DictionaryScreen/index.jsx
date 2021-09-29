@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Text, View, TouchableOpacity, Modal, Pressable } from 'react-native';
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  Modal,
+  Pressable,
+  SafeAreaView,
+} from 'react-native';
 import {
   Entypo,
   FontAwesome,
@@ -26,7 +33,7 @@ export function DictionaryScreen() {
   const { alphabet } = Alphabet;
   const route = useRoute();
   const language = route.params?.language;
-  const navigate = useNavigation();
+  const navigation = useNavigation();
   const [listWord, setListWord] = useState(alphabet);
   console.log('dictionary', language);
   const list = () =>
@@ -35,7 +42,7 @@ export function DictionaryScreen() {
         <TouchableOpacity
           style={styles.list}
           onPress={() => {
-            navigate.navigate('Words', { alphabetParam, language });
+            navigation.navigate('Words', { alphabetParam, language });
           }}
         >
           <Text styles={styles.textList}>{alphabetParam.name}</Text>
@@ -64,7 +71,16 @@ export function DictionaryScreen() {
   };
 
   return (
-    <>
+    <SafeAreaView>
+      <TouchableOpacity
+        style={styles.goback}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
+        <AntDesign name="left" size={24} color="#B1B1B1" />
+      </TouchableOpacity>
+
       <Modal visible={visib} transparent animationType="fade">
         <TouchableOpacity
           activeOpacity={1}
@@ -144,13 +160,13 @@ export function DictionaryScreen() {
                 name="magnifying-glass"
                 size={30}
                 color={DARK_GRAY}
-                style={{ left: 5, top: 9 }}
+                style={{ left: 12, top: 2 }}
               />
             }
             inputContainerStyle={[
               styles.searchBar,
               {
-                top: insets.top + 30,
+                top: 55,
               },
             ]}
             placeholder="Pesquisar letra"
@@ -173,6 +189,6 @@ export function DictionaryScreen() {
 
         <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
       </View>
-    </>
+    </SafeAreaView>
   );
 }
