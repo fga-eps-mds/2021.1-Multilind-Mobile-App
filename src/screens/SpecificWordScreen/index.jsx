@@ -8,6 +8,7 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import styles from './styles';
 import { Button } from "../../components";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export function SpecificWordScreen() {
     const insets = useSafeAreaInsets();
@@ -44,7 +45,7 @@ export function SpecificWordScreen() {
                 fontSize: 14,
                 textAlign: 'justify',
             }}>  
-                Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque turpis felis, eget varius risus sollicitudin a. Ut eget sodales dui, ut pellentesque tellus. Praesent consectetur cursus est 
+                    Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque turpis felis, eget varius risus sollicitudin a. Ut eget sodales dui, ut pellentesque tellus. Praesent consectetur cursus est 
             </Text>
             <Text style={{
                 marginTop: insets.top +10,
@@ -78,17 +79,30 @@ export function SpecificWordScreen() {
             }}>
                 Milho
             </Text>
-            {/* <View style={{
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-            }}>
-                <Button
-                    title="<voltar"
-                />
-                <Button
-                    title="Imagens"
-        />
-            </View> */}
+             <View style={{
+                //  width: '50%',
+                 justifyContent: 'space-between',
+                 flexWrap: 'wrap',
+                 marginTop: insets.top +10,
+                 flexDirection: 'row',
+                 marginHorizontal: 26,
+                 marginRight: 8,
+             }}>
+                 <TouchableOpacity style={styles.buttom1} >
+                     <View>
+                        <Text style={styles.buttontext}>Voltar</Text>
+                     </View>
+                 </TouchableOpacity>
+                 
+                 <TouchableOpacity style={styles.buttom2} >
+                 <View>
+                        <Text style={styles.buttontext2}> Imagens</Text>
+                     </View>
+                </TouchableOpacity>
+                
+               
+            </View>  
+            
         </ScrollView>
     </View>
     </>
