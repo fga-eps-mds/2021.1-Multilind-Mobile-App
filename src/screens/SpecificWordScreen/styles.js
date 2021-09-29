@@ -9,20 +9,6 @@ const styles = StyleSheet.create({
   listcontainer: {
     margin: 1,
   },
-  list: {
-    backgroundColor: 'white',
-    borderRadius: 0,
-    paddingVertical: 20,
-    paddingHorizontal: 25,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  textlist: {
-    color: 'black',
-    fontSize: 18,
-    fontFamily: MONTSERRAT_SEMIBOLD,
-  },
   arrow: {
     paddingRight: 14,
   },
@@ -36,19 +22,9 @@ const styles = StyleSheet.create({
     fontFamily: MONTSERRAT_BOLD,
     fontSize: 30,
   },
-  iconglass: {
-    left: 10,
-  },
   searchBar: {
     width: '90%',
     alignSelf: 'center',
-  },
-  modal: {
-    top: '16%',
-    left: '50%',
-    backgroundColor: 'white',
-    width: '47%',
-    height: 150,
   },
   flex: {
     flexDirection: 'row',
@@ -72,23 +48,40 @@ const styles = StyleSheet.create({
     height: 37,
     backgroundColor: 'white',
     borderRadius: 20,
+    flexDirection: 'row',
     borderColor: '#2D48BA',
+    borderWidth: 1,
   },
   buttom2: {
     width: 179,
     height: 37,
+    flexDirection: 'row',
     backgroundColor: '#2D48BA',
     borderRadius: 20,
   },
   buttontext: {
+    flexDirection: 'row',
     textAlign: 'center',
-    marginVertical: 8,
+    marginVertical: 2,
     color: '#2D48BA',
   },
   buttontext2: {
+    flexDirection: 'row',
     textAlign: 'center',
-    marginVertical: 8,
-    color: 'white',
+    left: 5,
+    marginVertical: 2,
+    color: '#FFFFFF',
+  },
+
+  buttonimage: {
+    flexDirection: 'row',
+    marginVertical: 5,
+    left: 12,
+  },
+  buttonadd: {
+    flexDirection: 'row',
+    marginVertical: 5,
+    left: 300,
   },
   filtericon: {},
 });
