@@ -24,7 +24,7 @@ export function LanguageInitialScreen() {
         <AntDesign name="left" size={24} color="#B1B1B1" />
       </TouchableOpacity>
 
-      <Text style={styles.title}>{language.name}</Text>
+      <Text style={styles.title}>{language.nome}</Text>
 
       <View style={styles.textcontainer}>
         <Text style={styles.firsttext}>
