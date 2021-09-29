@@ -11,8 +11,8 @@ export function WordContextProvider({ children }) {
     setWords(response);
   }
 
-  useEffect((idLingua) => {
-    getAllWords(idLingua);
+  useEffect(() => {
+    getAllWords();
   }, []);
 
   return (

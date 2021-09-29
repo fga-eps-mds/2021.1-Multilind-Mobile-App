@@ -11,7 +11,7 @@ import {
   ScrollView,
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
-import { useNavigation } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import { Input } from '../../components';
 import Alphabet from '../../alphabet.json';
@@ -24,16 +24,18 @@ import {
 
 export function DictionaryScreen() {
   const { alphabet } = Alphabet;
+  const route = useRoute();
+  const language = route.params?.language.id_lingua;
   const navigate = useNavigation();
   const [listWord, setListWord] = useState(alphabet);
-
+  console.log('dictionary', language);
   const list = () =>
     listWord.map((alphabetParam) => (
       <View key={alphabetParam.id} style={styles.listcontainer}>
         <TouchableOpacity
           style={styles.list}
           onPress={() => {
-            navigate.navigate('Words');
+            navigate.navigate('Words', { alphabetParam, language });
           }}
         >
           <Text styles={styles.textList}>{alphabetParam.name}</Text>

@@ -5,7 +5,7 @@ const url = '/palavra';
 export class WordService {
   static async getAllWords(idLingua) {
     try {
-      const response = await api.get(`${url}/${idLingua}`);
+      const response = await api.get(`${url}/all/${idLingua}`);
       return response.data;
     } catch (error) {
       console.error(error);
