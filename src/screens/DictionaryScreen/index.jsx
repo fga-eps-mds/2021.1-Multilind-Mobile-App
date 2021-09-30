@@ -58,7 +58,7 @@ export function DictionaryScreen() {
               fontSize: 30,
             }}
           >
-            Alfabeto Indígena
+            {language.nome}
           </Text>
         </View>
         <View>
