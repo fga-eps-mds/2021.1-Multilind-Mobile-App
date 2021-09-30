@@ -12,16 +12,7 @@ export function ListLanguages({ listLanguage }) {
     <View key={language.id_lingua} style={styles.listcontainer}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('LanguageInitial', {
-            language: {
-              id: language.id_lingua,
-              name: language.nome,
-              troncolinguistico: language.id_tronco,
-              regioesfaladas: language.regioesfaladas
-                ? language.regioesfaladas
-                : 'algo',
-            },
-          });
+          navigation.navigate('LanguageInitial', { language });
         }}
         style={styles.list}
       >
