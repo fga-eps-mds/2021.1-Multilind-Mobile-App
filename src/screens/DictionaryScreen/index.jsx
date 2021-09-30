@@ -14,10 +14,9 @@ export function DictionaryScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const navigation = useNavigation();
-  const [listWord, setListWord] = useState(alphabet);
   console.log('dictionary', language);
   const list = () =>
-    listWord.map((alphabetParam) => (
+    alphabet.map((alphabetParam) => (
       <View key={alphabetParam.id} style={styles.listcontainer}>
         <TouchableOpacity
           style={styles.list}
