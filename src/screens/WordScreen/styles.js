@@ -1,9 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {
-  MONTSERRAT_BOLD,
-  MONTSERRAT_SEMIBOLD,
-  MONTSERRAT_REGULAR,
-} from '../../constants';
+import { MONTSERRAT_SEMIBOLD } from '../../constants';
 
 const styles = StyleSheet.create({
   listcontainer: {
@@ -36,42 +32,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  title: {
-    fontFamily: MONTSERRAT_BOLD,
-    fontSize: 30,
-  },
-  iconglass: {
-    left: 10,
-  },
   searchBar: {
     width: '90%',
     alignSelf: 'center',
   },
-  modal: {
-    top: '16%',
-    left: '50%',
-    backgroundColor: 'white',
-    width: '47%',
-    height: 150,
-  },
-  flex: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  iconmodal: {
-    left: 5,
-  },
-  textmodal: {
-    fontSize: 16,
-    fontFamily: MONTSERRAT_REGULAR,
-    width: 200,
-    left: 25,
-  },
-  filter: {
-    top: '60%',
-    left: '80%',
-  },
-  filtericon: {},
 });
 
 export default styles;
