@@ -5,7 +5,13 @@ import markerImage from '../../assets/images/marker.png';
 import markerSelectedImage from '../../assets/images/marker-yellow.png';
 import styles from './styles';
 
-export function GoogleMap({ markers, mapStyle, onPressMarker, ...props }) {
+export function GoogleMap({
+  markers,
+  mapStyle,
+  onPressMarker,
+  initialRegion,
+  ...props
+}) {
   const [selectedMarkerId, setSelectedMarkerId] = useState(null);
 
   const handlePressMarker = (marker) => {
@@ -15,7 +21,18 @@ export function GoogleMap({ markers, mapStyle, onPressMarker, ...props }) {
     }
   };
   return (
-    <MapView style={[styles.map, mapStyle]} {...props}>
+    <MapView
+      style={[styles.map, mapStyle]}
+      initialRegion={initialRegion}
+      {...props}
+    >
+      <Marker
+        title="Você está aqui"
+        coordinate={{
+          latitude: initialRegion.latitude,
+          longitude: initialRegion.longitude,
+        }}
+      />
       {markers?.map((marker) => (
         <Marker
           identifier={String(marker.id)}
