@@ -21,7 +21,9 @@ export function ImageWordScreen() {
             const image = await ImageWordService.getImageWords(
               wordImage.id_palavra
             );
-            if (image.length) wordImage.url = image[0].download_url;
+            if (image.length) {
+              wordImage.url = image[0].download_url;
+            }
             return wordImage;
           })
         );
