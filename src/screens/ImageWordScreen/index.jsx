@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useRoute, useNavigation } from '@react-navigation/native';
-import { View, Image, Text, ScrollView } from 'react-native';
-import { WordService } from '../../services';
-import { TopBar, GoBack, ImageContainer } from '../../components';
+import { useRoute } from '@react-navigation/native';
+import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { WordService, ImageWordService } from '../../services';
+import { TopBar, GoBack, ImageContainer } from '../../components';
 import styles from './styles';
-import abacateIcon from '../../abacate-600x600.jpg';
 
 export function ImageWordScreen() {
   const route = useRoute();
@@ -14,8 +13,18 @@ export function ImageWordScreen() {
 
   useEffect(() => {
     async function getWords() {
-      const response = await WordService.getAllWords(language.id_lingua);
-      setWord(response[0].palavras);
+      WordService.getAllWords(language.id_lingua).then(async (response) => {
+        const wordsFound = await Promise.all(
+          response[0].palavras.map(async (wordImage) => {
+            const image = await ImageWordService.getImageWords(
+              wordImage.id_palavra
+            );
+            if (image.length) wordImage.url = image[0].download_url;
+            return wordImage;
+          })
+        );
+        setWord(wordsFound);
+      });
     }
     getWords();
   }, []);
@@ -23,8 +32,18 @@ export function ImageWordScreen() {
   const list = () =>
     word.length
       ? word.map((currentWord, index) => (
-          <View key={index} style={styles.containerImage}>
-            <ImageContainer palavra={currentWord.nome} image={abacateIcon} />
+          <View
+            key={currentWord.id_palavra}
+            style={
+              word.length === 2 && index === 0
+                ? styles.containerImage2
+                : styles.containerImage
+            }
+          >
+            <ImageContainer
+              palavra={currentWord.nome}
+              image={currentWord.url}
+            />
           </View>
         ))
       : null;
