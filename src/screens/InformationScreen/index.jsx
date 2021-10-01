@@ -32,30 +32,27 @@ export function InformationScreen() {
       <View style={{ alignItems: 'center' }}>
         <Text style={styles.headerText}>Arauá</Text>
       </View>
-      <View>
-        <ScrollView>
-          <View style={styles.title}>
-            <Text style={styles.titletext}> Etnias falantes</Text>
-          </View>
-          <View style={{ top: '4%' }}>{list()}</View>
-          <View style={styles.title}>
-            <Text style={styles.titletext}> História</Text>
-          </View>
-          <View style={styles.title}>
-            <Text style={styles.text}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              quis volutpat orci, pulvinar posuere leo. Vivamus vel tellus et
-              neque maximus sodales id ut massa. Donec at pellentesque tellus.
-              Proin porttitor ante scelerisque tincidunt pellentesque.
-              Pellentesque efficitur sodales posuere. Praesent sed cursus risus.
-            </Text>
-          </View>
-        </ScrollView>
-      </View>
+      <ScrollView>
+        <View style={styles.title}>
+          <Text style={styles.titletext}> Etnias falantes</Text>
+        </View>
+        <View style={{ top: '4%' }}>{list()}</View>
+        <View style={styles.title}>
+          <Text style={styles.titletext}> História</Text>
+        </View>
+        <View style={styles.title}>
+          <Text style={styles.text}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis
+            volutpat orci, pulvinar posuere leo. Vivamus vel tellus et neque
+            maximus sodales id ut massa. Donec at pellentesque tellus. Proin
+            porttitor ante scelerisque tincidunt pellentesque. Pellentesque
+            efficitur sodales posuere. Praesent sed cursus risus.
+          </Text>
+        </View>
+      </ScrollView>
       <Button
-        title=""
         style={styles.buttonscontainer}
-        icon={<AntDesign name="plus" size={24} color="blue" />}
+        icon={<AntDesign name="plus" size={26} color="blue" />}
       />
     </SafeAreaView>
   );

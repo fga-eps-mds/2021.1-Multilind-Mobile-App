@@ -112,9 +112,11 @@ const styles = StyleSheet.create({
     marginLeft: 290,
   },
   buttonscontainer: {
-    flexDirection: 'row',
-    marginVertical: 5,
-    marginLeft: 50,
+    marginTop: 690,
+    position: 'absolute',
+    marginLeft: 300,
+    width: 69,
+    backgroundColor: 'white',
   },
 });
 
