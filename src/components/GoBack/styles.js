@@ -3,9 +3,9 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   goback: {
     position: 'absolute',
-    marginTop: '22%',
+    marginTop: '12%',
     marginLeft: '5%',
-    //backgroundColor: 'red',
+    // backgroundColor: 'red',
   },
 });
 
