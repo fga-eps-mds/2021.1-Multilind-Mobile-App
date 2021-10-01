@@ -24,7 +24,7 @@ export function LanguageScreen() {
   const { languages } = useLanguage();
   const navigation = useNavigation();
   const [listLanguage, setListLanguage] = useState(languages);
-  console.log(listLanguage);
+  // console.log(listLanguage);
   const list = () =>
     listLanguage.map((language) => (
       <View key={language.id_lingua} style={styles.listcontainer}>
@@ -191,7 +191,7 @@ export function LanguageScreen() {
           </TouchableOpacity>
         </View>
 
-        <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
+        <ScrollView style={styles.ScrollView}>{list()}</ScrollView>
       </View>
     </>
   );

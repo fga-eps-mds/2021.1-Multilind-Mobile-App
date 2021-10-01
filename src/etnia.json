@@ -1,0 +1,80 @@
+{
+  "etnias": [
+    {
+      "id": "1",
+      "nome": "Teste1"
+    },
+    {
+      "id": "2",
+      "nome": "Teste2"
+    },
+    {
+      "id": "3",
+      "nome": "Teste3"
+    },
+    {
+      "id": "4",
+      "nome": "Teste4"
+    },
+    {
+      "id": "5",
+      "nome": "Teste5"
+    },
+    {
+      "id": "6",
+      "nome": "Teste6"
+    },
+    {
+      "id": "7",
+      "nome": "Teste7"
+    },
+    {
+      "id": "8",
+      "nome": "Teste8"
+    },
+    {
+      "id": "9",
+      "nome": "Teste9"
+    },
+    {
+      "id": "10",
+      "nome": "Teste10"
+    },
+    {
+      "id": "12",
+      "nome": "Teste11"
+    },
+    {
+      "id": "13",
+      "nome": "Teste12"
+    },
+    {
+      "id": "14",
+      "nome": "Teste13"
+    },
+    {
+      "id": "15",
+      "nome": "Teste14"
+    },
+    {
+      "id": "16",
+      "nome": "Teste15"
+    },
+    {
+      "id": "17",
+      "nome": "Teste16"
+    },
+    {
+      "id": "18",
+      "nome": "Teste17"
+    },
+    {
+      "id": "19",
+      "nome": "Teste18"
+    },
+    {
+      "id": "20",
+      "nome": "Teste19"
+    }
+  ]
+}

@@ -56,7 +56,13 @@ export function LanguageInitialScreen() {
           <AntDesign name="right" size={24} color="#B1B1B1" />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.info} textStyle={{ color: 'white' }}>
+        <TouchableOpacity
+          style={styles.info}
+          textStyle={{ color: 'white' }}
+          onPress={() => {
+            navigation.navigate('Information');
+          }}
+        >
           <View style={styles.buttoninfo}>
             <AntDesign name="infocirlce" size={24} color="white" />
             <Text style={styles.infotext}> Mais informações</Text>

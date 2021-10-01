@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   plusbutton: {
     width: 70,
     backgroundColor: 'white',
-    marginTop: 180,
+    marginTop: 130,
     marginLeft: 290,
   },
 });
