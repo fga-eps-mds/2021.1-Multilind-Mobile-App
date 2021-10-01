@@ -4,6 +4,7 @@ import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService, ImageWordService } from '../../services';
 import { TopBar, GoBack, ImageContainer } from '../../components';
+import { sortName } from '../../utils/sortByName';
 import styles from './styles';
 
 export function ImageWordScreen() {
@@ -14,8 +15,9 @@ export function ImageWordScreen() {
   useEffect(() => {
     async function getWords() {
       WordService.getAllWords(language.id_lingua).then(async (response) => {
+        const palavrasResponse = response[0].palavras;
         const wordsFound = await Promise.all(
-          response[0].palavras.map(async (wordImage) => {
+          palavrasResponse.map(async (wordImage) => {
             const image = await ImageWordService.getImageWords(
               wordImage.id_palavra
             );
@@ -31,7 +33,7 @@ export function ImageWordScreen() {
 
   const list = () =>
     word.length
-      ? word.map((currentWord, index) => (
+      ? sortName(word).map((currentWord, index) => (
           <View
             key={currentWord.id_palavra}
             style={
@@ -50,10 +52,9 @@ export function ImageWordScreen() {
 
   return (
     <SafeAreaView>
-      <GoBack />
-      <TopBar>{language.nome}</TopBar>
-
       <ScrollView>
+        <GoBack />
+        <TopBar>{language.nome}</TopBar>
         <View style={styles.content}>
           <SafeAreaView style={styles.container}>{list()}</SafeAreaView>
         </View>
