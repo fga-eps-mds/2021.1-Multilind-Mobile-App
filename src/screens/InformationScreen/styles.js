@@ -118,9 +118,11 @@ const styles = StyleSheet.create({
   },
   
   buttonscontainer: {
-    flexDirection: 'row',
-    marginVertical: 5,
-    marginLeft: 30,
+    marginTop: 690,
+    position: 'absolute',
+    marginLeft: 300,
+    width: 69,
+    backgroundColor: 'white',
   },
 });
 

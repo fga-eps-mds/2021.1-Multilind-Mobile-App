@@ -32,28 +32,28 @@ export function InformationScreen() {
       <View style={{ alignItems: 'center' }}>
         <Text style={styles.headerText}>Arauá</Text>
       </View>
-        <ScrollView>
-          <View style={styles.title}>
-            <Text style={styles.titletext}> Etnias falantes</Text>
-          </View>
-          <View style={{ top: '4%' }}>{list()}</View>
-          <View style={styles.title}>
-            <Text style={styles.titletext}> História</Text>
-          </View>
-          <View style={styles.title}>
-            <Text style={styles.text}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              quis volutpat orci, pulvinar posuere leo. Vivamus vel tellus et
-              neque maximus sodales id ut massa. Donec at pellentesque tellus.
-              Proin porttitor ante scelerisque tincidunt pellentesque.
-              Pellentesque efficitur sodales posuere. Praesent sed cursus risus.
-            </Text>
-          </View>
-        </ScrollView>
-        <Button
-            style={styles.plusbutton}
-            icon={<Ionicons name="add" size={30} color="#2D48BA" />}
-          />
+      <ScrollView>
+        <View style={styles.title}>
+          <Text style={styles.titletext}> Etnias falantes</Text>
+        </View>
+        <View style={{ top: '4%' }}>{list()}</View>
+        <View style={styles.title}>
+          <Text style={styles.titletext}> História</Text>
+        </View>
+        <View style={styles.title}>
+          <Text style={styles.text}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis
+            volutpat orci, pulvinar posuere leo. Vivamus vel tellus et neque
+            maximus sodales id ut massa. Donec at pellentesque tellus. Proin
+            porttitor ante scelerisque tincidunt pellentesque. Pellentesque
+            efficitur sodales posuere. Praesent sed cursus risus.
+          </Text>
+        </View>
+      </ScrollView>
+      <Button
+        style={styles.buttonscontainer}
+        icon={<AntDesign name="plus" size={26} color="blue" />}
+      />
     </SafeAreaView>
   );
 }
