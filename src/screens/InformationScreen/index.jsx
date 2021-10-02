@@ -51,7 +51,7 @@ export function InformationScreen() {
         </View>
       </ScrollView>
       <Button
-        style={styles.buttonscontainer}
+        style={styles.plusbutton}
         icon={<AntDesign name="plus" size={26} color="blue" />}
       />
     </SafeAreaView>
