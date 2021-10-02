@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     fontFamily: MONTSERRAT_BOLD,
     fontSize: 40,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: -20,
   },
   scrollView: {
     marginLeft: 26,
@@ -108,13 +108,19 @@ const styles = StyleSheet.create({
   plusbutton: {
     width: 70,
     backgroundColor: 'white',
-    marginTop: 180,
-    marginLeft: 290,
+    marginTop: 650,
+    marginLeft: 270,
+    position: 'absolute',
+    shadowColor: '#FFF',
+    shadowOffset: {width: 0, height: 5},
+    shadowOpacity: 1,
+    elevation: 1,
   },
+  
   buttonscontainer: {
     flexDirection: 'row',
     marginVertical: 5,
-    marginLeft: 50,
+    marginLeft: 30,
   },
 });
 

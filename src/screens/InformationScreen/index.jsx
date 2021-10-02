@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, TouchableOpacity, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 import { Button } from '../../components';
 import Etnias from '../../etnia.json';
 import styles from './styles';
@@ -32,7 +32,6 @@ export function InformationScreen() {
       <View style={{ alignItems: 'center' }}>
         <Text style={styles.headerText}>Arauá</Text>
       </View>
-      <View>
         <ScrollView>
           <View style={styles.title}>
             <Text style={styles.titletext}> Etnias falantes</Text>
@@ -51,12 +50,10 @@ export function InformationScreen() {
             </Text>
           </View>
         </ScrollView>
-      </View>
-      <Button
-        title=""
-        style={styles.buttonscontainer}
-        icon={<AntDesign name="plus" size={24} color="blue" />}
-      />
+        <Button
+            style={styles.plusbutton}
+            icon={<Ionicons name="add" size={30} color="#2D48BA" />}
+          />
     </SafeAreaView>
   );
 }
