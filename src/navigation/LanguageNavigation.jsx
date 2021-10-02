@@ -1,6 +1,10 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { LanguageScreen, LanguageInitialScreen } from '../screens';
+import {
+  LanguageScreen,
+  LanguageInitialScreen,
+  LanguagePerTrunk,
+} from '../screens';
 
 const Stack = createStackNavigator();
 
@@ -13,6 +17,7 @@ export function LanguageNavigation() {
     >
       <Stack.Screen name="Language" component={LanguageScreen} />
       <Stack.Screen name="LanguageInitial" component={LanguageInitialScreen} />
+      <Stack.Screen name="LanguagePerTrunk" component={LanguagePerTrunk} />
     </Stack.Navigator>
   );
 }
