@@ -3,3 +3,4 @@ export { SettingsScreen } from './SettingsScreen';
 export { MapScreen } from './MapScreen';
 export { LanguageInitialScreen } from './LanguageInitialScreen';
 export { LanguagePerTrunk } from './LanguagePerTrunk';
+export { ImageWordScreen } from './ImageWordScreen';
