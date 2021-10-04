@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
   arrow: {
     paddingRight: 14,
   },
-
   container: {
     height: 70,
     alignItems: 'center',
@@ -39,21 +38,13 @@ const styles = StyleSheet.create({
     top: '60%',
     left: '80%',
   },
-  buttom1: {
-    width: 111,
-    height: 37,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    flexDirection: 'row',
-    borderColor: '#2D48BA',
-    borderWidth: 1,
-  },
-  buttom2: {
+  buttom: {
     width: 179,
     height: 37,
     flexDirection: 'row',
     backgroundColor: '#2D48BA',
     borderRadius: 20,
+    alignItems: 'center',
   },
   buttontext: {
     flexDirection: 'row',
@@ -75,9 +66,19 @@ const styles = StyleSheet.create({
     left: 12,
   },
   buttonadd: {
-    flexDirection: 'row',
     marginVertical: 5,
-    left: 300,
+    width: 70,
+    backgroundColor: 'white',
+    marginTop: 650,
+    marginLeft: 290,
+    position: 'absolute',
+    shadowColor: '#FFF',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 1,
+    elevation: 1,
   },
   filtericon: {},
 });
