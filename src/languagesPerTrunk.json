@@ -1,0 +1,52 @@
+[
+  {
+    "id_tronco": 1,
+    "id_conteudo": 8,
+    "nome": "tupi",
+    "linguas": [
+      {
+        "id_lingua": 7,
+        "id_conteudo": 13,
+        "nome": "guarani1"
+      },
+      {
+        "id_lingua": 8,
+        "id_conteudo": 14,
+        "nome": "guarani5"
+      },
+      {
+        "id_lingua": 9,
+        "id_conteudo": 15,
+        "nome": "guarani6"
+      }
+    ]
+  },
+  {
+    "id_tronco": 2,
+    "id_conteudo": 9,
+    "nome": "Macro-Jê",
+    "linguas": [
+      {
+        "id_lingua": 4,
+        "id_conteudo": 10,
+        "nome": "guarani"
+      },
+      {
+        "id_lingua": 5,
+        "id_conteudo": 11,
+        "nome": "guarani2"
+      },
+      {
+        "id_lingua": 6,
+        "id_conteudo": 12,
+        "nome": "guarani3"
+      }
+    ]
+  },
+  {
+    "id_tronco": 3,
+    "id_conteudo": 8,
+    "nome": "Tupi sem linguas",
+    "linguas": []
+  }
+]
