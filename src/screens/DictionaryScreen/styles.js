@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {
-  MONTSERRAT_BOLD
-} from '../../constants'
+import { MONTSERRAT_BOLD } from '../../constants';
 
 const styles = StyleSheet.create({
   listcontainer: {
@@ -18,8 +16,9 @@ const styles = StyleSheet.create({
   },
   textlist: {
     color: 'black',
-    fontSize: 22,
+    fontSize: 18,
     fontFamily: MONTSERRAT_BOLD,
+    fontWeight: 'bold',
   },
   arrow: {
     paddingRight: 14,

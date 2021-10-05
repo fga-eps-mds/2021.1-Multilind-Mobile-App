@@ -24,7 +24,7 @@ export function DictionaryScreen() {
             navigation.navigate('Words', { alphabetParam, language });
           }}
         >
-          <Text styles={styles.textlist}>{alphabetParam.name}</Text>
+          <Text style={styles.textlist}>{alphabetParam.name}</Text>
           <AntDesign
             name="right"
             size={24}
