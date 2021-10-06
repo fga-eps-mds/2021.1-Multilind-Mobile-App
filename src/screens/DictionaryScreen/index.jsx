@@ -5,9 +5,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import styles from './styles';
-import { Input } from '../../components';
 import Alphabet from '../../alphabet.json';
-import { DARK_GRAY, MONTSERRAT_BOLD } from '../../constants';
+import { DARK_GRAY } from '../../constants';
+import { GoBack, TopBar, Input } from '../../components';
 
 export function DictionaryScreen() {
   const { alphabet } = Alphabet;
@@ -38,46 +38,28 @@ export function DictionaryScreen() {
 
   return (
     <SafeAreaView style={{ flex: 0.97 }}>
-      <TouchableOpacity
-        style={styles.goback}
-        onPress={() => {
-          navigation.goBack();
-        }}
-      >
-        <AntDesign name="left" size={24} color="#B1B1B1" />
-      </TouchableOpacity>
-
+      <View style={{ marginTop: insets.top - 10 }}>
+        <GoBack />
+        <TopBar>{language.nome}</TopBar>
+      </View>
       <View>
-        <View style={styles.container}>
-          <Text
-            style={{
-              marginTop: insets.top + 10,
-              fontFamily: MONTSERRAT_BOLD,
-              fontSize: 30,
-            }}
-          >
-            {language.nome}
-          </Text>
-        </View>
-        <View>
-          <Input
-            icon={
-              <Entypo
-                name="magnifying-glass"
-                size={30}
-                color={DARK_GRAY}
-                style={{ left: 0 }}
-              />
-            }
-            inputContainerStyle={[
-              styles.searchBar,
-              {
-                top: 17,
-              },
-            ]}
-            placeholder="Pesquisar letra"
-          />
-        </View>
+        <Input
+          icon={
+            <Entypo
+              name="magnifying-glass"
+              size={30}
+              color={DARK_GRAY}
+              style={{ left: 0 }}
+            />
+          }
+          inputContainerStyle={[
+            styles.searchBar,
+            {
+              top: 17,
+            },
+          ]}
+          placeholder="Pesquisar letra"
+        />
       </View>
       <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
     </SafeAreaView>

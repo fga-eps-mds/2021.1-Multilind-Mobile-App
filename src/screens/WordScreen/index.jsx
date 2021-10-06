@@ -4,9 +4,9 @@ import { Entypo, AntDesign } from '@expo/vector-icons';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService } from '../../services';
-import { DARK_GRAY, MONTSERRAT_BOLD } from '../../constants';
+import { DARK_GRAY } from '../../constants';
+import { GoBack, TopBar, Input } from '../../components';
 import styles from './styles';
-import { Input } from '../../components';
 
 export function WordsScreen() {
   const route = useRoute();
@@ -53,28 +53,12 @@ export function WordsScreen() {
       ));
 
   return (
-    <SafeAreaView>
-      <TouchableOpacity
-        style={styles.goback}
-        onPress={() => {
-          navigation.goBack();
-        }}
-      >
-        <AntDesign name="left" size={24} color="#B1B1B1" />
-      </TouchableOpacity>
-
+    <SafeAreaView style={{ flex: 0.79 }}>
+      <View style={{ marginTop: '-3%' }}>
+        <GoBack />
+        <TopBar>{letter}</TopBar>
+      </View>
       <View>
-        <View style={styles.container}>
-          <Text
-            style={{
-              marginBottom: 45,
-              fontFamily: MONTSERRAT_BOLD,
-              fontSize: 40,
-            }}
-          >
-            {letter}
-          </Text>
-        </View>
         <View>
           <Input
             icon={

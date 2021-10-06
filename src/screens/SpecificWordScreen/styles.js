@@ -52,10 +52,14 @@ const styles = StyleSheet.create({
     marginVertical: 2,
     color: '#2D48BA',
   },
-  buttontext2: {
-    flexDirection: 'row',
+  goback: {
+    marginTop: 55,
+    left: 15,
+  },
+  textbuttom: {
     textAlign: 'center',
-    left: 5,
+    left: 20,
+    fontSize: 17,
     marginVertical: 2,
     color: '#FFFFFF',
   },
