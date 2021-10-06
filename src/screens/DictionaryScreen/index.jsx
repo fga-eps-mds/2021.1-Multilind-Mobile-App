@@ -35,10 +35,9 @@ export function DictionaryScreen() {
       </View>
     ));
   const insets = useSafeAreaInsets();
-  const [, setVisib] = useState(false);
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 0.8 }}>
       <TouchableOpacity
         style={styles.goback}
         onPress={() => {
@@ -67,31 +66,17 @@ export function DictionaryScreen() {
                 name="magnifying-glass"
                 size={30}
                 color={DARK_GRAY}
-                style={{ left: 12, top: 2 }}
+                style={{ left: 0 }}
               />
             }
             inputContainerStyle={[
               styles.searchBar,
               {
-                top: 55,
+                top: 17,
               },
             ]}
             placeholder="Pesquisar letra"
           />
-
-          <TouchableOpacity
-            style={{ top: 15 }}
-            onPress={() => {
-              setVisib(true);
-            }}
-          >
-            <FontAwesome
-              name="filter"
-              size={24}
-              color={DARK_GRAY}
-              style={{ left: '80%' }}
-            />
-          </TouchableOpacity>
         </View>
 
         <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
