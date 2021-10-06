@@ -1,13 +1,15 @@
 import React from 'react';
 import { Text, View, Modal, TouchableOpacity } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesome5, Entypo } from '@expo/vector-icons';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
+import { useNavigation } from '@react-navigation/native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../constants';
 import styles from './styles';
 import { sortName, inverseSortName } from '../../utils/sortByName';
 
 export function ModalMod({ list, onChange, onChangeV, visual }) {
+  const navigation = useNavigation();
   const updateVisib = (value) => {
     onChangeV(value);
   };
@@ -68,6 +70,23 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
               />
               <Text style={styles.textmodal}>
                 Listar por nome (decrescente)
+              </Text>
+            </Pressable>
+            <Pressable
+              style={styles.flex}
+              onPress={() => {
+                navigation.navigate('LanguagePerTrunk');
+                updateVisib(false);
+              }}
+            >
+              <Entypo
+                name="flow-tree"
+                size={30}
+                color="black"
+                style={{ left: 5 }}
+              />
+              <Text style={styles.textmodal}>
+                Listar por tronco linguistico
               </Text>
             </Pressable>
           </View>
