@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
-import { Entypo, FontAwesome, AntDesign } from '@expo/vector-icons';
+import { Entypo, AntDesign } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useRoute, useNavigation } from '@react-navigation/native';
@@ -37,7 +37,7 @@ export function DictionaryScreen() {
   const insets = useSafeAreaInsets();
 
   return (
-    <SafeAreaView style={{ flex: 0.8 }}>
+    <SafeAreaView style={{ flex: 0.97 }}>
       <TouchableOpacity
         style={styles.goback}
         onPress={() => {
@@ -78,9 +78,8 @@ export function DictionaryScreen() {
             placeholder="Pesquisar letra"
           />
         </View>
-
-        <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
       </View>
+      <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
     </SafeAreaView>
   );
 }

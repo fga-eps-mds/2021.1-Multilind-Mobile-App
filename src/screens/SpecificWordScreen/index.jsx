@@ -3,14 +3,13 @@ import { View, Text, ScrollView, SafeAreaView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRoute } from '@react-navigation/native';
-import { FontAwesome, AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import {
   MONTSERRAT_BOLD,
   MONTSERRAT_SEMIBOLD,
   SCREEN_HEIGHT,
 } from '../../constants';
 import styles from './styles';
-import { Button } from '../../components';
 
 export function SpecificWordScreen() {
   const insets = useSafeAreaInsets();
@@ -63,10 +62,11 @@ export function SpecificWordScreen() {
             tellus. Praesent consectetur cursus est Lorem ipsum dolor sit amet,
             consectetur Lorem ipsum dolor sit amet,consectetur adipiscing elit.
             Nullam scelerisque turpis felis, eget varius risus sollicitudin a.
-            Ut eget sodales dui, ut pellentesqutellus. Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Nullam scelerisque turpis felis, eget
-            varius risus sollicitudin a. Ut eget sodales dui, ut pellentesque
-            tellus. Praesent consectetur cursus est Lorem ipsum dolor sit amet,
+            Ut eget sodales dui, ut pellentesqutellus. Lorem ipsum dolor sit
+            amet, consectetur Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Nullam scelerisque turpis felis, eget varius risus
+            sollicitudin a. Ut eget sodales dui, ut pellentesque tellus.
+            Praesent consectetur cursus est Lorem ipsum dolor sit amet,
             consectetur Lorem ipsum dolor sit amet,consectetur adipiscing elit.
             Nullam scelerisque turpis felis, eget varius risus sollicitudin a.
             Ut eget sodales dui, ut pellentesqutellus.
