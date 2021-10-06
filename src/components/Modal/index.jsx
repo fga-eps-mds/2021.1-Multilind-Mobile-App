@@ -10,19 +10,13 @@ import { sortName, inverseSortName } from '../../utils/sortByName';
 
 export function ModalMod({ list, onChange, onChangeV, visual }) {
   const navigation = useNavigation();
-  const updateVisib = (value) => {
-    onChangeV(value);
-  };
 
-  const updateLanguage = (value) => {
-    onChange(value);
-  };
   return (
     <Modal visible={visual} transparent animationType="fade">
       <TouchableOpacity
         activeOpacity={1}
         onPress={() => {
-          updateVisib(false);
+          onChangeV(false);
         }}
         style={{
           width: SCREEN_WIDTH,
@@ -43,8 +37,8 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
             <Pressable
               style={styles.flex}
               onPress={() => {
-                updateLanguage(sortName(list));
-                updateVisib(false);
+                onChange(sortName(list));
+                onChangeV(false);
               }}
             >
               <FontAwesome5
@@ -58,8 +52,8 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
             <Pressable
               style={styles.flex}
               onPress={() => {
-                updateLanguage(inverseSortName(list));
-                updateVisib(false);
+                onChange(inverseSortName(list));
+                onChangeV(false);
               }}
             >
               <FontAwesome5
@@ -76,7 +70,7 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
               style={styles.flex}
               onPress={() => {
                 navigation.navigate('LanguagePerTrunk');
-                updateVisib(false);
+                onChangeV(false);
               }}
             >
               <Entypo

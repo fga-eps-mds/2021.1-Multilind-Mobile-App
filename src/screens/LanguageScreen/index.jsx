@@ -13,11 +13,12 @@ import {
 export function LanguageScreen() {
   const { languages } = useLanguage();
   const [listLanguage, setListLanguage] = useState(languages);
+  const [languageSearch, setLanguageSearch] = useState('');
+  const [visib, setVisib] = useState(false);
 
+  const updateSearch = (event) => setLanguageSearch(event);
   const updateLanguage = (value) => setListLanguage(value);
   const updateVisib = (value) => setVisib(value);
-
-  const [visib, setVisib] = useState(false);
 
   return (
     <SafeAreaView>
@@ -30,12 +31,25 @@ export function LanguageScreen() {
       <View>
         <TopBar>Línguas Indígenas</TopBar>
         <View>
-          <SearchBar placeholder="Pesquisar por uma língua" />
+          <SearchBar
+            placeholder="Pesquisar por uma língua"
+            onChange={updateSearch}
+          />
           <Filter onChangeV={updateVisib} />
         </View>
 
         <ScrollView>
-          <ListLanguages listLanguage={listLanguage} />
+          <ListLanguages
+            listLanguage={listLanguage.filter((language) =>
+              languageSearch === '' ||
+              language.nome
+                .toLowerCase()
+                .substring(0, languageSearch.length) ===
+                languageSearch.toLowerCase()
+                ? language
+                : false
+            )}
+          />
         </ScrollView>
       </View>
     </SafeAreaView>

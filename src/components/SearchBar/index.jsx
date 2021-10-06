@@ -4,16 +4,17 @@ import styles from './styles';
 import { Input } from '../Input';
 import { DARK_GRAY } from '../../constants';
 
-export function SearchBar({ placeholder }) {
+export function SearchBar({ placeholder, onChange }) {
   return (
     <Input
       icon={<Entypo name="magnifying-glass" size={30} color={DARK_GRAY} />}
       inputContainerStyle={[
         styles.searchBar,
         {
-          top: 10,
+          marginTop: '7.5%',
         },
       ]}
+      onChange={onChange}
       placeholder={placeholder}
     />
   );
