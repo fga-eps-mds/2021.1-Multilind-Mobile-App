@@ -1,13 +1,11 @@
-// eslint-disable-next-line import/no-unresolved
-// import { get } from 'react-native/Libraries/Utilities/PixelRatio';
-import api from './api';
+import apiContent from './api';
 
 const url = '/lingua';
 
 export class LanguageService {
   static async getAllLanguages() {
     try {
-      const response = await api.get(url);
+      const response = await apiContent.get(url);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -17,7 +15,7 @@ export class LanguageService {
 
   static async getLanguageByID(id) {
     try {
-      const response = await api.get(`${url}/${id}`);
+      const response = await apiContent.get(`${url}/${id}`);
       return response.data;
     } catch (error) {
       console.error(error);

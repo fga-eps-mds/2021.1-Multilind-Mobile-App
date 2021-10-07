@@ -2,9 +2,13 @@ import { StyleSheet } from 'react-native';
 import { MONTSERRAT_SEMIBOLD, MONTSERRAT_REGULAR } from '../../constants';
 
 const styles = StyleSheet.create({
+  bottomModalContainer: {
+    height: 200,
+  },
   title: {
     fontFamily: MONTSERRAT_SEMIBOLD,
     fontSize: 24,
+    textAlign: 'center',
   },
   subtitle: {
     fontFamily: MONTSERRAT_SEMIBOLD,
