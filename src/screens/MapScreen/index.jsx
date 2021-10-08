@@ -37,6 +37,7 @@ export function MapScreen() {
           initialRegion={location}
           markers={spokeLanguages}
           onPressMarker={onPressMarker}
+          shouldDismissMarker={!bottomModalVisible}
         />
       )}
 

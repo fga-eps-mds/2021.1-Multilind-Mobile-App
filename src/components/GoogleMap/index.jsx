@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import { useState } from 'react/cjs/react.development';
 import markerImage from '../../assets/images/marker.png';
@@ -10,6 +10,7 @@ export function GoogleMap({
   mapStyle,
   onPressMarker,
   initialRegion,
+  shouldDismissMarker,
   ...props
 }) {
   const [selectedMarkerId, setSelectedMarkerId] = useState(null);
@@ -20,6 +21,17 @@ export function GoogleMap({
       setSelectedMarkerId(marker.id);
     }
   };
+
+  const handleMarkerDismiss = () => {
+    setSelectedMarkerId(null);
+  };
+
+  useEffect(() => {
+    if (shouldDismissMarker) {
+      handleMarkerDismiss();
+    }
+  }, [shouldDismissMarker]);
+
   return (
     <MapView
       style={[styles.map, mapStyle]}
