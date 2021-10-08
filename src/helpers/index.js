@@ -1,2 +1,2 @@
 export { useCustomFonts } from './font-helper';
-export * from './spoke-helper';
+export * from './idiom-helper';

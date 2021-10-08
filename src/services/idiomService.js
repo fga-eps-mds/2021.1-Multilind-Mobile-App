@@ -1,9 +1,9 @@
 import apiContent from './api';
 
-const url = '/falada';
+const url = '/idioma';
 
-export class SpokeService {
-  static async getAllSpokeLanguages() {
+export class IdiomService {
+  static async getAllIdioms() {
     try {
       const response = await apiContent.get(url);
       return response.data;

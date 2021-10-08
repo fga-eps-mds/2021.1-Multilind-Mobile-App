@@ -7,7 +7,7 @@ import {
   LocationContextProvider,
   LanguageContextProvider,
   TrunkContextProvider,
-  SpokeContextProvider,
+  IdiomContextProvider,
 } from './src/contexts';
 import { useCustomFonts } from './src/helpers';
 
@@ -19,7 +19,7 @@ export default function App() {
   }
 
   return (
-    <SpokeContextProvider>
+    <IdiomContextProvider>
       <TrunkContextProvider>
         <LanguageContextProvider>
           <LocationContextProvider>
@@ -31,6 +31,6 @@ export default function App() {
           </LocationContextProvider>
         </LanguageContextProvider>
       </TrunkContextProvider>
-    </SpokeContextProvider>
+    </IdiomContextProvider>
   );
 }

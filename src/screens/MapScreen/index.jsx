@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useLocation, useSpoke } from '../../contexts';
+import { useLocation, useIdiom } from '../../contexts';
 import { Input, GoogleMap, ContentBottomModal } from '../../components';
 
 import styles from './styles';
@@ -12,14 +12,14 @@ export function MapScreen() {
   const insets = useSafeAreaInsets();
 
   const { location, hasLocation } = useLocation();
-  const { spokeLanguages } = useSpoke();
+  const { idioms } = useIdiom();
   const [bottomModalVisible, setBottomModalVisible] = useState(false);
   const [selectedContent, setSelectedContent] = useState({});
 
-  const onPressMarker = (content) => {
+  const onPressMarker = useCallback((content) => {
     setSelectedContent(content);
     setBottomModalVisible(true);
-  };
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -35,7 +35,7 @@ export function MapScreen() {
       {hasLocation && (
         <GoogleMap
           initialRegion={location}
-          markers={spokeLanguages}
+          markers={idioms}
           onPressMarker={onPressMarker}
           shouldDismissMarker={!bottomModalVisible}
         />
