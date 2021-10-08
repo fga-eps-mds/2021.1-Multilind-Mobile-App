@@ -48,7 +48,12 @@ export function LanguageInitialScreen() {
           <AntDesign name="right" size={24} color="#B1B1B1" />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.portrait}>
+        <TouchableOpacity
+          style={styles.portrait}
+          onPress={() => {
+            navigation.navigate('ImageWordScreen', { language });
+          }}
+        >
           <View style={styles.flexview}>
             <Image source={portraitimg} style={styles.img} />
             <Text style={styles.buttontext}> Imagens</Text>

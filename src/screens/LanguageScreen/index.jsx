@@ -58,14 +58,6 @@ export function LanguageScreen() {
     newList.sort((a, b) => b.nome.localeCompare(a.nome));
     setListLanguage(newList);
   };
-  const sortListTronco = () => {
-    const newList = [...languages];
-
-    newList.sort((a, b) =>
-      a.troncolinguistico.localeCompare(b.troncolinguistico)
-    );
-    setListLanguage(newList);
-  };
   return (
     <>
       <Modal visible={visib} transparent animationType="fade">
@@ -127,7 +119,7 @@ export function LanguageScreen() {
               <Pressable
                 style={styles.flex}
                 onPress={() => {
-                  sortListTronco();
+                  navigation.navigate('LanguagePerTrunk');
                   setVisib(false);
                 }}
               >

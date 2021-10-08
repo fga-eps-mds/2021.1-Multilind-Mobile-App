@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   goback: {
     position: 'absolute',
-    top: 55,
+    marginTop: 70,
     left: 15,
   },
 
