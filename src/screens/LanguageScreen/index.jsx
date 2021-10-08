@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView, Modal, TouchableOpacity } from 'react-native';
+import {
+  Text,
+  View,
+  ScrollView,
+  Modal,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import {
   Entypo,
   FontAwesome5,
@@ -59,7 +66,7 @@ export function LanguageScreen() {
     setListLanguage(newList);
   };
   return (
-    <>
+    <SafeAreaView style={{ flex: 0.77 }}>
       <Modal visible={visib} transparent animationType="fade">
         <TouchableOpacity
           activeOpacity={1}
@@ -137,6 +144,7 @@ export function LanguageScreen() {
           </TouchableWithoutFeedback>
         </TouchableOpacity>
       </Modal>
+      {/* <TopBar>Línguas indígenas</TopBar> */}
       <View>
         <View style={styles.container}>
           <Text
@@ -162,7 +170,7 @@ export function LanguageScreen() {
             inputContainerStyle={[
               styles.searchBar,
               {
-                top: insets.top + 20,
+                top: insets.top,
               },
             ]}
             placeholder="Pesquisar língua"
@@ -183,8 +191,8 @@ export function LanguageScreen() {
           </TouchableOpacity>
         </View>
 
-        <ScrollView style={styles.ScrollView}>{list()}</ScrollView>
+        <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
       </View>
-    </>
+    </SafeAreaView>
   );
 }

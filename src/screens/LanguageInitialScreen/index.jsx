@@ -65,7 +65,7 @@ export function LanguageInitialScreen() {
           style={styles.info}
           textStyle={{ color: 'white' }}
           onPress={() => {
-            navigation.navigate('Information');
+            navigation.navigate('Information', { language });
           }}
         >
           <View style={styles.buttoninfo}>

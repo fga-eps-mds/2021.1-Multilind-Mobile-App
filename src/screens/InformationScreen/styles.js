@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     fontFamily: MONTSERRAT_BOLD,
     fontSize: 40,
     fontWeight: 'bold',
-    marginTop: -20,
+    marginTop: -10,
   },
   scrollView: {
     marginLeft: 26,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: MONTSERRAT_SEMIBOLD,
     fontSize: 20,
-    bottom: '15%',
+    bottom: '5%',
     textAlign: 'justify',
     marginRight: 26,
     color: '#262626',
@@ -112,11 +112,11 @@ const styles = StyleSheet.create({
     marginLeft: 270,
     position: 'absolute',
     shadowColor: '#FFF',
-    shadowOffset: {width: 0, height: 5},
+    shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 1,
     elevation: 1,
   },
-  
+
   buttonscontainer: {
     marginTop: 690,
     position: 'absolute',
