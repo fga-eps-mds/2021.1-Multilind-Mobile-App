@@ -7,19 +7,19 @@ import styles from './styles';
 import { PRIMARY_BLUE, WHITE } from '../../constants';
 
 export function ContentBottomModal({ visible, toggle, content }) {
-  // const renderEthnicityList = () =>
-  //   content.ethnicities?.map((ethnicity) => (
-  //     <Text key={ethnicity} style={styles.item}>
-  //       🔅 {ethnicity}
-  //     </Text>
-  //   ));
+  const isEthnicityNotListNull = content.ethnicities?.length !== 0;
 
-  // const renderStateList = () =>
-  //   content.states?.map((state) => (
-  //     <Text key={state} style={styles.item}>
-  //       📍 {state}
-  //     </Text>
-  //   ));
+  const renderEthnicityList = () => (
+    <>
+      <Text style={styles.itemTitle}>Principais Etnias:</Text>
+      {content.ethnicities?.map((ethnicity) => (
+        <Text key={ethnicity} style={styles.item}>
+          🔅 {ethnicity}
+        </Text>
+      ))}
+    </>
+  );
+
   return (
     <BottomModal
       visible={visible}
@@ -30,11 +30,9 @@ export function ContentBottomModal({ visible, toggle, content }) {
       <Text style={styles.subtitle}>Tronco Linguístico: {content.origin}</Text>
 
       <View style={styles.body}>
-        <View>
-          {/* <Text style={styles.itemTitle}>Principais Etnias:</Text>
-          {renderEthnicityList()} */}
+        {isEthnicityNotListNull && renderEthnicityList()}
+        <View style={styles.buttons}>
           <Button
-            style={styles.buttons}
             outlined
             onPress={toggle}
             icon={
@@ -43,12 +41,7 @@ export function ContentBottomModal({ visible, toggle, content }) {
           >
             Voltar
           </Button>
-        </View>
-        <View>
-          {/* <Text style={styles.itemTitle}>Principais Estados: </Text> */}
-          {/* {renderStateList()} */}
           <Button
-            style={styles.buttons}
             icon={<FontAwesome5 name="info-circle" size={24} color={WHITE} />}
           >
             Ver detalhes

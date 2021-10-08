@@ -10,6 +10,7 @@ export function IdiomContextProvider({ children }) {
     const response = await IdiomService.getAllIdioms();
     setIdioms(normalizeSpokeResponse(response));
   }
+
   useEffect(() => {
     getAllIdioms();
   }, []);

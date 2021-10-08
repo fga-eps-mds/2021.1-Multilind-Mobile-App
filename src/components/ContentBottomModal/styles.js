@@ -3,7 +3,7 @@ import { MONTSERRAT_SEMIBOLD, MONTSERRAT_REGULAR } from '../../constants';
 
 const styles = StyleSheet.create({
   bottomModalContainer: {
-    height: 200,
+    height: null,
   },
   title: {
     fontFamily: MONTSERRAT_SEMIBOLD,
@@ -27,12 +27,13 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   body: {
-    flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 10,
   },
   buttons: {
-    marginTop: 34,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
   },
 });
 

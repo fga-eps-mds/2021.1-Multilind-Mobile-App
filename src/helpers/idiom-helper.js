@@ -1,9 +1,9 @@
-export const normalizeSpokeResponse = (spoke) =>
-  spoke.map((data) => ({
+export const normalizeSpokeResponse = (idiom) =>
+  idiom.map((data) => ({
     id: data.id_conteudo,
     title: data.lingua.nome,
     origin: data.lingua.tronco?.nome || 'Não indentificado',
-    ethnicities: ['Caingangues', 'Kainguangs'],
+    ethnicities: data.lingua?.etnia?.map((e) => e.nome),
     latitude: data.localidade.latitude,
     longitude: data.localidade.longitude,
   }));
