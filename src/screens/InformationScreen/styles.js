@@ -1,9 +1,5 @@
 import { StyleSheet, StatusBar } from 'react-native';
-import {
-  MONTSERRAT_BOLD,
-  MONTSERRAT_SEMIBOLD,
-  MONTSERRAT_REGULAR,
-} from '../../constants';
+import { MONTSERRAT_BOLD, MONTSERRAT_SEMIBOLD } from '../../constants';
 
 const styles = StyleSheet.create({
   listcontainer: {
@@ -63,67 +59,22 @@ const styles = StyleSheet.create({
     marginRight: 26,
     color: '#262626',
   },
-  iconglass: {
-    left: 10,
-  },
-  searchBar: {
-    width: '90%',
-    alignSelf: 'center',
-  },
-  modal: {
-    top: '16%',
-    left: '50%',
-    backgroundColor: 'white',
-    width: '47%',
-    height: 150,
-  },
-  flex: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  iconmodal: {
-    left: 5,
-  },
-  textmodal: {
-    fontSize: 16,
-    fontFamily: MONTSERRAT_REGULAR,
-    width: 200,
-    left: 25,
-  },
-  filter: {
-    top: '60%',
-    left: '80%',
-  },
-  filtericon: {},
   goback: {
     position: 'absolute',
     top: 55,
     left: 15,
   },
-  buttonadd: {
-    flexDirection: 'row',
-    marginVertical: 5,
-    marginLeft: 50,
-  },
-  plusbutton: {
-    width: 70,
-    backgroundColor: 'white',
-    marginTop: 650,
-    marginLeft: 270,
-    position: 'absolute',
-    shadowColor: '#FFF',
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 1,
-    elevation: 1,
-  },
-
-  buttonscontainer: {
-    marginTop: 690,
-    position: 'absolute',
-    marginLeft: 300,
-    width: 69,
-    backgroundColor: 'white',
-  },
+  // plusbutton: {
+  //   width: 70,
+  //   backgroundColor: 'white',
+  //   marginTop: 650,
+  //   marginLeft: 270,
+  //   position: 'absolute',
+  //   shadowColor: '#FFF',
+  //   shadowOffset: { width: 0, height: 5 },
+  //   shadowOpacity: 1,
+  //   elevation: 1,
+  // },
 });
 
 export default styles;
