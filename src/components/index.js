@@ -10,3 +10,6 @@ export { SearchBar } from './SearchBar';
 export { GoBack } from './GoBack';
 export { ImageContainer } from './ImageContainer';
 export { Filter } from './Filter';
+export { LanguageInfo } from './LanguageInformation';
+export { DictOrImage } from './DictOrImage';
+export { MoreInfo } from './MoreInfo';
