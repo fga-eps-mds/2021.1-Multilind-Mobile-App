@@ -46,10 +46,14 @@ export function InformationScreen() {
         <Text style={styles.headerText}>{language.nome}</Text>
       </View>
       <ScrollView>
-        <View style={styles.title}>
-          <Text style={styles.titletext}> Etnias falantes</Text>
-        </View>
-        <View style={{ top: '2%' }}>{list()}</View>
+        {dialeto.length ? (
+          <>
+            <View style={styles.title}>
+              <Text style={styles.titletext}> Etnias falantes</Text>
+            </View>
+            <View style={{ top: '2%' }}>{list()}</View>
+          </>
+        ) : null}
         <View style={styles.title}>
           <Text style={styles.titletext}> História</Text>
         </View>
