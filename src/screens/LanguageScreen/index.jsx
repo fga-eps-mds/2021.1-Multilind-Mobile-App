@@ -31,7 +31,6 @@ export function LanguageScreen() {
   const { languages } = useLanguage();
   const navigation = useNavigation();
   const [listLanguage, setListLanguage] = useState(languages);
-  // console.log(listLanguage);
   const list = () =>
     listLanguage.map((language) => (
       <View key={language.id_lingua} style={styles.listcontainer}>

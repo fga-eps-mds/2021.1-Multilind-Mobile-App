@@ -12,14 +12,12 @@ export function InformationScreen() {
   const navigation = useNavigation();
   const language = route.params?.language;
   const [dialeto, setDialeto] = useState([]);
-  console.log('id_lingua', language.id_lingua);
 
   useEffect(() => {
     async function getDialetos() {
       const response = await DialetoService.getAllDialetos({
         idLingua: language.id_lingua,
       });
-      console.log('dialetos ', response);
       setDialeto(response);
     }
     getDialetos();
