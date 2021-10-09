@@ -57,8 +57,15 @@ export function LanguagePerTrunk() {
               />
             )}
           </TouchableOpacity>
+
           {expanded === index && (
-            <ListLanguages listLanguage={tronco.linguas} />
+            <ListLanguages
+              listLanguage={tronco.linguas.map((lingua) =>
+                Object.assign(lingua, {
+                  tronco: { nome: tronco.nome, id_tronco: tronco.id_tronco },
+                })
+              )}
+            />
           )}
         </View>
       ));
