@@ -107,7 +107,7 @@ export function SpecificWordScreen() {
             justifyContent: 'space-between',
             flexWrap: 'wrap',
             marginTop: 40,
-            marginTop: 10,
+            marginBottom: 10,
             flexDirection: 'row',
             marginHorizontal: 26,
             marginRight: 8,
