@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
   list: {
     backgroundColor: 'white',
     borderRadius: 0,
-    paddingVertical: 20,
+    paddingTop: 13,
+    paddingBottom: 14,
     paddingHorizontal: 25,
     flexDirection: 'row',
     alignItems: 'center',
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
   },
   textlist: {
     color: 'black',
-    fontSize: 18,
+    fontSize: 20,
     fontFamily: MONTSERRAT_SEMIBOLD,
   },
   arrow: {
