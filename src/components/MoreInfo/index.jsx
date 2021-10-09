@@ -4,11 +4,11 @@ import { useNavigation } from '@react-navigation/native';
 import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
 
-export function MoreInfo({ language }) {
+export function MoreInfo({ language, style }) {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-      style={styles.info}
+      style={[styles.info, style]}
       textStyle={{ color: 'white' }}
       onPress={() => {
         navigation.navigate('Information', { language });

@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './styles';
 
-export function LanguageInfo({ language }) {
+export function LanguageInfo({ language, style }) {
   return (
-    <View style={styles.textcontainer}>
+    <View style={[styles.textcontainer, style]}>
       <Text style={styles.firsttext}>
         Tronco Linguístico: {language.tronco.nome ?? 'Isoladas'}
       </Text>
