@@ -19,12 +19,6 @@ export function LanguagePerTrunk() {
   const [expanded, setExpanded] = useState(false);
   const [visib, setVisib] = useState(false);
 
-  const updateSearch = (event) => setTrunkSearch(event);
-  const updateLanguage = (value) => setListLanguage(value);
-  const updateVisib = (value) => setVisib(value);
-  const toggleExpand = (index) =>
-    setExpanded(expanded === index ? null : index);
-
   const list = () =>
     listTrunk
       .filter((tronco) =>
@@ -38,7 +32,7 @@ export function LanguagePerTrunk() {
         <View key={tronco.id_tronco} style={styles.listcontainer}>
           <TouchableOpacity
             style={styles.list}
-            onPress={() => toggleExpand(index)}
+            onPress={() => setExpanded(expanded === index ? null : index)}
           >
             <View style={styles.troncoLinguas}>
               <Text style={styles.textlist}>{tronco.nome}</Text>
@@ -74,8 +68,8 @@ export function LanguagePerTrunk() {
     <SafeAreaView>
       <ModalMod
         list={listTrunk}
-        onChange={updateLanguage}
-        onChangeV={updateVisib}
+        onChange={setListLanguage}
+        onChangeV={setVisib}
         visual={visib}
       />
       <View>
@@ -83,9 +77,9 @@ export function LanguagePerTrunk() {
         <View>
           <SearchBar
             placeholder="Pesquisar por um Tronco"
-            onChange={updateSearch}
+            onChange={setTrunkSearch}
           />
-          <Filter onChangeV={updateVisib} />
+          <Filter onChangeV={setVisib} />
         </View>
         <ScrollView style={styles.scrollView}>{list()}</ScrollView>
       </View>

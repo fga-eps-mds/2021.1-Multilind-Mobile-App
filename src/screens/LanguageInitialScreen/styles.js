@@ -8,12 +8,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  LanguageInfo: {
+    marginTop: 10,
+  },
   goback: {
     position: 'absolute',
     marginTop: 70,
     left: 15,
   },
-  dictChildren: { marginBottom: 16 },
+  dictChildren: {
+    marginBottom: 16,
+  },
   Dict: {
     width: '90%',
     marginBottom: '8.3%',

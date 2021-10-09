@@ -16,16 +16,12 @@ export function LanguageScreen() {
   const [languageSearch, setLanguageSearch] = useState('');
   const [visib, setVisib] = useState(false);
 
-  const updateSearch = (event) => setLanguageSearch(event);
-  const updateLanguage = (value) => setListLanguage(value);
-  const updateVisib = (value) => setVisib(value);
-
   return (
     <SafeAreaView>
       <ModalMod
         list={listLanguage}
-        onChange={updateLanguage}
-        onChangeV={updateVisib}
+        onChange={setListLanguage}
+        onChangeV={setVisib}
         visual={visib}
       />
       <View>
@@ -33,9 +29,9 @@ export function LanguageScreen() {
         <View>
           <SearchBar
             placeholder="Pesquisar por uma língua"
-            onChange={updateSearch}
+            onChange={setLanguageSearch}
           />
-          <Filter onChangeV={updateVisib} />
+          <Filter onChangeV={setVisib} />
         </View>
 
         <ScrollView>

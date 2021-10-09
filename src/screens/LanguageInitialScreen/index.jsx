@@ -23,7 +23,7 @@ export function LanguageInitialScreen() {
         <GoBack />
         <TopBar>{language.nome}</TopBar>
         <View style={styles.container}>
-          <LanguageInfo language={language} />
+          <LanguageInfo language={language} style={styles.LanguageInfo} />
 
           <View style={styles.Dict}>
             <DictOrImage
