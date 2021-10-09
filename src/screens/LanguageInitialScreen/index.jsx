@@ -12,7 +12,7 @@ export function LanguageInitialScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const navigation = useNavigation();
-
+  console.log(language);
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
@@ -24,7 +24,7 @@ export function LanguageInitialScreen() {
         <AntDesign name="left" size={24} color="#B1B1B1" />
       </TouchableOpacity>
 
-      <Text style={styles.title}>{language.name}</Text>
+      <Text style={styles.title}>{language.nome}</Text>
 
       <View style={styles.textcontainer}>
         <Text style={styles.firsttext}>
@@ -40,7 +40,12 @@ export function LanguageInitialScreen() {
       </View>
 
       <View style={styles.buttonscontainer}>
-        <TouchableOpacity style={styles.dictionary}>
+        <TouchableOpacity
+          style={styles.dictionary}
+          onPress={() => {
+            navigation.navigate('Dictionary', { language });
+          }}
+        >
           <View style={styles.flexview}>
             <Image style={styles.img} source={dicionary} />
             <Text style={styles.buttontext}>Dicionário</Text>
