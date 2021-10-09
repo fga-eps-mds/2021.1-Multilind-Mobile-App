@@ -9,3 +9,4 @@ export { TopBar } from './TopBar';
 export { SearchBar } from './SearchBar';
 export { GoBack } from './GoBack';
 export { ImageContainer } from './ImageContainer';
+export { Filter } from './Filter';

@@ -6,8 +6,12 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
   },
+  clearContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   input: {
-    width: '100%',
+    width: '95%',
     height: 50,
     backgroundColor: LIGHT,
     borderRadius: 15,
