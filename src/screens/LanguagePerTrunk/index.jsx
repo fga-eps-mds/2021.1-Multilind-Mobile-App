@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
-import { AntDesign, FontAwesome } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTrunk } from '../../contexts';
-import { ListLanguages, ModalMod, TopBar, SearchBar } from '../../components';
-import { DARK_GRAY } from '../../constants';
+import {
+  ListLanguages,
+  ModalMod,
+  TopBar,
+  SearchBar,
+  Filter,
+} from '../../components';
 import styles from './styles';
 
 export function LanguagePerTrunk() {
@@ -57,20 +62,8 @@ export function LanguagePerTrunk() {
       <View>
         <TopBar>Línguas Indígenas</TopBar>
         <View>
-          <SearchBar placeholder="Pesquisar por uma língua" />
-          <TouchableOpacity
-            onPress={() => {
-              updateVisib(true);
-            }}
-            style={styles.filterClick}
-          >
-            <FontAwesome
-              name="filter"
-              size={24}
-              color={DARK_GRAY}
-              style={styles.filter}
-            />
-          </TouchableOpacity>
+          <SearchBar placeholder="Pesquisar por um Tronco" />
+          <Filter onChangeV={updateVisib} />
         </View>
         <ScrollView style={styles.scrollView}>{list()}</ScrollView>
       </View>
