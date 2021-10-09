@@ -16,7 +16,6 @@ export function SpecificWordScreen() {
   const insets = useSafeAreaInsets();
   const route = useRoute();
   const word = route.params?.word;
-  console.log(word.nome);
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ marginTop: insets.top - 15 }}>
@@ -108,6 +107,7 @@ export function SpecificWordScreen() {
             justifyContent: 'space-between',
             flexWrap: 'wrap',
             marginTop: 40,
+            marginTop: 10,
             flexDirection: 'row',
             marginHorizontal: 26,
             marginRight: 8,
