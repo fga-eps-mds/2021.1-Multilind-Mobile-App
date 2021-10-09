@@ -18,7 +18,6 @@ export function WordsScreen() {
   useEffect(() => {
     async function getWords() {
       const response = await WordService.getAllWords(language.id_lingua);
-      console.log('words', response);
       setWords(response);
     }
     getWords();

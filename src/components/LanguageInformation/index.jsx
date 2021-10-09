@@ -3,7 +3,6 @@ import { View, Text } from 'react-native';
 import styles from './styles';
 
 export function LanguageInfo({ language }) {
-  console.log(language);
   return (
     <View style={styles.textcontainer}>
       <Text style={styles.firsttext}>
