@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { MONTSERRAT_SEMIBOLD } from '../../constants';
+import { MONTSERRAT_SEMIBOLD, GRAY } from '../../constants';
 
 const styles = StyleSheet.create({
   textcontainer: {
@@ -11,19 +11,19 @@ const styles = StyleSheet.create({
   firsttext: {
     fontFamily: MONTSERRAT_SEMIBOLD,
     fontSize: 16,
-    color: 'rgba(0, 0, 0, 0.55)',
+    color: GRAY,
     paddingTop: '2%',
   },
   sectext: {
     fontFamily: MONTSERRAT_SEMIBOLD,
     fontSize: 16,
-    color: 'rgba(0, 0, 0, 0.55)',
+    color: GRAY,
     paddingTop: '2%',
   },
   thirdtext: {
     fontFamily: MONTSERRAT_SEMIBOLD,
     fontSize: 16,
-    color: 'rgba(0, 0, 0, 0.55)',
+    color: GRAY,
     paddingTop: '2%',
     paddingBottom: '2%',
   },
