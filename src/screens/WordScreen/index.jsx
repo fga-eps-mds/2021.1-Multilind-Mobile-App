@@ -18,7 +18,7 @@ export function WordsScreen() {
   useEffect(() => {
     async function getWords() {
       const response = await WordService.getAllWords(language.id_lingua);
-      setWords(response);
+      setWords(response.palavras);
     }
     getWords();
   }, []);
@@ -26,7 +26,7 @@ export function WordsScreen() {
   const list = () =>
     words
       .filter(
-        (word) => word.nome.substr(0, 1).toLowerCase() === letter.toLowerCase()
+        (word) => word.significado.substr(0, 1).toLowerCase() === letter.toLowerCase()
       )
       .map((word) => (
         <View key={word.id_palavra} style={styles.listcontainer}>
@@ -37,7 +37,7 @@ export function WordsScreen() {
                 navigation.navigate('SpecificWord', { word });
               }}
             >
-              <Text style={styles.textlist}>{word.nome}</Text>
+              <Text style={styles.textlist}>{word.significado}</Text>
               <AntDesign
                 name="right"
                 size={24}

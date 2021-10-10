@@ -20,7 +20,7 @@ export function SpecificWordScreen() {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ marginTop: insets.top - 15 }}>
         <GoBack />
-        <TopBar>{word.nome}</TopBar>
+        <TopBar>{word.significado}</TopBar>
       </View>
       <ScrollView
         style={{
@@ -39,68 +39,13 @@ export function SpecificWordScreen() {
         </Text>
         <Text
           style={{
-            marginTop: 20,
-            marginLeft: 26,
-            marginRight: 26,
-            fontFamily: MONTSERRAT_SEMIBOLD,
-            fontSize: 14,
-            textAlign: 'justify',
-          }}
-        >
-          Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Nullam scelerisque turpis felis, eget
-          varius risus sollicitudin a. Ut eget sodales dui, ut pellentesque
-          tellus. Praesent consectetur cursus est Lorem ipsum dolor sit amet,
-          consectetur Lorem ipsum dolor sit amet,consectetur adipiscing elit.
-          Nullam scelerisque turpis felis, eget varius risus sollicitudin a. Ut
-          eget sodales dui, ut pellentesqutellus. Lorem ipsum dolor sit amet,
-          consectetur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Nullam scelerisque turpis felis, eget varius risus sollicitudin a. Ut
-          eget sodales dui, ut pellentesque tellus. Praesent consectetur cursus
-          est Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit
-          amet,consectetur adipiscing elit. Nullam scelerisque turpis felis,
-          eget varius risus sollicitudin a. Ut eget sodales dui, ut
-          pellentesqutellus.
-        </Text>
-        <Text
-          style={{
-            marginTop: 20,
-            marginLeft: 26,
-            fontFamily: MONTSERRAT_BOLD,
-            fontSize: 16,
-          }}
-        >
-          Tradução (Português indígena)
-        </Text>
-        <Text
-          style={{
             marginTop: 10,
             marginLeft: 26,
             fontFamily: MONTSERRAT_SEMIBOLD,
             fontSize: 14,
           }}
         >
-          {word.significado}
-        </Text>
-        <Text
-          style={{
-            marginTop: 20,
-            marginLeft: 26,
-            fontFamily: MONTSERRAT_BOLD,
-            fontSize: 16,
-          }}
-        >
-          Tradução (Português)
-        </Text>
-        <Text
-          style={{
-            marginTop: 10,
-            marginLeft: 26,
-            fontFamily: MONTSERRAT_SEMIBOLD,
-            fontSize: 14,
-          }}
-        >
-          {word.significado}
+          {word.nome}
         </Text>
         <View
           style={{
