@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLanguage } from '../../contexts';
+import { FilterListSearch } from '../../utils';
 import {
   ListLanguages,
   ModalMod,
@@ -36,15 +37,7 @@ export function LanguageScreen() {
 
         <ScrollView>
           <ListLanguages
-            listLanguage={listLanguage.filter((language) =>
-              languageSearch === '' ||
-              language.nome
-                .toLowerCase()
-                .substring(0, languageSearch.length) ===
-                languageSearch.toLowerCase()
-                ? language
-                : false
-            )}
+            listLanguage={FilterListSearch(listLanguage, languageSearch)}
           />
         </ScrollView>
       </View>
