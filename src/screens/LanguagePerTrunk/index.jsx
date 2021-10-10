@@ -76,7 +76,7 @@ export function LanguagePerTrunk() {
         <TopBar>Línguas Indígenas</TopBar>
         <View>
           <SearchBar
-            placeholder="Pesquisar por um Tronco"
+            placeholder="Pesquisar por uma Família"
             onChange={setTrunkSearch}
           />
           <Filter onChangeV={setVisib} />

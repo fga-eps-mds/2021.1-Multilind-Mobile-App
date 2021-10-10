@@ -6,7 +6,7 @@ export function LanguageInfo({ language, style }) {
   return (
     <View style={[styles.textcontainer, style]}>
       <Text style={styles.firsttext}>
-        Tronco Linguístico: {language.tronco.nome ?? 'Isoladas'}
+        Família Linguística: {language.tronco.nome ?? 'Isolada'}
       </Text>
       {/* <Text style={styles.sectext}>
         Regiões Faladas: {language.regioesfaladas}

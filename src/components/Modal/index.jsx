@@ -80,7 +80,7 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
                 style={{ left: 5 }}
               />
               <Text style={styles.textmodal}>
-                Listar por tronco linguistico
+                Listar por família linguistica
               </Text>
             </Pressable>
           </View>
