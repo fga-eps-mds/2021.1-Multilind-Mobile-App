@@ -7,12 +7,15 @@ import { Button } from '../../components';
 import styles from './styles';
 import dicionary from '../../assets/images/dicionary.png';
 import portraitimg from '../../assets/images/portrait.png';
+import { useLanguage } from '../../contexts';
 
 export function LanguageInitialScreen() {
   const route = useRoute();
-  const language = route.params?.language;
+  const idLanguage = route.params?.id;
   const navigation = useNavigation();
-  console.log(language);
+  const { languages } = useLanguage();
+  const language = languages.filter((lang) => lang.id_lingua === idLanguage)[0];
+
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
@@ -24,14 +27,14 @@ export function LanguageInitialScreen() {
         <AntDesign name="left" size={24} color="#B1B1B1" />
       </TouchableOpacity>
 
-      <Text style={styles.title}>{language.nome}</Text>
+      <Text style={styles.title}>{language?.nome}</Text>
 
       <View style={styles.textcontainer}>
         <Text style={styles.firsttext}>
-          Tronco Linguistico: {language.troncolinguistico}
+          Tronco Linguistico: {language?.troncolinguistico}
         </Text>
         <Text style={styles.sectext}>
-          Regiões Faladas: {language.regioesfaladas}
+          Regiões Faladas: {language?.regioesfaladas}
         </Text>
         <Text style={styles.thirdtext}>20% de falantes</Text>
         <View style={styles.greypercentage}>
