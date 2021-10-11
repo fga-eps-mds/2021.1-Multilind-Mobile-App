@@ -8,9 +8,6 @@ export function LanguageInfo({ language, style }) {
       <Text style={styles.firsttext}>
         Família Linguística: {language.tronco.nome ?? 'Isolada'}
       </Text>
-      {/* <Text style={styles.sectext}>
-        Regiões Faladas: {language.regioesfaladas}
-      </Text> */}
       <Text style={styles.thirdtext}>20% de falantes</Text>
       <View style={styles.greypercentage}>
         <View style={styles.yellowpercentage} />
