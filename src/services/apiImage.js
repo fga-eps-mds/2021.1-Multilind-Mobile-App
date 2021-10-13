@@ -1,7 +1,8 @@
 import axios from 'axios';
+import urls from '../config/env';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000',
+  baseURL: urls.imagesServer,
   headers: {
     'Content-type': 'application/json',
   },

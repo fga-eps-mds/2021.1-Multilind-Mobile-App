@@ -2,9 +2,13 @@ import { StyleSheet } from 'react-native';
 import { MONTSERRAT_SEMIBOLD, MONTSERRAT_REGULAR } from '../../constants';
 
 const styles = StyleSheet.create({
+  bottomModalContainer: {
+    height: null,
+  },
   title: {
     fontFamily: MONTSERRAT_SEMIBOLD,
     fontSize: 24,
+    textAlign: 'center',
   },
   subtitle: {
     fontFamily: MONTSERRAT_SEMIBOLD,
@@ -23,12 +27,13 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   body: {
-    flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 10,
   },
   buttons: {
-    marginTop: 34,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
   },
 });
 

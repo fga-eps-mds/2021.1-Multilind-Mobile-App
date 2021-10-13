@@ -4,6 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute } from '@react-navigation/native';
 import styles from './styles';
+import { useLanguage } from '../../contexts';
 import { portraitImage, dicionaryImage } from '../../assets/images';
 import {
   GoBack,
@@ -15,7 +16,9 @@ import {
 
 export function LanguageInitialScreen() {
   const route = useRoute();
-  const language = route.params?.language;
+  const idLanguage = route.params?.id;
+  const { languages } = useLanguage();
+  const language = languages.filter((lang) => lang.id_lingua === idLanguage)[0];
 
   return (
     <SafeAreaView>
