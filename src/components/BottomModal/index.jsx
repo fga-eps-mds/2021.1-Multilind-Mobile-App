@@ -5,7 +5,7 @@ import modalStyles from './styles';
 
 const MODAL_HEIGHT = SCREEN_HEIGHT * 0.35;
 const MODAL_WIDTH = SCREEN_WIDTH;
-export function BottomModal({ visible, toggle, children }) {
+export function BottomModal({ visible, toggle, style, children }) {
   const translateY = useRef(new Animated.Value(MODAL_HEIGHT)).current;
   const [modalVisible, setModalVisible] = useState(visible);
 
@@ -47,12 +47,13 @@ export function BottomModal({ visible, toggle, children }) {
       />
       <Animated.View
         style={[
-          modalStyles.modal,
           {
             width: MODAL_WIDTH,
             height: MODAL_HEIGHT,
             transform: [{ translateY }],
           },
+          modalStyles.modal,
+          style,
         ]}
       >
         {children}

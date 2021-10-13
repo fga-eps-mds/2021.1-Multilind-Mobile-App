@@ -7,6 +7,7 @@ import {
   LocationContextProvider,
   LanguageContextProvider,
   TrunkContextProvider,
+  IdiomContextProvider,
 } from './src/contexts';
 import { useCustomFonts } from './src/helpers';
 
@@ -18,16 +19,18 @@ export default function App() {
   }
 
   return (
-    <TrunkContextProvider>
-      <LanguageContextProvider>
-        <LocationContextProvider>
-          <SafeAreaProvider>
-            <NavigationContainer>
-              <BottomNavigation />
-            </NavigationContainer>
-          </SafeAreaProvider>
-        </LocationContextProvider>
-      </LanguageContextProvider>
-    </TrunkContextProvider>
+    <IdiomContextProvider>
+      <TrunkContextProvider>
+        <LanguageContextProvider>
+          <LocationContextProvider>
+            <SafeAreaProvider>
+              <NavigationContainer>
+                <BottomNavigation />
+              </NavigationContainer>
+            </SafeAreaProvider>
+          </LocationContextProvider>
+        </LanguageContextProvider>
+      </TrunkContextProvider>
+    </IdiomContextProvider>
   );
 }

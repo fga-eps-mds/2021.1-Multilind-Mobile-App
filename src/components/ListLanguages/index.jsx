@@ -12,7 +12,7 @@ export function ListLanguages({ listLanguage }) {
     <View key={language.id_lingua} style={styles.listcontainer}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('LanguageInitial', { language });
+          navigation.navigate('LanguageInitial', { id: language.id_lingua });
         }}
         style={styles.list}
       >
