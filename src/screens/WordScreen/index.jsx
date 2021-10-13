@@ -25,7 +25,7 @@ export function WordsScreen() {
 
   const list = () =>
     words
-      .filter(
+      ?.filter(
         (word) => word.significado.substr(0, 1).toLowerCase() === letter.toLowerCase()
       )
       .map((word) => (
