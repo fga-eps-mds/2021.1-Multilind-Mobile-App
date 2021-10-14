@@ -4,7 +4,7 @@ import { useRoute } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService } from '../../services';
 import { GoBack, TopBar, ListWords, SearchBar } from '../../components';
-import { removeAccent } from '../../utils/removeAccent';
+import { removeAccent, FilterListSearch } from '../../utils';
 
 export function WordsScreen() {
   const route = useRoute();
@@ -36,19 +36,14 @@ export function WordsScreen() {
 
         <ScrollView style={{ top: '4%' }}>
           <ListWords
-            listWords={words
-              .filter(
+            listWords={FilterListSearch(
+              words.filter(
                 (word) =>
                   removeAccent(word.nome[0]).toLowerCase() ===
                   letter.toLowerCase()
-              )
-              .filter((el) =>
-                wordSearch === '' ||
-                el.nome.toLowerCase().substr(0, wordSearch.length) ===
-                  wordSearch.toLowerCase()
-                  ? el
-                  : false
-              )}
+              ),
+              wordSearch
+            )}
           />
         </ScrollView>
       </View>
