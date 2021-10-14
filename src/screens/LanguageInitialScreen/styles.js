@@ -1,74 +1,37 @@
 import { StyleSheet } from 'react-native';
-import {
-  MONTSERRAT_BOLD,
-  MONTSERRAT_SEMIBOLD,
-  MONTSERRAT_REGULAR,
-} from '../../constants';
+import { MONTSERRAT_BOLD } from '../../constants';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
+  },
+  LanguageInfo: {
+    marginTop: 10,
   },
   goback: {
     position: 'absolute',
     marginTop: 70,
     left: 15,
   },
-
+  dictChildren: {
+    marginBottom: 16,
+  },
+  Dict: {
+    width: '90%',
+    marginBottom: '8.3%',
+    marginTop: '12%',
+  },
   title: {
     fontFamily: MONTSERRAT_BOLD,
     fontSize: 30,
     top: 5,
   },
-
-  textcontainer: {
-    width: '90%',
-    top: 50,
-  },
-
-  firsttext: {
-    fontFamily: MONTSERRAT_REGULAR,
-    fontSize: 16,
-  },
-  sectext: {
-    paddingTop: 15,
-    fontFamily: MONTSERRAT_REGULAR,
-    fontSize: 16,
-  },
-  thirdtext: {
-    paddingTop: 12,
-    fontFamily: MONTSERRAT_REGULAR,
-    fontSize: 16,
-  },
-  greypercentage: {
-    fontFamily: MONTSERRAT_REGULAR,
-    backgroundColor: '#E5E5E5',
-    width: 277,
-    height: 27,
-    borderRadius: 13.5,
-    marginBottom: 20,
-    marginTop: 7,
-  },
-  yellowpercentage: {
-    fontFamily: MONTSERRAT_REGULAR,
-    backgroundColor: '#FFC100',
-    width: 75,
-    height: '100%',
-    borderRadius: 13.5,
-  },
   buttonscontainer: {
     top: 80,
     width: '90%',
-  },
-  dictionary: {
-    height: 95,
-    backgroundColor: 'white',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderRadius: 15,
-    paddingHorizontal: 20,
   },
   portrait: {
     height: 95,
@@ -80,50 +43,25 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     top: 15,
   },
-  flexview: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  img: {
-    width: 50,
-    height: 50,
-  },
-  buttontext: {
-    color: 'black',
-    paddingLeft: 29,
-    fontFamily: MONTSERRAT_SEMIBOLD,
-    fontSize: 24,
-  },
-
-  info: {
-    width: '100%',
-    top: 45,
-    backgroundColor: '#2D48BA',
-    height: 49,
-    borderRadius: 21.5,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-
-  buttoninfo: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    left: 26,
-  },
-
-  infotext: {
-    paddingLeft: 66,
-    fontFamily: MONTSERRAT_SEMIBOLD,
-    fontSize: 16,
-    color: 'white',
-  },
 
   plusbutton: {
-    width: 70,
+    marginTop: '9%',
+    marginLeft: '80%',
+    width: 43,
+    height: 43,
+    borderRadius: 43 / 2,
+    alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: 'white',
-    marginTop: 130,
-    marginLeft: 290,
+    shadowColor: 'rgba(0, 0, 0, 0.25)',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.34,
+    shadowRadius: 6.27,
+
+    elevation: 10,
   },
 });
 

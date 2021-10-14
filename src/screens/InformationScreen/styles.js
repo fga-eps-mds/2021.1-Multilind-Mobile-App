@@ -64,17 +64,6 @@ const styles = StyleSheet.create({
     top: 55,
     left: 15,
   },
-  // plusbutton: {
-  //   width: 70,
-  //   backgroundColor: 'white',
-  //   marginTop: 650,
-  //   marginLeft: 270,
-  //   position: 'absolute',
-  //   shadowColor: '#FFF',
-  //   shadowOffset: { width: 0, height: 5 },
-  //   shadowOpacity: 1,
-  //   elevation: 1,
-  // },
 });
 
 export default styles;

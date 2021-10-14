@@ -4,11 +4,11 @@ import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 
-export const GoBack = () => {
+export const GoBack = ({ style }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-      style={styles.goback}
+      style={[styles.goback, style]}
       onPress={() => {
         navigation.goBack();
       }}

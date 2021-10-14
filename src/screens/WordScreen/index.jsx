@@ -5,7 +5,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService } from '../../services';
 import { GoBack, TopBar, ListWords, SearchBar } from '../../components';
 import { removeAccent } from '../../utils/removeAccent';
-import styles from './styles';
 
 export function WordsScreen() {
   const route = useRoute();
