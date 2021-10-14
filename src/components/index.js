@@ -4,6 +4,7 @@ export { BottomModal } from './BottomModal';
 export { ContentBottomModal } from './ContentBottomModal';
 export { Button } from './Button';
 export { ListLanguages } from './ListLanguages';
+export { ListWords } from './ListWords';
 export { ModalMod } from './Modal';
 export { TopBar } from './TopBar';
 export { SearchBar } from './SearchBar';
