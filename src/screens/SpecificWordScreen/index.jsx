@@ -20,7 +20,7 @@ export function SpecificWordScreen() {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ marginTop: insets.top - 15 }}>
         <GoBack />
-        <TopBar>{word.significado}</TopBar>
+        <TopBar>{word.nome.split(',')[0]}</TopBar>
       </View>
       <ScrollView
         style={{
@@ -45,7 +45,7 @@ export function SpecificWordScreen() {
             fontSize: 14,
           }}
         >
-          {word.nome}
+          {word.significado}
         </Text>
         <View
           style={{
