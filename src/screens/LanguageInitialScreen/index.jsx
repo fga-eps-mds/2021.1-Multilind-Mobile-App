@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, ScrollView, TouchableOpacity } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRoute } from '@react-navigation/native';
 import styles from './styles';
@@ -45,10 +44,6 @@ export function LanguageInitialScreen() {
             />
           </View>
           <MoreInfo language={language} />
-
-          <TouchableOpacity style={styles.plusbutton}>
-            <AntDesign name="plus" size={24} color="blue" />
-          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

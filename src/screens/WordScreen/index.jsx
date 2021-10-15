@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
-import { Entypo, AntDesign } from '@expo/vector-icons';
-import { useRoute, useNavigation } from '@react-navigation/native';
+import { View, ScrollView } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService } from '../../services';
-import { DARK_GRAY } from '../../constants';
-import { GoBack, TopBar, Input } from '../../components';
-import styles from './styles';
+import { GoBack, TopBar, ListWords, SearchBar } from '../../components';
+import { removeAccent, FilterListSearch } from '../../utils';
 
 export function WordsScreen() {
   const route = useRoute();
   const letter = route.params?.alphabetParam.name;
-  const navigation = useNavigation();
   const language = route.params?.language;
   const [words, setWords] = useState([]);
+  const [wordSearch, setWordSearch] = useState('');
 
   useEffect(() => {
     async function getWords() {
@@ -23,56 +21,29 @@ export function WordsScreen() {
     getWords();
   }, []);
 
-  const list = () =>
-    words
-      ?.filter(
-        (word) => word.significado.substr(0, 1).toLowerCase() === letter.toLowerCase()
-      )
-      .map((word) => (
-        <View key={word.id_palavra} style={styles.listcontainer}>
-          {word ? (
-            <TouchableOpacity
-              style={styles.list}
-              onPress={() => {
-                navigation.navigate('SpecificWord', { word });
-              }}
-            >
-              <Text style={styles.textlist}>{word.significado}</Text>
-              <AntDesign
-                name="right"
-                size={24}
-                color="#B1B1B1"
-                style={styles.arrow}
-              />
-            </TouchableOpacity>
-          ) : (
-            <></>
-          )}
-        </View>
-      ));
-
   return (
-    <SafeAreaView style={{ flex: 0.79 }}>
-      <View style={{ marginTop: '-3%' }}>
+    <SafeAreaView>
+      <View style={{ paddingVertical: 10 }}>
         <GoBack />
         <TopBar>{letter}</TopBar>
+        <SearchBar
+          placeholder="Pesquisar por uma Palavra"
+          onChange={setWordSearch}
+        />
       </View>
       <View>
-        <View>
-          <Input
-            icon={
-              <Entypo
-                name="magnifying-glass"
-                size={30}
-                color={DARK_GRAY}
-                style={{ left: 10 }}
-              />
-            }
-            inputContainerStyle={[styles.searchBar]}
-            placeholder="Pesquisar palavra"
+        <ScrollView>
+          <ListWords
+            listWords={FilterListSearch(
+              words.filter(
+                (word) =>
+                  removeAccent(word.nome[0]).toLowerCase() ===
+                  letter.toLowerCase()
+              ),
+              wordSearch
+            )}
           />
-        </View>
-        <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
