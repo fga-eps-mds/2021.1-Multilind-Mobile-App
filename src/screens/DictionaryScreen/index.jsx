@@ -14,7 +14,6 @@ export function DictionaryScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const navigation = useNavigation();
-  console.log('dictionary', language);
   const list = () =>
     alphabet.map((alphabetParam) => (
       <View key={alphabetParam.id} style={styles.listcontainer}>

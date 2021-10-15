@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../constants';
 import styles from './styles';
-import { sortName, inverseSortName } from '../../utils/sortByName';
+import { sortName, inverseSortName } from '../../utils';
 
 export function ModalMod({ list, onChange, onChangeV, visual }) {
   const navigation = useNavigation();
@@ -80,7 +80,7 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
                 style={{ left: 5 }}
               />
               <Text style={styles.textmodal}>
-                Listar por tronco linguistico
+                Listar por família linguistica
               </Text>
             </Pressable>
           </View>

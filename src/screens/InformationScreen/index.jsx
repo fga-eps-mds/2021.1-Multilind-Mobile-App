@@ -70,10 +70,6 @@ export function InformationScreen() {
           </Text>
         </View>
       </ScrollView>
-      {/* <Button
-        style={styles.plusbutton}
-        icon={<AntDesign name="plus" size={26} color="blue" />}
-      /> */}
     </SafeAreaView>
   );
 }

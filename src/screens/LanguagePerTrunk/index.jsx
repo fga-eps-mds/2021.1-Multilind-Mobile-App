@@ -3,6 +3,7 @@ import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useTrunk } from '../../contexts';
+import { FilterListSearch } from '../../utils';
 import {
   ListLanguages,
   ModalMod,
@@ -19,66 +20,59 @@ export function LanguagePerTrunk() {
   const [expanded, setExpanded] = useState(false);
   const [visib, setVisib] = useState(false);
 
-  const updateSearch = (event) => setTrunkSearch(event);
-  const updateLanguage = (value) => setListLanguage(value);
-  const updateVisib = (value) => setVisib(value);
-  const toggleExpand = (index) =>
-    setExpanded(expanded === index ? null : index);
-
   const list = () =>
-    listTrunk
-      .filter((tronco) =>
-        trunkSearch === '' ||
-        tronco.nome.toLowerCase().substring(0, trunkSearch.length) ===
-          trunkSearch.toLowerCase()
-          ? tronco
-          : false
-      )
-      .map((tronco, index) => (
-        <View key={tronco.id_tronco} style={styles.listcontainer}>
-          <TouchableOpacity
-            style={styles.list}
-            onPress={() => toggleExpand(index)}
-          >
-            <View style={styles.troncoLinguas}>
-              <Text style={styles.textlist}>{tronco.nome}</Text>
-              {tronco.linguas.length > 0 && (
-                <Text style={styles.qtdLinguas}>
-                  {`${tronco.linguas.length} línguas`}
-                </Text>
-              )}
-            </View>
+    FilterListSearch(listTrunk, trunkSearch).map((tronco, index) => (
+      <View key={tronco.id_tronco} style={styles.listcontainer}>
+        <TouchableOpacity
+          style={styles.list}
+          onPress={() => setExpanded(expanded === index ? null : index)}
+        >
+          <View style={styles.troncoLinguas}>
+            <Text style={styles.textlist}>{tronco.nome}</Text>
             {tronco.linguas.length > 0 && (
-              <AntDesign
-                name={expanded === index ? 'up' : 'down'}
-                size={24}
-                color="#B1B1B1"
-                style={styles.arrow}
-              />
+              <Text style={styles.qtdLinguas}>
+                {`${tronco.linguas.length} línguas`}
+              </Text>
             )}
-          </TouchableOpacity>
-          {expanded === index && (
-            <ListLanguages listLanguage={tronco.linguas} />
+          </View>
+          {tronco.linguas.length > 0 && (
+            <AntDesign
+              name={expanded === index ? 'up' : 'down'}
+              size={24}
+              color="#B1B1B1"
+              style={styles.arrow}
+            />
           )}
-        </View>
-      ));
+        </TouchableOpacity>
+
+        {expanded === index && (
+          <ListLanguages
+            listLanguage={tronco.linguas.map((lingua) =>
+              Object.assign(lingua, {
+                tronco: { nome: tronco.nome, id_tronco: tronco.id_tronco },
+              })
+            )}
+          />
+        )}
+      </View>
+    ));
 
   return (
     <SafeAreaView>
       <ModalMod
         list={listTrunk}
-        onChange={updateLanguage}
-        onChangeV={updateVisib}
+        onChange={setListLanguage}
+        onChangeV={setVisib}
         visual={visib}
       />
       <View>
         <TopBar>Línguas Indígenas</TopBar>
         <View>
           <SearchBar
-            placeholder="Pesquisar por um Tronco"
-            onChange={updateSearch}
+            placeholder="Pesquisar por uma Família"
+            onChange={setTrunkSearch}
           />
-          <Filter onChangeV={updateVisib} />
+          <Filter onChangeV={setVisib} />
         </View>
         <ScrollView style={styles.scrollView}>{list()}</ScrollView>
       </View>

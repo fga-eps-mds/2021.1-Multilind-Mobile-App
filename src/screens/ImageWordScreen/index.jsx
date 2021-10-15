@@ -15,7 +15,7 @@ export function ImageWordScreen() {
   useEffect(() => {
     async function getWords() {
       WordService.getAllWords(language.id_lingua).then(async (response) => {
-        const palavrasResponse = response[0].palavras;
+        const palavrasResponse = response.palavras;
         const wordsFound = await Promise.all(
           palavrasResponse.map(async (wordImage) => {
             const image = await ImageWordService.getImageWords(

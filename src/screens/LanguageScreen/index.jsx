@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLanguage } from '../../contexts';
+import { FilterListSearch } from '../../utils';
 import {
   ListLanguages,
   ModalMod,
@@ -16,16 +17,12 @@ export function LanguageScreen() {
   const [languageSearch, setLanguageSearch] = useState('');
   const [visib, setVisib] = useState(false);
 
-  const updateSearch = (event) => setLanguageSearch(event);
-  const updateLanguage = (value) => setListLanguage(value);
-  const updateVisib = (value) => setVisib(value);
-
   return (
     <SafeAreaView>
       <ModalMod
         list={listLanguage}
-        onChange={updateLanguage}
-        onChangeV={updateVisib}
+        onChange={setListLanguage}
+        onChangeV={setVisib}
         visual={visib}
       />
       <View>
@@ -33,22 +30,14 @@ export function LanguageScreen() {
         <View>
           <SearchBar
             placeholder="Pesquisar por uma língua"
-            onChange={updateSearch}
+            onChange={setLanguageSearch}
           />
-          <Filter onChangeV={updateVisib} />
+          <Filter onChangeV={setVisib} />
         </View>
 
         <ScrollView>
           <ListLanguages
-            listLanguage={listLanguage.filter((language) =>
-              languageSearch === '' ||
-              language.nome
-                .toLowerCase()
-                .substring(0, languageSearch.length) ===
-                languageSearch.toLowerCase()
-                ? language
-                : false
-            )}
+            listLanguage={FilterListSearch(listLanguage, languageSearch)}
           />
         </ScrollView>
       </View>
