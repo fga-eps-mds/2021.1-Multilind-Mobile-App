@@ -1,16 +1,13 @@
 import React from 'react';
 import { View, Text, ScrollView, SafeAreaView } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRoute } from '@react-navigation/native';
-import { FontAwesome } from '@expo/vector-icons';
 import { GoBack, TopBar } from '../../components';
 import {
   MONTSERRAT_BOLD,
   MONTSERRAT_SEMIBOLD,
   SCREEN_HEIGHT,
 } from '../../constants';
-import styles from './styles';
 
 export function SpecificWordScreen() {
   const insets = useSafeAreaInsets();
