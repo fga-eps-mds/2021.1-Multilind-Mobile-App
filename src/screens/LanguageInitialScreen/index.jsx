@@ -46,9 +46,6 @@ export function LanguageInitialScreen() {
           </View>
           <MoreInfo language={language} />
 
-          <TouchableOpacity style={styles.plusbutton}>
-            <AntDesign name="plus" size={24} color="blue" />
-          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

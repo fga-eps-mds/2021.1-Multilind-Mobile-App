@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Entypo, AntDesign } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -7,9 +7,10 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import Alphabet from '../../alphabet.json';
 import { DARK_GRAY } from '../../constants';
-import { GoBack, TopBar, Input } from '../../components';
+import { GoBack, TopBar, Input, SearchBar } from '../../components';
 
 export function DictionaryScreen() {
+  const [search, setSearch] = useState('');
   const { alphabet } = Alphabet;
   const route = useRoute();
   const language = route.params?.language;
@@ -36,31 +37,14 @@ export function DictionaryScreen() {
   const insets = useSafeAreaInsets();
 
   return (
-    <SafeAreaView style={{ flex: 0.97 }}>
-      <View style={{ marginTop: insets.top - 10 }}>
+    <SafeAreaView>
+      <View style={{paddingVertical: 10}}>
         <GoBack />
         <TopBar>{language.nome}</TopBar>
+        <SearchBar onChange={setSearch} placeholder="Pesquisar letra"/>
       </View>
-      <View>
-        <Input
-          icon={
-            <Entypo
-              name="magnifying-glass"
-              size={30}
-              color={DARK_GRAY}
-              style={{ left: 0 }}
-            />
-          }
-          inputContainerStyle={[
-            styles.searchBar,
-            {
-              top: 17,
-            },
-          ]}
-          placeholder="Pesquisar letra"
-        />
-      </View>
-      <ScrollView style={{ top: '4%' }}>{list()}</ScrollView>
+      
+      <ScrollView>{list()}</ScrollView>
     </SafeAreaView>
   );
 }

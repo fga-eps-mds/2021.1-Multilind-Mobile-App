@@ -22,8 +22,8 @@ export function WordsScreen() {
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 0.79 }}>
-      <View style={{ marginTop: '-3%' }}>
+    <SafeAreaView>
+      <View>
         <GoBack />
         <TopBar>{letter}</TopBar>
       </View>
@@ -33,7 +33,7 @@ export function WordsScreen() {
           onChange={setWordSearch}
         />
 
-        <ScrollView style={{ top: '4%' }}>
+        <ScrollView>
           <ListWords
             listWords={FilterListSearch(
               words.filter(
