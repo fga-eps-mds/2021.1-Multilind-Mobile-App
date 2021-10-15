@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
-import { Entypo, AntDesign } from '@expo/vector-icons';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { AntDesign } from '@expo/vector-icons';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import Alphabet from '../../alphabet.json';
-import { DARK_GRAY } from '../../constants';
-import { GoBack, TopBar, Input, SearchBar } from '../../components';
+import { GoBack, TopBar, SearchBar } from '../../components';
 
 export function DictionaryScreen() {
-  const [search, setSearch] = useState('');
+  const [, setSearch] = useState('');
   const { alphabet } = Alphabet;
   const route = useRoute();
   const language = route.params?.language;
@@ -34,16 +32,15 @@ export function DictionaryScreen() {
         </TouchableOpacity>
       </View>
     ));
-  const insets = useSafeAreaInsets();
 
   return (
     <SafeAreaView>
-      <View style={{paddingVertical: 10}}>
+      <View style={{ paddingVertical: 10 }}>
         <GoBack />
         <TopBar>{language.nome}</TopBar>
-        <SearchBar onChange={setSearch} placeholder="Pesquisar letra"/>
+        <SearchBar onChange={setSearch} placeholder="Pesquisar letra" />
       </View>
-      
+
       <ScrollView>{list()}</ScrollView>
     </SafeAreaView>
   );
