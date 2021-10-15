@@ -23,16 +23,15 @@ export function WordsScreen() {
 
   return (
     <SafeAreaView>
-      <View>
+      <View style={{ paddingVertical: 10 }}>
         <GoBack />
         <TopBar>{letter}</TopBar>
-      </View>
-      <View>
         <SearchBar
-          placeholder="Pesquisar uma Palavra"
+          placeholder="Pesquisar por uma Palavra"
           onChange={setWordSearch}
         />
-
+      </View>
+      <View>
         <ScrollView>
           <ListWords
             listWords={FilterListSearch(

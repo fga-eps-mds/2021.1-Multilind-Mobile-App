@@ -32,7 +32,7 @@ export function SpecificWordScreen() {
             marginTop: insets.top + 30,
             marginLeft: insets.left + 26,
             fontFamily: MONTSERRAT_BOLD,
-            fontSize: 16,
+            fontSize: 23,
           }}
         >
           Significado
@@ -42,7 +42,7 @@ export function SpecificWordScreen() {
             marginTop: 10,
             marginLeft: 26,
             fontFamily: MONTSERRAT_SEMIBOLD,
-            fontSize: 14,
+            fontSize: 20,
           }}
         >
           {word.significado}
@@ -58,12 +58,12 @@ export function SpecificWordScreen() {
             marginRight: 8,
           }}
         >
-          <TouchableOpacity style={styles.buttom}>
+          {/* <TouchableOpacity style={styles.buttom}>
             <View style={styles.buttonimage}>
               <FontAwesome name="image" size={24} color="white" />
               <Text style={styles.textbuttom}>Ver imagem</Text>
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </ScrollView>
     </SafeAreaView>
