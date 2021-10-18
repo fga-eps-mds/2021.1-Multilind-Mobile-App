@@ -32,7 +32,7 @@ export function LanguageInitialScreen() {
               style={styles.dictChildren}
               language={language}
               image={dicionaryImage}
-              navigate="Dictionary"
+              navigate="Words"
               text="Dicionário"
             />
 

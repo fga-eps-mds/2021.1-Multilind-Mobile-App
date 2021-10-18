@@ -4,11 +4,10 @@ import { useRoute } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService } from '../../services';
 import { GoBack, TopBar, ListWords, SearchBar } from '../../components';
-import { removeAccent, FilterListSearch } from '../../utils';
+import { FilterListSearch } from '../../utils';
 
 export function WordsScreen() {
   const route = useRoute();
-  const letter = route.params?.alphabetParam.name;
   const language = route.params?.language;
   const [words, setWords] = useState([]);
   const [wordSearch, setWordSearch] = useState('');
@@ -25,7 +24,7 @@ export function WordsScreen() {
     <SafeAreaView>
       <View style={{ paddingVertical: 10 }}>
         <GoBack />
-        <TopBar>{letter}</TopBar>
+        <TopBar>Palavras</TopBar>
         <SearchBar
           placeholder="Pesquisar por uma Palavra"
           onChange={setWordSearch}
@@ -33,16 +32,7 @@ export function WordsScreen() {
       </View>
       <View>
         <ScrollView>
-          <ListWords
-            listWords={FilterListSearch(
-              words.filter(
-                (word) =>
-                  removeAccent(word.nome[0]).toLowerCase() ===
-                  letter.toLowerCase()
-              ),
-              wordSearch
-            )}
-          />
+          <ListWords listWords={FilterListSearch(words, wordSearch)} />
         </ScrollView>
       </View>
     </SafeAreaView>
