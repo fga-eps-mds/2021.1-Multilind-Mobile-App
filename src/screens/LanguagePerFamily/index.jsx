@@ -27,7 +27,7 @@ export function LanguagePerFamily() {
           style={styles.list}
           onPress={() => setExpanded(expanded === index ? null : index)}
         >
-          <View style={styles.troncoLinguas}>
+          <View style={styles.familyLinguas}>
             <Text style={styles.textlist}>{tronco.nome}</Text>
             {tronco.linguas.length > 0 && (
               <Text style={styles.qtdLinguas}>
