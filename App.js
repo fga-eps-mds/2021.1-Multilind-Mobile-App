@@ -6,7 +6,7 @@ import { BottomNavigation } from './src/navigation';
 import {
   LocationContextProvider,
   LanguageContextProvider,
-  TrunkContextProvider,
+  FamilyContextProvider,
   IdiomContextProvider,
 } from './src/contexts';
 import { useCustomFonts } from './src/helpers';
@@ -20,7 +20,7 @@ export default function App() {
 
   return (
     <IdiomContextProvider>
-      <TrunkContextProvider>
+      <FamilyContextProvider>
         <LanguageContextProvider>
           <LocationContextProvider>
             <SafeAreaProvider>
@@ -30,7 +30,7 @@ export default function App() {
             </SafeAreaProvider>
           </LocationContextProvider>
         </LanguageContextProvider>
-      </TrunkContextProvider>
+      </FamilyContextProvider>
     </IdiomContextProvider>
   );
 }

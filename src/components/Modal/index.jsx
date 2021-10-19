@@ -69,7 +69,7 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
             <Pressable
               style={styles.flex}
               onPress={() => {
-                navigation.navigate('LanguagePerTrunk');
+                navigation.navigate('LanguagePerFamily');
                 onChangeV(false);
               }}
             >

@@ -29,7 +29,7 @@ export function ContentBottomModal({ visible, toggle, content }) {
       style={styles.bottomModalContainer}
     >
       <Text style={styles.title}>{content.title}</Text>
-      <Text style={styles.subtitle}>Tronco Linguístico: {content.origin}</Text>
+      <Text style={styles.subtitle}>Família Linguistica: {content.origin}</Text>
 
       <View style={styles.body}>
         {isEthnicityNotListNull && renderEthnicityList()}

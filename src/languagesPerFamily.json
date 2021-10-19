@@ -1,6 +1,6 @@
 [
   {
-    "id_tronco": 1,
+    "id_familia": 1,
     "id_conteudo": 8,
     "nome": "tupi",
     "linguas": [
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "id_tronco": 2,
+    "id_familia": 2,
     "id_conteudo": 9,
     "nome": "Macro-Jê",
     "linguas": [
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "id_tronco": 3,
+    "id_familia": 3,
     "id_conteudo": 8,
     "nome": "Tupi sem linguas",
     "linguas": []

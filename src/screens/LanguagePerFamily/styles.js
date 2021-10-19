@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   arrow: {
     paddingRight: 14,
   },
-  troncoLinguas: {
+  familiaLinguas: {
     display: 'flex',
     flexDirection: 'row',
   },
