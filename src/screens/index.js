@@ -8,3 +8,4 @@ export { DictionaryScreen } from './DictionaryScreen';
 export { SpecificWordScreen } from './SpecificWordScreen';
 export { LanguagePerTrunk } from './LanguagePerTrunk';
 export { ImageWordScreen } from './ImageWordScreen';
+export { SpecificImageScreen } from './SpecificImageScreen';
