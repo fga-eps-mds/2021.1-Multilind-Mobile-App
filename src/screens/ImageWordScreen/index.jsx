@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
-import { View, ScrollView } from 'react-native';
+import { View, FlatList, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService, ImageWordService } from '../../services';
 import { TopBar, GoBack, ImageContainer } from '../../components';
@@ -11,13 +11,17 @@ export function ImageWordScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const [word, setWord] = useState([]);
+  const [perPage, setPerPage] = useState(6);
+  const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     async function getWords() {
       WordService.getAllWords(language.id_lingua).then(async (response) => {
         const palavrasResponse = response.palavras;
+        const slice = palavrasResponse.slice(offset, offset + perPage);
+        console.log('slice', slice);
         const wordsFound = await Promise.all(
-          palavrasResponse.map(async (wordImage) => {
+          slice.map(async (wordImage) => {
             const image = await ImageWordService.getImageWords(
               wordImage.id_palavra
             );
@@ -31,36 +35,59 @@ export function ImageWordScreen() {
       });
     }
     getWords();
-  }, []);
+  }, [perPage]);
 
-  const list = () =>
-    word.length
-      ? sortName(word).map((currentWord, index) => (
+  const fetchMore = () => {
+    console.log('word.length', word.length);
+    if (perPage <= word.length) {
+      setPerPage(perPage + 6);
+      return (
+        <View
+          style={{
+            paddingVertical: 20,
+            borderTopWidth: 1,
+            borderColor: '#CED0CE',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <ActivityIndicator animating size={'large'} />
+        </View>
+      );
+    }
+    return null;
+  };
+
+  return (
+    <SafeAreaView>
+      <GoBack />
+      <TopBar>{language.nome}</TopBar>
+      <FlatList
+        onEndReachedThreshold={1}
+        onEndReached={fetchMore}
+        style={{
+          marginLeft: 20,
+          marginRight: 20,
+        }}
+        numColumns={2}
+        data={word}
+        renderItem={(currentWord, index) => (
           <View
-            key={currentWord.id_palavra}
+            key={currentWord.item.id_palavra}
             style={
-              word.length === 2 && index === 0
+              currentWord.item.length === 2 && index === 0
                 ? styles.containerImage2
                 : styles.containerImage
             }
           >
             <ImageContainer
-              palavra={currentWord.nome}
-              image={currentWord.url}
+              palavra={currentWord.item.nome.split(',')[0]}
+              image={currentWord.item.url}
             />
           </View>
-        ))
-      : null;
-
-  return (
-    <SafeAreaView>
-      <ScrollView>
-        <GoBack />
-        <TopBar>{language.nome}</TopBar>
-        <View style={styles.content}>
-          <SafeAreaView style={styles.container}>{list()}</SafeAreaView>
-        </View>
-      </ScrollView>
+        )}
+        keyExtractor={(item) => item.id_palavra}
+      />
     </SafeAreaView>
   );
 }
