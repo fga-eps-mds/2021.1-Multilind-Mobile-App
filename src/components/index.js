@@ -14,3 +14,4 @@ export { Filter } from './Filter';
 export { LanguageInfo } from './LanguageInformation';
 export { DictOrImage } from './DictOrImage';
 export { MoreInfo } from './MoreInfo';
+export { WordMeaning } from './WordMeaning';
