@@ -25,12 +25,12 @@ export function SpecificWordScreen() {
         <GoBack />
         <TopBar>{word.nome.split(',')[0]}</TopBar>
       </View>
+      <WordMeaning />
       <ScrollView
         style={{
           height: SCREEN_HEIGHT,
         }}
       >
-        <WordMeaning />
         <View
           style={{
             justifyContent: 'space-between',
@@ -45,7 +45,7 @@ export function SpecificWordScreen() {
           <TouchableOpacity
             style={styles.buttom}
             onPress={() => {
-              navigation.navigate('SpecificImageScreen');
+              navigation.navigate('SpecificImageScreen', { word });
             }}
           >
             <View style={styles.buttonimage}>
