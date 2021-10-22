@@ -52,7 +52,7 @@ export function SpecificWordScreen() {
           >
             <View style={styles.buttonimage}>
               <FontAwesome name="image" size={24} color="white" />
-              <Text style={styles.textbuttom}>Ver imagem</Text>
+              <Text style={styles.textbuttom}>Visualizar imagens</Text>
             </View>
           </TouchableOpacity>
         </View>

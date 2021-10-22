@@ -43,7 +43,7 @@ export function SpecificImageScreen() {
         <TopBar>{word.nome}</TopBar>
       </View>
       <WordMeaning />
-      <Text style={styles.title}>Imagens Relativas</Text>
+      {images.length > 0 && <Text style={styles.title}>Imagens Relativas</Text>}
       <SafeAreaView style={styles.container}>{list()}</SafeAreaView>
     </SafeAreaView>
   );
