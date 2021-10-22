@@ -45,7 +45,9 @@ export function SpecificWordScreen() {
           <TouchableOpacity
             style={styles.buttom}
             onPress={() => {
-              navigation.navigate('SpecificImageScreen', { word });
+              navigation.navigate('SpecificImageScreen', {
+                word,
+              });
             }}
           >
             <View style={styles.buttonimage}>
