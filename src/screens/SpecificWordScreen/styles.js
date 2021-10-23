@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     left: '80%',
   },
   buttom: {
-    width: 179,
+    width: 220,
     height: 37,
     flexDirection: 'row',
     backgroundColor: '#2D48BA',
