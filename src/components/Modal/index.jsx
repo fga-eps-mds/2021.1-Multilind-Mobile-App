@@ -69,7 +69,7 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
             <Pressable
               style={styles.flex}
               onPress={() => {
-                navigation.navigate('LanguagePerTrunk');
+                navigation.navigate('LanguagePerFamily');
                 onChangeV(false);
               }}
             >
@@ -80,7 +80,7 @@ export function ModalMod({ list, onChange, onChangeV, visual }) {
                 style={{ left: 5 }}
               />
               <Text style={styles.textmodal}>
-                Listar por família linguistica
+                Listar por família linguística
               </Text>
             </Pressable>
           </View>
