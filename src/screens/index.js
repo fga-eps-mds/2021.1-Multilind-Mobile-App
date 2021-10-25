@@ -5,5 +5,6 @@ export { LanguageInitialScreen } from './LanguageInitialScreen';
 export { InformationScreen } from './InformationScreen';
 export { WordsScreen } from './WordScreen';
 export { SpecificWordScreen } from './SpecificWordScreen';
-export { LanguagePerTrunk } from './LanguagePerTrunk';
+export { LanguagePerFamily } from './LanguagePerFamily';
 export { ImageWordScreen } from './ImageWordScreen';
+export { SpecificImageScreen } from './SpecificImageScreen';

@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-import styles from '../../screens/LanguagePerTrunk/styles';
+import styles from '../../screens/LanguagePerFamily/styles';
 
 export function ListLanguages({ listLanguage }) {
   const navigation = useNavigation();

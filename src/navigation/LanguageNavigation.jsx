@@ -5,9 +5,10 @@ import {
   LanguageInitialScreen,
   WordsScreen,
   SpecificWordScreen,
-  LanguagePerTrunk,
+  LanguagePerFamily,
   ImageWordScreen,
   InformationScreen,
+  SpecificImageScreen,
 } from '../screens';
 
 const Stack = createStackNavigator();
@@ -24,8 +25,12 @@ export function LanguageNavigation() {
       <Stack.Screen name="Information" component={InformationScreen} />
       <Stack.Screen name="Words" component={WordsScreen} />
       <Stack.Screen name="SpecificWord" component={SpecificWordScreen} />
-      <Stack.Screen name="LanguagePerTrunk" component={LanguagePerTrunk} />
+      <Stack.Screen name="LanguagePerFamily" component={LanguagePerFamily} />
       <Stack.Screen name="ImageWordScreen" component={ImageWordScreen} />
+      <Stack.Screen
+        name="SpecificImageScreen"
+        component={SpecificImageScreen}
+      />
     </Stack.Navigator>
   );
 }
