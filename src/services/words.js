@@ -24,7 +24,6 @@ export class WordService {
   }
 
   static async getAllWordsPerPage({ idLingua, page, rowsPerPage }) {
-    // console.log(JSON.parse(obj));
     try {
       const response = await api.get(
         `${url}/pages/${idLingua}/${page}/${rowsPerPage}`

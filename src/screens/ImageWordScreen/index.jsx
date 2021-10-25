@@ -20,7 +20,6 @@ export function ImageWordScreen() {
       rowsPerPage: perPage,
     }).then(async (response) => {
       const palavrasResponse = response.rows[0].palavras;
-      console.log(palavrasResponse);
       const wordsFound = await Promise.all(
         palavrasResponse.map(async (wordImage) => {
           const image = await ImageWordService.getImageWords(
@@ -32,7 +31,6 @@ export function ImageWordScreen() {
           return wordImage;
         })
       );
-      // console.log(wordsFound);
       setWord([...word, ...wordsFound]);
     });
   }
