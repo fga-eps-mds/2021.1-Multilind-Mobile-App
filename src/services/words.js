@@ -22,4 +22,17 @@ export class WordService {
       return { error: true, message: error?.response?.data };
     }
   }
+
+  static async getAllWordsPerPage({ idLingua, page, rowsPerPage }) {
+    // console.log(JSON.parse(obj));
+    try {
+      const response = await api.get(
+        `${url}/pages/${idLingua}/${page}/${rowsPerPage}`
+      );
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      return { error: true, message: error?.response?.data };
+    }
+  }
 }
