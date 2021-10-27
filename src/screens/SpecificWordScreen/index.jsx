@@ -11,7 +11,11 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 import styles from './styles';
 import { GoBack, TopBar, WordMeaning } from '../../components';
-import { SCREEN_HEIGHT } from '../../constants';
+import {
+  SCREEN_HEIGHT,
+  MONTSERRAT_BOLD,
+  MONTSERRAT_SEMIBOLD,
+} from '../../constants';
 
 export function SpecificWordScreen() {
   const insets = useSafeAreaInsets();
