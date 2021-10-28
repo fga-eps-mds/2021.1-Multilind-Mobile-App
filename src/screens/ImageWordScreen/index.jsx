@@ -44,10 +44,12 @@ export function ImageWordScreen() {
                 : styles.containerImage
             }
           >
-            <ImageContainer
-              palavra={currentWord.nome}
-              image={currentWord.url}
-            />
+            {currentWord.url === undefined ? null : (
+              <ImageContainer
+                palavra={currentWord.nome}
+                image={currentWord.url}
+              />
+            )}
           </View>
         ))
       : null;
