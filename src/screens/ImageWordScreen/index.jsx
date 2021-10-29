@@ -34,7 +34,6 @@ export function ImageWordScreen() {
       setWord([...word, ...wordsFound]);
     });
   }
-
   useEffect(() => {
     getWords();
   }, [page]);
@@ -58,21 +57,20 @@ export function ImageWordScreen() {
         numColumns={2}
         data={word}
         renderItem={({ item, index }) => (
-          <View
-            key={item.nome}
-            style={
-              item.length === 2 && index === 0
-                ? styles.containerImage2
-                : styles.containerImage
-            }
-          >
-            {currentWord.url === undefined ? null : (
-              <ImageContainer
-                palavra={currentWord.nome}
-                image={currentWord.url}
-              />
+          <>
+            {item.url === undefined ? null : (
+
+              <View
+                key={item.nome}
+                style={
+                  item.length === 2 && index === 0
+                    ? styles.containerImage2
+                    : styles.containerImage
+                }
+              >
+              </View>
             )}
-          </View>
+          </>
         )}
         keyExtractor={(item) => item.nome}
       />
