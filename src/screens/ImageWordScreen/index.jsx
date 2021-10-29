@@ -59,7 +59,6 @@ export function ImageWordScreen() {
         renderItem={({ item, index }) => (
           <>
             {item.url === undefined ? null : (
-
               <View
                 key={item.nome}
                 style={
@@ -68,6 +67,10 @@ export function ImageWordScreen() {
                     : styles.containerImage
                 }
               >
+                <ImageContainer
+                  palavra={item.nome.split(',', 1)}
+                  image={item.url}
+                />
               </View>
             )}
           </>
