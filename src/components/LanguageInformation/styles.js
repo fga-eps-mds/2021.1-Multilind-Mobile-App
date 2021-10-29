@@ -14,11 +14,18 @@ const styles = StyleSheet.create({
     color: GRAY,
     paddingTop: '2%',
   },
-  sectext: {
+  textlist: {
+    fontSize: 20,
+    fontFamily: MONTSERRAT_SEMIBOLD,
+    color: GRAY,
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  text: {
+    marginLeft: 5,
     fontFamily: MONTSERRAT_SEMIBOLD,
     fontSize: 16,
     color: GRAY,
-    paddingTop: '2%',
   },
   thirdtext: {
     fontFamily: MONTSERRAT_SEMIBOLD,

@@ -66,10 +66,12 @@ export function ImageWordScreen() {
                 : styles.containerImage
             }
           >
-            <ImageContainer
-              palavra={item.nome.split(',', 1)}
-              image={item.url}
-            />
+            {currentWord.url === undefined ? null : (
+              <ImageContainer
+                palavra={currentWord.nome}
+                image={currentWord.url}
+              />
+            )}
           </View>
         )}
         keyExtractor={(item) => item.nome}
