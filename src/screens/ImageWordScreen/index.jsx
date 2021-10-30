@@ -55,7 +55,7 @@ export function ImageWordScreen() {
           marginBottom: '10%',
         }}
         numColumns={2}
-        data={word}
+        data={word.filter((item) => item.url)}
         renderItem={({ item, index }) => (
           <>
             {item.url === undefined ? null : (
