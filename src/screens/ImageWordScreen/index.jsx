@@ -12,7 +12,7 @@ export function ImageWordScreen() {
   const language = route.params?.language;
   const [word, setWord] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
-  const [emptyMessage, setEmptyMessage] = useState(false);
+  // const [emptyMessage, setEmptyMessage] = useState(false);
 
   useEffect(() => {
     async function getWords() {
@@ -25,8 +25,6 @@ export function ImageWordScreen() {
             );
             if (image.length) {
               wordImage.url = image[0].download_url;
-            } else {
-              setEmptyMessage(true);
             }
             return wordImage;
           })
@@ -57,7 +55,12 @@ export function ImageWordScreen() {
             )}
           </View>
         ))
-      : null;
+      :
+      <View>
+        { !showLoading && 
+        <Text style={styles.text}>Ainda não há imagens da língua {language.nome} :(</Text>
+        }
+      </View>;
 
   return (
     <SafeAreaView>
@@ -65,10 +68,7 @@ export function ImageWordScreen() {
         <GoBack />
         <TopBar>{language.nome}</TopBar>
         <View style={styles.content}>
-          {showLoading && <Loading />}
-          {emptyMessage && (
-            <Text>Ainda não há imagens da língua {language.nome} :(</Text>
-          )}
+          { showLoading && <Loading /> }
           <SafeAreaView style={styles.container}>{list()}</SafeAreaView>
         </View>
       </ScrollView>

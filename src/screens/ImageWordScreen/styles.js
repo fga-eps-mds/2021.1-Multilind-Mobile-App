@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { MONTSERRAT_REGULAR } from '../../constants/fonts';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,6 +18,12 @@ const styles = StyleSheet.create({
   content: {
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    marginTop: '50%',
+    fontSize: 16,
+    fontFamily: MONTSERRAT_REGULAR,
+    fontWeight: 'bold',
   },
 });
 
