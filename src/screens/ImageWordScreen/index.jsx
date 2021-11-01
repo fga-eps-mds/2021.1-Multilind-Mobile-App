@@ -44,8 +44,10 @@ export function ImageWordScreen() {
 
   return (
     <SafeAreaView>
-      <GoBack />
-      <TopBar>{language.nome}</TopBar>
+      <View>
+        <GoBack />
+        <TopBar>{language.nome}</TopBar>
+      </View>
       <FlatList
         onEndReachedThreshold={0.9}
         onEndReached={fetchMore}

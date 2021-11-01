@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   },
   containerImage: {
     marginBottom: 50,
-    marginLeft: '4%',
+    marginRight: '4%',
   },
   containerImage2: {
     width: '50%',
