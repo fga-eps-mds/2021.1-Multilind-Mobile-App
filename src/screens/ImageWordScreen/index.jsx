@@ -68,11 +68,16 @@ export function ImageWordScreen() {
                 }
               >
                 <ImageContainer
-                  palavra={item.nome.split(',', 1)}
+                  palavra={
+                    item.nome.includes(';')
+                      ? item.nome.split(';', 1)
+                      : item.nome.split(',', 1)
+                  }
                   image={item.url}
                 />
               </View>
             )}
+            {console.log(item)}
           </>
         )}
         keyExtractor={(item) => item.nome}

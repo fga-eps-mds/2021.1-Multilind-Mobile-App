@@ -2,9 +2,6 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    // justifyContent: 'space-evenly',
-    // display: 'flex',
-    // flexDirection: 'row',
     flexWrap: 'wrap',
   },
   containerImage: {
