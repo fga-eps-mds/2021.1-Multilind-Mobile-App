@@ -3,8 +3,8 @@ import Constants from 'expo-constants';
 const ENV = {
   dev: {
     development: true,
-    contentServer: `https://multilind-content-stagging.herokuapp.com/`,
-    imagesServer: `http://192.168.15.14:5000`,
+    contentServer: `http://192.168.0.88:8000`,
+    imagesServer: `http://192.168.0.88:5000`,
   },
   staging: {
     staging: true,
@@ -34,4 +34,4 @@ function getEnvVars(env = '') {
   return ENV.dev;
 }
 
-export default getEnvVars('staging');
+export default getEnvVars(Constants.manifest.releaseChannel);

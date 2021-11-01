@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService, ImageWordService } from '../../services';
 import { TopBar, GoBack, ImageContainer, Loading } from '../../components';
@@ -12,6 +12,7 @@ export function ImageWordScreen() {
   const language = route.params?.language;
   const [word, setWord] = useState([]);
   const [showLoading, setShowLoading] = useState(true);
+  const [emptyMessage, setEmptyMessage] = useState(false);
 
   useEffect(() => {
     async function getWords() {
@@ -24,6 +25,8 @@ export function ImageWordScreen() {
             );
             if (image.length) {
               wordImage.url = image[0].download_url;
+            } else {
+              setEmptyMessage(true);
             }
             return wordImage;
           })
@@ -62,9 +65,10 @@ export function ImageWordScreen() {
         <GoBack />
         <TopBar>{language.nome}</TopBar>
         <View style={styles.content}>
-            { showLoading && 
-              <Loading></Loading>
-            }
+          {showLoading && <Loading />}
+          {emptyMessage && (
+            <Text>Ainda não há imagens da língua {language.nome} :(</Text>
+          )}
           <SafeAreaView style={styles.container}>{list()}</SafeAreaView>
         </View>
       </ScrollView>
