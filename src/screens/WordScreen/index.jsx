@@ -3,7 +3,7 @@ import { View, ScrollView } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService } from '../../services';
-import { GoBack, TopBar, ListWords, SearchBar } from '../../components';
+import { GoBack, TopBar, ListWords, SearchBar, Loading } from '../../components';
 import { removeAccent, FilterListSearch } from '../../utils';
 
 export function WordsScreen() {
@@ -12,6 +12,7 @@ export function WordsScreen() {
   const language = route.params?.language;
   const [words, setWords] = useState([]);
   const [wordSearch, setWordSearch] = useState('');
+  const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
     async function getWords() {
@@ -19,6 +20,7 @@ export function WordsScreen() {
       setWords(response.palavras);
     }
     getWords();
+    setShowLoading(false);
   }, []);
 
   return (
@@ -32,18 +34,21 @@ export function WordsScreen() {
         />
       </View>
       <View>
-        <ScrollView>
-          <ListWords
-            listWords={FilterListSearch(
-              words.filter(
-                (word) =>
-                  removeAccent(word.nome[0]).toLowerCase() ===
-                  letter.toLowerCase()
-              ),
-              wordSearch
-            )}
-          />
-        </ScrollView>
+          <ScrollView>
+            { showLoading && 
+              <Loading></Loading>
+            }
+             <ListWords
+              listWords={FilterListSearch(
+                words.filter(
+                  (word) =>
+                    removeAccent(word.nome[0]).toLowerCase() ===
+                    letter.toLowerCase()
+                ),
+                wordSearch
+              )}
+            />
+          </ScrollView>
       </View>
     </SafeAreaView>
   );

@@ -8,7 +8,6 @@ import {
   SpecificWordScreen,
   LanguagePerFamily,
   ImageWordScreen,
-  InformationScreen,
   SpecificImageScreen,
 } from '../screens';
 
@@ -23,7 +22,6 @@ export function LanguageNavigation() {
     >
       <Stack.Screen name="Language" component={LanguageScreen} />
       <Stack.Screen name="LanguageInitial" component={LanguageInitialScreen} />
-      <Stack.Screen name="Information" component={InformationScreen} />
       <Stack.Screen name="Dictionary" component={DictionaryScreen} />
       <Stack.Screen name="Words" component={WordsScreen} />
       <Stack.Screen name="SpecificWord" component={SpecificWordScreen} />

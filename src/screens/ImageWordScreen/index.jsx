@@ -3,7 +3,7 @@ import { useRoute } from '@react-navigation/native';
 import { View, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService, ImageWordService } from '../../services';
-import { TopBar, GoBack, ImageContainer } from '../../components';
+import { TopBar, GoBack, ImageContainer, Loading } from '../../components';
 import { sortName } from '../../utils/sortByName';
 import styles from './styles';
 
@@ -11,6 +11,7 @@ export function ImageWordScreen() {
   const route = useRoute();
   const language = route.params?.language;
   const [word, setWord] = useState([]);
+  const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
     async function getWords() {
@@ -28,6 +29,7 @@ export function ImageWordScreen() {
           })
         );
         setWord(wordsFound);
+        setShowLoading(false);
       });
     }
     getWords();
@@ -60,6 +62,9 @@ export function ImageWordScreen() {
         <GoBack />
         <TopBar>{language.nome}</TopBar>
         <View style={styles.content}>
+            { showLoading && 
+              <Loading></Loading>
+            }
           <SafeAreaView style={styles.container}>{list()}</SafeAreaView>
         </View>
       </ScrollView>

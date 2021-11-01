@@ -10,7 +10,6 @@ import {
   TopBar,
   LanguageInfo,
   DictOrImage,
-  MoreInfo,
 } from '../../components';
 
 export function LanguageInitialScreen() {
@@ -43,7 +42,6 @@ export function LanguageInitialScreen() {
               text="Imagens"
             />
           </View>
-          <MoreInfo language={language} />
         </View>
       </ScrollView>
     </SafeAreaView>
