@@ -58,7 +58,7 @@ export function ImageWordScreen() {
         data={word.filter((item) => item.url)}
         renderItem={({ item, index }) => (
           <>
-            {item.url === undefined ? null : (
+            {item.url === undefined || item.nome === undefined ? null : (
               <View
                 key={item.nome}
                 style={
@@ -77,7 +77,7 @@ export function ImageWordScreen() {
                 />
               </View>
             )}
-            {console.log(item)}
+            {/* {console.log(item)} */}
           </>
         )}
         keyExtractor={(item) => item.nome}
