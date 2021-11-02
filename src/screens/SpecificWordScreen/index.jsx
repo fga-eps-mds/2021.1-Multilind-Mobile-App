@@ -11,7 +11,11 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import { FontAwesome } from '@expo/vector-icons';
 import styles from './styles';
 import { GoBack, TopBar, WordMeaning } from '../../components';
-import { SCREEN_HEIGHT } from '../../constants';
+import {
+  SCREEN_HEIGHT,
+  MONTSERRAT_BOLD,
+  MONTSERRAT_SEMIBOLD,
+} from '../../constants';
 
 export function SpecificWordScreen() {
   const insets = useSafeAreaInsets();
@@ -23,7 +27,7 @@ export function SpecificWordScreen() {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ marginTop: insets.top - 15 }}>
         <GoBack />
-        <TopBar>{word.nome.split(',')[0]}</TopBar>
+        <TopBar>{word.significado}</TopBar>
       </View>
       <WordMeaning />
       <ScrollView
@@ -31,6 +35,26 @@ export function SpecificWordScreen() {
           height: SCREEN_HEIGHT,
         }}
       >
+        <Text
+          style={{
+            marginTop: insets.top + 30,
+            marginLeft: insets.left + 26,
+            fontFamily: MONTSERRAT_BOLD,
+            fontSize: 23,
+          }}
+        >
+          Tradução
+        </Text>
+        <Text
+          style={{
+            marginTop: 10,
+            marginLeft: 26,
+            fontFamily: MONTSERRAT_SEMIBOLD,
+            fontSize: 20,
+          }}
+        >
+          {word.nome}
+        </Text>
         <View
           style={{
             justifyContent: 'space-between',

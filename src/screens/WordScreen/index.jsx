@@ -10,11 +10,10 @@ import {
   SearchBar,
   Loading,
 } from '../../components';
-import { removeAccent, FilterListSearch } from '../../utils';
+import { FilterListSearch } from '../../utils';
 
 export function WordsScreen() {
   const route = useRoute();
-  const letter = route.params?.alphabetParam.name;
   const language = route.params?.language;
   const [words, setWords] = useState([]);
   const [wordSearch, setWordSearch] = useState('');
@@ -33,7 +32,7 @@ export function WordsScreen() {
     <SafeAreaView>
       <View style={{ paddingVertical: 10 }}>
         <GoBack />
-        <TopBar>{letter}</TopBar>
+        <TopBar>Palavras</TopBar>
         <SearchBar
           placeholder="Pesquisar por uma Palavra"
           onChange={setWordSearch}
@@ -42,16 +41,7 @@ export function WordsScreen() {
       <View>
         <ScrollView>
           {showLoading && <Loading />}
-          <ListWords
-            listWords={FilterListSearch(
-              words.filter(
-                (word) =>
-                  removeAccent(word.nome[0]).toLowerCase() ===
-                  letter.toLowerCase()
-              ),
-              wordSearch
-            )}
-          />
+          <ListWords listWords={FilterListSearch(words, wordSearch)} />
         </ScrollView>
       </View>
     </SafeAreaView>

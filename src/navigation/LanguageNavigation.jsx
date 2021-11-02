@@ -3,7 +3,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import {
   LanguageScreen,
   LanguageInitialScreen,
-  DictionaryScreen,
   WordsScreen,
   SpecificWordScreen,
   LanguagePerFamily,
@@ -22,7 +21,6 @@ export function LanguageNavigation() {
     >
       <Stack.Screen name="Language" component={LanguageScreen} />
       <Stack.Screen name="LanguageInitial" component={LanguageInitialScreen} />
-      <Stack.Screen name="Dictionary" component={DictionaryScreen} />
       <Stack.Screen name="Words" component={WordsScreen} />
       <Stack.Screen name="SpecificWord" component={SpecificWordScreen} />
       <Stack.Screen name="LanguagePerFamily" component={LanguagePerFamily} />
