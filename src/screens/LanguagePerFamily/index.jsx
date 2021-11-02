@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFamily } from '../../contexts';
 import { FilterListSearch } from '../../utils';
 import {
-  ListLanguages,
+  Language,
   ModalMod,
   TopBar,
   SearchBar,
@@ -23,6 +23,7 @@ export function LanguagePerFamily() {
   const list = () =>
     FilterListSearch(listFamily, familySearch).map((tronco, index) => (
       <View key={tronco.id_tronco} style={styles.listcontainer}>
+        {console.log(tronco)}
         <TouchableOpacity
           style={styles.list}
           onPress={() => setExpanded(expanded === index ? null : index)}
@@ -45,15 +46,10 @@ export function LanguagePerFamily() {
           )}
         </TouchableOpacity>
 
-        {expanded === index && (
-          <ListLanguages
-            listLanguage={tronco.linguas.map((lingua) =>
-              Object.assign(lingua, {
-                tronco: { nome: tronco.nome, id_tronco: tronco.id_tronco },
-              })
-            )}
-          />
-        )}
+        {expanded === index &&
+          tronco.linguas?.map((lingua) => (
+            <Language key={lingua.id_lingua} language={lingua} />
+          ))}
       </View>
     ));
 

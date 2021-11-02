@@ -2,7 +2,6 @@ export { LanguageScreen } from './LanguageScreen';
 export { SettingsScreen } from './SettingsScreen';
 export { MapScreen } from './MapScreen';
 export { LanguageInitialScreen } from './LanguageInitialScreen';
-export { InformationScreen } from './InformationScreen';
 export { WordsScreen } from './WordScreen';
 export { SpecificWordScreen } from './SpecificWordScreen';
 export { LanguagePerFamily } from './LanguagePerFamily';

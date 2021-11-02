@@ -16,6 +16,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  images: {
+    marginLeft: '5%',
+    marginRight: '5%',
+    marginBottom: '10%',
+  },
 });
 
 export default styles;

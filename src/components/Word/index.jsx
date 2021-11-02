@@ -5,12 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 
 import styles from '../../screens/LanguagePerFamily/styles';
 
-export function ListWords({ listWords }) {
+export function Word({ word }) {
   const navigation = useNavigation();
-
-  return listWords?.map((word) => (
+  return (
     <View key={word.id_palavra} style={styles.listcontainer}>
-      {word ? (
+      {word && (
         <TouchableOpacity
           style={styles.list}
           onPress={() => {
@@ -25,9 +24,7 @@ export function ListWords({ listWords }) {
             style={styles.arrow}
           />
         </TouchableOpacity>
-      ) : (
-        <></>
       )}
     </View>
-  ));
+  );
 }

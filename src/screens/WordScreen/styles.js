@@ -1,42 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { MONTSERRAT_SEMIBOLD } from '../../constants';
+import { SCREEN_HEIGHT } from '../../constants';
 
 const styles = StyleSheet.create({
-  listcontainer: {
-    margin: 1,
-  },
-  list: {
-    backgroundColor: 'white',
-    borderRadius: 0,
-    paddingTop: 13,
-    paddingBottom: 14,
-    paddingHorizontal: 25,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  textlist: {
-    color: 'black',
-    fontSize: 20,
-    fontFamily: MONTSERRAT_SEMIBOLD,
-  },
-  arrow: {
-    paddingRight: 14,
-  },
-  goback: {
-    position: 'absolute',
-    top: 55,
-    left: 15,
-  },
-  container: {
-    height: 70,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  searchBar: {
-    width: '90%',
-    alignSelf: 'center',
-  },
+  listcontainer: { height: SCREEN_HEIGHT * 0.6, marginTop: 20 },
+  loadingOrEmptyContainer: { paddingHorizontal: 10 },
 });
 
 export default styles;

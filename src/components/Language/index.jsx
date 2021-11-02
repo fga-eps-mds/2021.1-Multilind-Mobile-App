@@ -5,11 +5,11 @@ import { useNavigation } from '@react-navigation/native';
 
 import styles from '../../screens/LanguagePerFamily/styles';
 
-export function ListLanguages({ listLanguage }) {
+export function Language({ language }) {
   const navigation = useNavigation();
 
-  return listLanguage.map((language) => (
-    <View key={language.id_lingua} style={styles.listcontainer}>
+  return (
+    <View style={styles.listcontainer}>
       <TouchableOpacity
         onPress={() => {
           navigation.navigate('LanguageInitial', { id: language.id_lingua });
@@ -25,5 +25,5 @@ export function ListLanguages({ listLanguage }) {
         />
       </TouchableOpacity>
     </View>
-  ));
+  );
 }

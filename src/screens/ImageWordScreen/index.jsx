@@ -1,38 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import { useRoute } from '@react-navigation/native';
-import { View, FlatList } from 'react-native';
+import { useRoute, useNavigation } from '@react-navigation/native';
+import { View, FlatList, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WordService, ImageWordService } from '../../services';
-import { TopBar, GoBack, ImageContainer } from '../../components';
+import {
+  TopBar,
+  GoBack,
+  ImageContainer,
+  LoadingOrEmptyMessage,
+} from '../../components';
 import styles from './styles';
 
 export function ImageWordScreen() {
   const route = useRoute();
+  const navigation = useNavigation();
+
   const language = route.params?.language;
-  const [word, setWord] = useState([]);
+  const [words, setWords] = useState([]);
   const perPage = 6;
   const [page, setpage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   async function getWords() {
-    WordService.getAllWordsPerPage({
+    const response = await WordService.getAllWordsPerPage({
       idLingua: language.id_lingua,
       page,
       rowsPerPage: perPage,
-    }).then(async (response) => {
-      const palavrasResponse = response.rows[0].palavras;
-      const wordsFound = await Promise.all(
-        palavrasResponse.map(async (wordImage) => {
-          const image = await ImageWordService.getImageWords(
-            wordImage.id_palavra
-          );
-          if (image.length) {
-            wordImage.url = image[0].download_url;
-          }
-          return wordImage;
-        })
-      );
-      setWord([...word, ...wordsFound]);
     });
+
+    const palavrasResponse = response.rows[0].palavras;
+    const wordsFound = await Promise.all(
+      palavrasResponse.map(async (wordImage) => {
+        const image = await ImageWordService.getImageWords(
+          wordImage.id_palavra
+        );
+        if (image.length) {
+          wordImage.url = image[0].download_url;
+        }
+        return wordImage;
+      })
+    );
+    setLoading(false);
+    setWords([...words, ...wordsFound]);
   }
   useEffect(() => {
     getWords();
@@ -51,17 +60,23 @@ export function ImageWordScreen() {
       <FlatList
         onEndReachedThreshold={0.9}
         onEndReached={fetchMore}
-        style={{
-          marginLeft: '5%',
-          marginRight: '5%',
-          marginBottom: '10%',
-        }}
+        style={styles.images}
         numColumns={2}
-        data={word.filter((item) => item.url)}
+        ListEmptyComponent={
+          <LoadingOrEmptyMessage
+            loading={loading}
+            isEmpty={words?.length === 0}
+            emptyMessage={`Ainda não há imagens da língua ${language.nome} :(`}
+          />
+        }
+        data={words.filter((item) => item.url)}
         renderItem={({ item, index }) => (
           <>
             {item.url === undefined || item.nome === undefined ? null : (
-              <View
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate('SpecificWord', { word: item })
+                }
                 key={item.nome}
                 style={
                   item.length === 2 && index === 0
@@ -77,9 +92,8 @@ export function ImageWordScreen() {
                   }
                   image={item.url}
                 />
-              </View>
+              </TouchableOpacity>
             )}
-            {/* {console.log(item)} */}
           </>
         )}
         keyExtractor={(item) => item.nome}
