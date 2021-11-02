@@ -27,7 +27,7 @@ export function LocationContextProvider({ children }) {
       }
 
       const currentLocation = await getLastKnownPositionAsync({});
-      if (currentLocation) {
+      if (currentLocation?.coords) {
         setLocation((state) => ({ ...state, ...currentLocation.coords }));
       } else {
         setLocation(BRASIL_REGION_INFO);
