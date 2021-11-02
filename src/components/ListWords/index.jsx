@@ -17,7 +17,7 @@ export function ListWords({ listWords }) {
             navigation.navigate('SpecificWord', { word });
           }}
         >
-          <Text style={styles.textlist}>{word.nome}</Text>
+          <Text style={styles.textlist}>{word.significado}</Text>
           <AntDesign
             name="right"
             size={24}
