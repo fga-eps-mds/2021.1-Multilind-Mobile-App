@@ -5,9 +5,11 @@ const LanguageContext = createContext();
 
 export function LanguageContextProvider({ children }) {
   const [languages, setLanguages] = useState([]);
+  const [loadingLanguages, setLoadingLanguages] = useState(true);
 
   async function getAllLanguages() {
     const response = await LanguageService.getAllLanguages();
+    setLoadingLanguages(false);
     setLanguages(response);
   }
 
@@ -16,7 +18,7 @@ export function LanguageContextProvider({ children }) {
   }, []);
 
   return (
-    <LanguageContext.Provider value={{ languages }}>
+    <LanguageContext.Provider value={{ languages, loadingLanguages }}>
       {children}
     </LanguageContext.Provider>
   );
