@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { FontAwesome5, Ionicons } from '@expo/vector-icons';
-import { MapScreen, SettingsScreen } from '../screens';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { MapScreen, AboutScreen } from '../screens';
 import { PRIMARY_BLUE, DARK } from '../constants';
 import { LanguageNavigation } from './LanguageNavigation';
 
@@ -43,12 +43,12 @@ export function BottomNavigation() {
       <Tab.Screen
         name="Settings"
         options={{
-          tabBarLabel: 'Configurações',
+          tabBarLabel: 'Sobre',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="settings-sharp" size={30} color={color} />
+            <FontAwesome5 name="info-circle" size={30} color={color} />
           ),
         }}
-        component={SettingsScreen}
+        component={AboutScreen}
       />
     </Tab.Navigator>
   );

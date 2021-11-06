@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     marginTop: '1%',
+    marginBottom: 75,
   },
 });
 

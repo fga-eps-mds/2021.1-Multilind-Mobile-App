@@ -7,3 +7,4 @@ export { SpecificWordScreen } from './SpecificWordScreen';
 export { LanguagePerFamily } from './LanguagePerFamily';
 export { ImageWordScreen } from './ImageWordScreen';
 export { SpecificImageScreen } from './SpecificImageScreen';
+export { AboutScreen } from './AboutScreen';
