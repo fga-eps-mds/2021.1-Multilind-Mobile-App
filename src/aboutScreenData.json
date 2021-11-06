@@ -6,17 +6,22 @@
       {
         "id": 1,
         "nome": "Glottolog",
-        "url": "/"
+        "url": "https://glottolog.org/"
       },
       {
         "id": 2,
         "nome": "Funai",
-        "url": "/"
+        "url": "https://www.gov.br/funai/pt-br"
       },
       {
         "id": 3,
         "nome": "PIB Socioambiental",
-        "url": "/"
+        "url": "https://pib.socioambiental.org/pt/P%C3%A1gina_principal"
+      },
+      {
+        "id": 4,
+        "nome": "Lexibank",
+        "url": "https://github.com/lexibank/huntergatherer/"
       }
     ]
   },
@@ -24,18 +29,30 @@
     "id": 2,
     "title": "Contribuidores",
     "content": [
-      { "id": 1, "nome": "Carlos Rafael" },
-      { "id": 2, "nome": "Helder Lourenço" },
-      { "id": 3, "nome": "Hérick Lima" },
-      { "id": 4, "nome": "Ingrid Carvalho" },
-      { "id": 5, "nome": "Isadora Galvão" },
-      { "id": 6, "nome": "Micaella Gouveia" },
-      { "id": 7, "nome": "Pedro Igor" },
-      { "id": 8, "nome": "Gabriel Davi" },
       {
-        "id": 9,
-        "nome": "Sofia Patrocínio"
-      }
+        "id": 1,
+        "nome": "Altaci Corrêa Rubim"
+      },
+      {
+        "id": 2,
+        "nome": "Anari Braz Bomfim"
+      },
+      { "id": 3, "nome": "Carlos Rafael" },
+      { "id": 4, "nome": "Eunice da Rocha Moraes Rodrigues" },
+      { "id": 5, "nome": "Gabriel Davi" },
+      { "id": 6, "nome": "Helder Lourenço" },
+      { "id": 7, "nome": "Hérick Lima" },
+      { "id": 8, "nome": "Idiane Cruz da Silva" },
+      { "id": 9, "nome": "Ingrid Carvalho" },
+      { "id": 10, "nome": "Isadora Galvão" },
+      { "id": 11, "nome": "Jywateju Kayabi" },
+      { "id": 12, "nome": "Maria Gorete Neto" },
+      { "id": 13, "nome": "Micaella Gouveia" },
+      { "id": 14, "nome": "Pedro Igor" },
+      { "id": 15, "nome": "Sofia Patrocínio" },
+      { "id": 16, "nome": "Sâmela Ramos da Silva Meirelles" },
+      { "id": 17, "nome": "Thiago Costa Chacon" },
+      { "id": 18, "nome": "Waraxowoo’i Maurício Tapirapé" }
     ]
   }
 ]
