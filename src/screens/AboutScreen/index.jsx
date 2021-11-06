@@ -26,7 +26,9 @@ export function AboutScreen() {
               <TouchableOpacity
                 style={styles.list}
                 onPress={async () => {
-                  if (dataType.id === 2) return;
+                  if (dataType.id === 2) {
+                    return;
+                  }
                   const supported = await Linking.canOpenURL(dataContent.url);
                   if (supported) {
                     await Linking.openURL(dataContent.url);
