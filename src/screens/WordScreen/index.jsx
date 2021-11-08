@@ -10,7 +10,7 @@ import {
   SearchBar,
   LoadingOrEmptyMessage,
 } from '../../components';
-import { FilterListSearch } from '../../utils';
+import { FilterListSearch, sortMeaning } from '../../utils';
 import styles from './styles';
 
 export function WordsScreen() {
@@ -56,7 +56,7 @@ export function WordsScreen() {
             />
           </View>
         }
-        data={filteredWords}
+        data={sortMeaning(filteredWords)}
         renderItem={({ item }) => <Word word={item} />}
         keyExtractor={(item) => String(item.id_palavra)}
       />

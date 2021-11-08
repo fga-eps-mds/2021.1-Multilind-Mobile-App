@@ -1,3 +1,3 @@
-export { sortName, inverseSortName } from './sortByName';
+export { sortName, inverseSortName, sortMeaning } from './sortByName';
 export { FilterListSearch } from './FilterListSearch';
 export { removeAccent } from './removeAccent';
