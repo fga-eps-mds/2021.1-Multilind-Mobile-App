@@ -1,12 +1,22 @@
 import { StyleSheet } from 'react-native';
+import { MONTSERRAT_BOLD } from '../../constants';
 
 const styles = StyleSheet.create({
+  title: {
+    fontFamily: MONTSERRAT_BOLD,
+    fontSize: 23,
+    marginLeft: 26,
+    marginTop: 25,
+    marginBottom: 15,
+  },
   container: {
+    justifyContent: 'space-evenly',
+    display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
   },
   containerImage: {
     marginBottom: 50,
-    marginRight: '4%',
   },
   containerImage2: {
     width: '50%',
@@ -16,11 +26,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  images: {
-    marginLeft: '5%',
-    marginRight: '5%',
-    marginBottom: '10%',
-  },
 });
-
 export default styles;

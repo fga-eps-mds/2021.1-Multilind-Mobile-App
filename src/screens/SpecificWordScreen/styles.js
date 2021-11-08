@@ -39,12 +39,14 @@ const styles = StyleSheet.create({
     left: '80%',
   },
   buttom: {
-    width: 179,
-    height: 37,
+    width: 250,
+    height: 40,
     flexDirection: 'row',
     backgroundColor: '#2D48BA',
     borderRadius: 20,
     alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
   },
   buttontext: {
     flexDirection: 'row',
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
   },
   textbuttom: {
     textAlign: 'center',
-    left: 20,
+    left: 10,
     fontSize: 17,
     marginVertical: 2,
     color: '#FFFFFF',
@@ -67,7 +69,6 @@ const styles = StyleSheet.create({
   buttonimage: {
     flexDirection: 'row',
     marginVertical: 5,
-    left: 12,
   },
   buttonadd: {
     marginVertical: 5,

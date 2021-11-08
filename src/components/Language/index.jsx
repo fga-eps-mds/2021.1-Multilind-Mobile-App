@@ -3,13 +3,13 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-import styles from '../../screens/LanguagePerTrunk/styles';
+import styles from '../../screens/LanguagePerFamily/styles';
 
-export function ListLanguages({ listLanguage }) {
+export function Language({ language }) {
   const navigation = useNavigation();
 
-  return listLanguage.map((language) => (
-    <View key={language.id_lingua} style={styles.listcontainer}>
+  return (
+    <View style={styles.listcontainer}>
       <TouchableOpacity
         onPress={() => {
           navigation.navigate('LanguageInitial', { id: language.id_lingua });
@@ -25,5 +25,5 @@ export function ListLanguages({ listLanguage }) {
         />
       </TouchableOpacity>
     </View>
-  ));
+  );
 }

@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   arrow: {
     paddingRight: 14,
   },
-  troncoLinguas: {
+  familyLinguas: {
     display: 'flex',
     flexDirection: 'row',
   },
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     marginTop: '1%',
+    marginBottom: 75,
   },
 });
 

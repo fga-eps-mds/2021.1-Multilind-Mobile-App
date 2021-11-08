@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useTrunk } from '../../contexts';
+import { useFamily } from '../../contexts';
 import { FilterListSearch } from '../../utils';
 import {
-  ListLanguages,
+  Language,
   ModalMod,
   TopBar,
   SearchBar,
@@ -13,21 +13,22 @@ import {
 } from '../../components';
 import styles from './styles';
 
-export function LanguagePerTrunk() {
-  const { trunks } = useTrunk();
-  const [listTrunk, setListLanguage] = useState(trunks);
-  const [trunkSearch, setTrunkSearch] = useState('');
+export function LanguagePerFamily() {
+  const { families } = useFamily();
+  const [listFamily, setListLanguage] = useState(families);
+  const [familySearch, setFamilySearch] = useState('');
   const [expanded, setExpanded] = useState(false);
   const [visib, setVisib] = useState(false);
 
   const list = () =>
-    FilterListSearch(listTrunk, trunkSearch).map((tronco, index) => (
+    FilterListSearch(listFamily, familySearch).map((tronco, index) => (
       <View key={tronco.id_tronco} style={styles.listcontainer}>
+        {console.log(tronco)}
         <TouchableOpacity
           style={styles.list}
           onPress={() => setExpanded(expanded === index ? null : index)}
         >
-          <View style={styles.troncoLinguas}>
+          <View style={styles.familyLinguas}>
             <Text style={styles.textlist}>{tronco.nome}</Text>
             {tronco.linguas.length > 0 && (
               <Text style={styles.qtdLinguas}>
@@ -45,22 +46,17 @@ export function LanguagePerTrunk() {
           )}
         </TouchableOpacity>
 
-        {expanded === index && (
-          <ListLanguages
-            listLanguage={tronco.linguas.map((lingua) =>
-              Object.assign(lingua, {
-                tronco: { nome: tronco.nome, id_tronco: tronco.id_tronco },
-              })
-            )}
-          />
-        )}
+        {expanded === index &&
+          tronco.linguas?.map((lingua) => (
+            <Language key={lingua.id_lingua} language={lingua} />
+          ))}
       </View>
     ));
 
   return (
     <SafeAreaView>
       <ModalMod
-        list={listTrunk}
+        list={listFamily}
         onChange={setListLanguage}
         onChangeV={setVisib}
         visual={visib}
@@ -70,7 +66,7 @@ export function LanguagePerTrunk() {
         <View>
           <SearchBar
             placeholder="Pesquisar por uma Família"
-            onChange={setTrunkSearch}
+            onChange={setFamilySearch}
           />
           <Filter onChangeV={setVisib} />
         </View>

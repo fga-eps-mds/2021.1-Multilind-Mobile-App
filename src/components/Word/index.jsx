@@ -3,21 +3,20 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-import styles from '../../screens/LanguagePerTrunk/styles';
+import styles from '../../screens/LanguagePerFamily/styles';
 
-export function ListWords({ listWords }) {
+export function Word({ word }) {
   const navigation = useNavigation();
-
-  return listWords?.map((word) => (
+  return (
     <View key={word.id_palavra} style={styles.listcontainer}>
-      {word ? (
+      {word && (
         <TouchableOpacity
           style={styles.list}
           onPress={() => {
             navigation.navigate('SpecificWord', { word });
           }}
         >
-          <Text style={styles.textlist}>{word.nome}</Text>
+          <Text style={styles.textlist}>{word.significado}</Text>
           <AntDesign
             name="right"
             size={24}
@@ -25,9 +24,7 @@ export function ListWords({ listWords }) {
             style={styles.arrow}
           />
         </TouchableOpacity>
-      ) : (
-        <></>
       )}
     </View>
-  ));
+  );
 }

@@ -2,8 +2,8 @@ import api from './api';
 
 const url = '/tronco';
 
-export class TrunkService {
-  static async getAllTrunks() {
+export class FamilyService {
+  static async getAllFamilies() {
     try {
       const response = await api.get(url);
       return response.data;
@@ -13,7 +13,7 @@ export class TrunkService {
     }
   }
 
-  static async getTrunkByID(id) {
+  static async getFamilyByID(id) {
     try {
       const response = await api.get(`${url}/${id}`);
       return response.data;
