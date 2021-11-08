@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLanguage } from '../../contexts';
-import { FilterListSearch } from '../../utils';
+import { FilterListSearch, sortName } from '../../utils';
 import {
   Language,
   ModalMod,
@@ -52,7 +52,7 @@ export function LanguageScreen() {
               />
             </View>
           }
-          data={filteredList}
+          data={sortName(filteredList)}
           keyExtractor={(item) => String(item.id_lingua)}
           renderItem={({ item }) => <Language language={item} />}
         />
