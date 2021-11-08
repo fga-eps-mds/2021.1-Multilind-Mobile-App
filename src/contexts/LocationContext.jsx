@@ -38,7 +38,7 @@ export function LocationContextProvider({ children }) {
 
   return (
     <LocationContext.Provider
-      value={{ location, hasLocation: location.latitude && location.longitude }}
+      value={{ location: BRASIL_REGION_INFO, hasLocation: true }}
     >
       {children}
     </LocationContext.Provider>

@@ -18,6 +18,11 @@ export default {
       supportsTablet: true,
     },
     android: {
+      config: {
+        googleMaps: {
+          apiKey: 'AIzaSyCw37cP2Gf57smfGx3Aa1vUmeZYmZhoAUU',
+        },
+      },
       permissions: ['ACCESS_BACKGROUND_LOCATION'],
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
