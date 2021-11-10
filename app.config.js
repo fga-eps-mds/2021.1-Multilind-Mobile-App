@@ -1,14 +1,14 @@
 export default {
   expo: {
-    name: 'multilind-frontend',
-    slug: 'multilind-frontend',
+    name: 'Multilind',
+    slug: 'Multilind',
     version: '1.0.0',
     orientation: 'portrait',
-    icon: './assets/icon.png',
+    icon: './src/assets/images/icon.png',
     splash: {
-      image: './assets/splash.png',
+      image: './src/assets/images/splash.png',
       resizeMode: 'contain',
-      backgroundColor: '#ffffff',
+      backgroundColor: '#338BAE',
     },
     updates: {
       fallbackToCacheTimeout: 0,
@@ -20,8 +20,8 @@ export default {
     android: {
       permissions: ['ACCESS_BACKGROUND_LOCATION'],
       adaptiveIcon: {
-        foregroundImage: './assets/adaptive-icon.png',
-        backgroundColor: '#FFFFFF',
+        foregroundImage: './src/assets/images/adaptive-icon.png',
+        backgroundColor: '#338BAE',
       },
       package: 'com.gabrieldvpereira.multilindfrontend',
     },
