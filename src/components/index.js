@@ -11,6 +11,7 @@ export { Loading } from './Loading';
 export { SearchBar } from './SearchBar';
 export { GoBack } from './GoBack';
 export { ImageContainer } from './ImageContainer';
+export { LanguageInfo } from './LanguageInformation';
 export { Filter } from './Filter';
 export { DictOrImage } from './DictOrImage';
 export { WordMeaning } from './WordMeaning';

@@ -5,7 +5,7 @@ import { useRoute } from '@react-navigation/native';
 import styles from './styles';
 import { useLanguage } from '../../contexts';
 import { portraitImage, dicionaryImage } from '../../assets/images';
-import { GoBack, TopBar, DictOrImage } from '../../components';
+import { GoBack, TopBar, LanguageInfo, DictOrImage } from '../../components';
 
 export function LanguageInitialScreen() {
   const route = useRoute();
@@ -19,6 +19,8 @@ export function LanguageInitialScreen() {
         <GoBack />
         <TopBar>{language.nome}</TopBar>
         <View style={styles.container}>
+          <LanguageInfo language={language} style={styles.LanguageInfo} />
+
           <View style={styles.Dict}>
             <DictOrImage
               style={styles.dictChildren}
