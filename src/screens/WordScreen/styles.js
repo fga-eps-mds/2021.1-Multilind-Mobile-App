@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  listcontainer: { marginTop: 20 },
+  listcontainer: { paddingBottom: '40%' },
   loadingOrEmptyContainer: { paddingHorizontal: 10 },
 });
 
