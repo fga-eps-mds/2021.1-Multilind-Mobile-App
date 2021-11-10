@@ -10,7 +10,7 @@ import {
   SearchBar,
   LoadingOrEmptyMessage,
 } from '../../components';
-import { FilterListSearch, sortMeaning } from '../../utils';
+import { FilterListSearchWord, sortMeaning } from '../../utils';
 import styles from './styles';
 
 export function WordsScreen() {
@@ -29,11 +29,11 @@ export function WordsScreen() {
     getWords();
   }, []);
 
-  const filteredWords = FilterListSearch(words, wordSearch);
+  const filteredWords = FilterListSearchWord(words, wordSearch);
 
   return (
     <SafeAreaView>
-      <View>
+      <View style={{ marginBottom: 20 }}>
         <GoBack />
         <TopBar>Palavras</TopBar>
         <SearchBar
@@ -42,7 +42,7 @@ export function WordsScreen() {
         />
       </View>
       <FlatList
-        style={styles.listcontainer}
+        contentContainerStyle={styles.listcontainer}
         ListEmptyComponent={
           <View style={styles.loadingOrEmptyContainer}>
             <LoadingOrEmptyMessage

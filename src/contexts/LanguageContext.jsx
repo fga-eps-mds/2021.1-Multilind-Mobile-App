@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import { LanguageService } from '../services';
+import { sortName } from '../utils';
 
 const LanguageContext = createContext();
 
@@ -10,7 +11,7 @@ export function LanguageContextProvider({ children }) {
   async function getAllLanguages() {
     const response = await LanguageService.getAllLanguages();
     setLoadingLanguages(false);
-    setLanguages(response);
+    setLanguages(sortName(response));
   }
 
   useEffect(() => {

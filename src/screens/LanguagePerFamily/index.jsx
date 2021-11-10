@@ -23,7 +23,6 @@ export function LanguagePerFamily() {
   const list = () =>
     FilterListSearch(listFamily, familySearch).map((tronco, index) => (
       <View key={tronco.id_tronco} style={styles.listcontainer}>
-        {console.log(tronco)}
         <TouchableOpacity
           style={styles.list}
           onPress={() => setExpanded(expanded === index ? null : index)}
